@@ -1,10 +1,7 @@
 import os
-import time
-import datetime
-import urllib.request
-import json
 import threading
-from http.server import HTTPServer, BaseHTTPRequestHandler
+import json
+import urllib.request
 import discord
 from discord.ext import commands
 from discord.ui import Select, View
@@ -29,8 +26,7 @@ intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-# --- MAPA DE ACCELS POR DISTANCIA ---
-# Esto sirve para asociar automáticamente los accels meta según el tipo de pista que detecte la web.
+# --- BASE DE DATOS DE ACCELS META ---
 ACCEL_DATABASE = {
     "Short": (
         "• **Runner:** *Angling x Scheming* (Seiun Sky) + *Sprint Turbo*.\n"
@@ -55,43 +51,38 @@ ACCEL_DATABASE = {
 }
 
 def fetch_latest_cm_data():
-    """
-    Función que consulta la web/API automatizada para traer la CM actual o próxima.
-    Si la web cambia o falla, cuenta con un respaldo para no romper el bot.
-    """
+    """Consulta segura a la API externa para evitar bloqueos."""
     try:
-        # Petición a la API/Web con User-Agent para evitar bloqueos
         req = urllib.request.Request(
             "https://raw.githubusercontent.com/uma-musume-db/cm-data/main/current_cm.json",
             headers={'User-Agent': 'Mozilla/5.0'}
         )
-        with urllib.request.urlopen(req, timeout=5) as response:
-            data = json.loads(response.read().decode())
-            return data
+        # Timeout súper rápido de 2 segundos para no hacer esperar a Discord
+        with urllib.request.urlopen(req, timeout=2) as response:
+            return json.loads(response.read().decode())
     except Exception as e:
-        print(f"Error consultando web externa: {e}")
-        # Retorno de respaldo (Fallback) en caso de que la web cambie o no responda
+        print(f"Aviso (usando respaldo): {e}")
         return {
-            "name": "Champions Meeting (Auto-detectado)",
+            "name": "Champions Meeting (Próxima)",
             "track": "Tokyo 1600m (Mile)",
             "category": "Mile",
             "start_time": 1815782400,
             "end_time": 1816300800
         }
 
-# --- MENÚ DESPLEGABLE CON AUTO-DESPLIEGUE ---
+# --- INTERFAZ UI (SELECT MENU & EMBED) ---
 class CMSelect(Select):
     def __init__(self, cm_info):
         self.cm_info = cm_info
         options = [
             discord.SelectOption(
                 label=cm_info.get("name", "Champions Meeting Actual"),
-                description=f"Pista: {cm_info.get('track', 'Por determinar')}",
+                description=f"Pista: {cm_info.get('track', 'Tokyo 1600m')}",
                 value="cm_auto",
                 emoji="🏆"
             )
         ]
-        super().__init__(placeholder="Selecciona la CM autodetectada...", options=options)
+        super().__init__(placeholder="Selecciona una Champions Meeting...", options=options)
 
     async def callback(self, interaction: discord.Interaction):
         category = self.cm_info.get("category", "Mile")
@@ -103,13 +94,13 @@ class CMSelect(Select):
             color=discord.Color.gold()
         )
         
-        start_ts = self.cm_info.get("start_time")
-        end_ts = self.cm_info.get("end_time")
+        start_ts = self.cm_info.get("start_time", 1815782400)
+        end_ts = self.cm_info.get("end_time", 1816300800)
         
         inicio_fmt = f"<t:{start_ts}:F> (<t:{start_ts}:R>)"
         fin_fmt = f"<t:{end_ts}:F> (<t:{end_ts}:R>)"
         
-        embed.add_field(name="📅 Inicio del Evento", value=inicio_fmt, inline=False)
+        embed.add_field(name="📅 Inicio", value=inicio_fmt, inline=False)
         embed.add_field(name="🏁 Finalización", value=fin_fmt, inline=False)
         embed.add_field(name="⚡ Accels Meta Recomendados", value=accels, inline=False)
         
@@ -120,26 +111,24 @@ class CMView(View):
         super().__init__()
         self.add_item(CMSelect(cm_info))
 
-# --- COMANDO ---
+# --- COMANDO PRINCIPAL ---
 @bot.command(name="cm")
 async def cmd_cm(ctx):
-    # Consulta la web en tiempo real al ejecutar el comando
+    # Obtener la información de forma ultra segura
     cm_info = fetch_latest_cm_data()
     
     embed = discord.Embed(
-        title="🏆 Guía de Champions Meeting (Auto-actualizada)",
-        description="Se ha consultado la web de eventos. Haz clic abajo para desplegar las fechas en tu hora local y la guía de accels.",
+        title="🏆 Guía de Champions Meeting",
+        description="Selecciona una opción del menú para consultar el horario dinámico y los accels meta.",
         color=discord.Color.blue()
     )
     await ctx.send(embed=embed, view=CMView(cm_info))
 
 @bot.event
 async def on_ready():
-    print(f'Bot encendido correctamente como {bot.user}')
+    print(f'Bot encendido con éxito como {bot.user}')
 
-# --- INICIO DEL BOT ---
+# --- INICIALIZAR BOT ---
 TOKEN = os.getenv("DISCORD_TOKEN")
 if TOKEN:
     bot.run(TOKEN)
-else:
-    print("Error: No se encontró la variable DISCORD_TOKEN.")
