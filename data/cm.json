@@ -1,7 +1,7 @@
 
 {
   "name": "Sagittarius Cup — CM20",
-  "summary": "Sagittarius Cup (CM20) — EVENTO FINALIZADO.\n\nFinalizó: <t:1792187940:F>\n\nCircuito: Nakayama, césped, 2500 m, distancia Long, sentido horario, trazado interior, invierno y clima nublado.\n\nPunto clave: la fase tardía comienza en la recta opuesta, en el metro 1667. Prioriza habilidades de aceleración que puedan activarse en esa zona; las que dependen de la recta final pueden llegar demasiado tarde.",
+  "summary": "Sagittarius Cup (CM20) — EVENTO FINALIZADO.\n\nFinalizó: <t:1792187940:F>\n\nCircuito: **Nakayama**, **césped (Turf)**, **2500 m**, distancia **Long**, sentido **horario**, trazado **interior**, estación **invierno** y clima **nublado**.\n\nLa fase tardía comienza en la recta opuesta, en el metro **1667**. Prioriza habilidades de aceleración que puedan activarse en esa zona.",
   "track": {
     "venue": "Nakayama",
     "distance_m": 2500,
@@ -15,149 +15,169 @@
   "sections": {
     "umas": {
       "title": "Mejores Umas",
-      "description": "La elección depende del estilo de carrera y de las habilidades disponibles. Para esta edición, Front Runners tienen una ventaja importante; End Closers también pueden competir bien con una build preparada.",
+      "description": "Las opciones más destacadas para esta carrera son **Front Runners** y **End Closers**. La elección concreta depende de las habilidades de aceleración, la recuperación y las estadísticas que puedas conseguir.",
       "fields": [
         {
           "name": "Front Runners",
-          "value": "Son una de las opciones más fuertes para este circuito. Seiun Sky puede aportar aceleración heredada relevante. Mantén una buena ventaja y prioriza habilidades que se activen durante la fase tardía."
+          "value": "**Kitasan Black**, **Seiun Sky** y **Maruzensky** son opciones para esta estrategia. La ventaja inicial y la aceleración temprana son importantes en Nakayama 2500 m. **Angling and Scheming** es una herencia prioritaria."
         },
         {
           "name": "End Closers",
-          "value": "Pueden aprovechar habilidades de aceleración sin condiciones de posición tan exigentes. Uma Stan y Daring Strike son opciones importantes para este estilo cuando están disponibles y encajan con la build."
+          "value": "**Gold Ship**, **Narita Taishin**, **Tamamo Cross** y **Mayano Top Gun** son opciones destacadas. **Gold Ship** tiene recuperación propia y **Daring Strike**; **Narita Taishin** y **Tamamo Cross** también pueden aprovechar la aceleración de su estilo. **Straightaway Spurt** y **Encroaching Shadow** son habilidades importantes para esta estrategia."
         },
         {
           "name": "Late Surgers",
-          "value": "Tienen potencial, pero dependen más de su posición durante la carrera. New Year T.M. Opera O es una alternativa consistente por sus herramientas propias y recuperación."
+          "value": "**New Year T.M. Opera O**, **Christmas Oguri Cap** y **Mejiro Ryan** son opciones a considerar. **New Year T.M. Opera O** combina herramientas de fase tardía con recuperación propia. **Christmas Oguri Cap** puede aprovechar su habilidad única y **Claw Forward** cuando cumple sus condiciones."
         },
         {
           "name": "Pace Chasers",
-          "value": "Son más dependientes de la posición y de cumplir las condiciones de activación. Christmas Oguri Cap, Summer Mejiro McQueen y Halloween Rice Shower son opciones a considerar."
+          "value": "**Christmas Oguri Cap**, **Summer Mejiro McQueen** y **Halloween Rice Shower** son opciones destacadas para esta distancia. Necesitan buenas habilidades de velocidad durante la fase media para llegar a la fase tardía en una posición que permita activar su aceleración."
         }
       ]
     },
     "stats": {
-      "title": "Stats: Graded y Open",
-      "description": "Objetivo orientativo para una build competitiva. Ajusta los valores según el estilo, la recuperación disponible y las cartas que tengas.",
+      "title": "Stats recomendadas",
+      "description": "Dos objetivos distintos: una build competitiva para **Graded League** y una distribución más accesible para apuntar a rango **A+**.",
       "fields": [
         {
-          "name": "Objetivos generales",
-          "value": "Speed: 1500+\nPower: 1000+\nWit: 1000+\nGuts: alrededor de 600\nStamina: depende del estilo y de la recuperación."
+          "name": "Graded League — competitiva",
+          "value": "**Speed:** 1500+\n**Stamina:** alrededor de 900, con **1 recuperación dorada**\n**Power:** 1000+\n**Guts:** alrededor de 600\n**Wit:** 1000+"
         },
         {
-          "name": "Stamina por estilo",
-          "value": "Front Runners y Pace Chasers: apunta a 1000 o más con una recuperación dorada.\nLate Surgers: alrededor de 950 o más con una recuperación dorada.\nEnd Closers: alrededor de 900 o más con una recuperación dorada.\n\nSon referencias de esta guía, no garantías de supervivencia: la build final debe considerar el consumo de energía y las habilidades."
+          "name": "Objetivo A+ — build accesible",
+          "value": "**Speed:** 1150–1200+\n**Stamina:** alrededor de 900, con **1 recuperación dorada**\n**Power:** 800–900+\n**Guts:** 400–500\n**Wit:** 400–600\n\nSon objetivos de entrenamiento para orientar la build; el rango final también depende de las habilidades y del resultado del entrenamiento."
         },
         {
-          "name": "Distribución de supports",
-          "value": "Con crecimiento de Speed: 2 Speed, 1 Stamina, 2 Wit y una carta de utilidad como Light Hello.\nSin crecimiento de Speed: 3 Speed, 1 Stamina, 1 Wit y una carta de utilidad como Light Hello.\n\nAjusta la distribución según los límites de tus cartas y las estadísticas que puedas alcanzar."
+          "name": "Mazo con crecimiento de Speed",
+          "value": "**2 Speed**, **1 Stamina**, **2 Wit** y **Light Hello**."
         },
         {
-          "name": "Recuperación",
-          "value": "Para 2500 m, no descuides Stamina. Una recuperación dorada puede ayudar a completar la distancia, pero no compensa una Stamina demasiado baja ni una build mal equilibrada."
+          "name": "Mazo sin crecimiento de Speed",
+          "value": "**3 Speed**, **1 Stamina**, **1 Wit** y **Light Hello**."
+        },
+        {
+          "name": "Stamina y recuperación",
+          "value": "Si no tienes suficientes factores de **Stamina**, reserva un espacio para una carta de ese atributo. **Super Creek** es una opción fuerte por **Swinging Maestro** y su rendimiento de entrenamiento. Las Umas con recuperación propia pueden tener más flexibilidad en la elección."
         }
       ]
     },
     "inheritance": {
       "title": "Herencia",
-      "description": "Prioriza los factores que ayuden a alcanzar los requisitos de Stamina y las habilidades heredadas que realmente encajen con tu estilo. Para esta carrera, la referencia de la guía es contar con alrededor de 16★ de Stamina en los factores si quieres reducir la dependencia de una carta de Stamina.",
+      "description": "Para una carrera **Long de 2500 m**, prioriza factores de **Stamina** y habilidades heredadas que puedan activarse durante la aceleración.",
       "fields": [
         {
           "name": "Factores de Stamina",
-          "value": "Intenta acercarte a 16★ de Stamina heredada. Si no llegas a ese objetivo, considera incluir una carta de Stamina en el mazo. No sacrifiques toda la Speed o Power solo por perseguir estrellas."
+          "value": "Intenta conseguir alrededor de **16★ de Stamina** entre los factores heredados. Esto ayuda a reducir la dependencia de una carta de Stamina en el mazo."
         },
         {
           "name": "Front Runners",
-          "value": "Seiun Sky es una herencia clave por Angling and Scheming y Break It Down!. Si solo puedes priorizar una de esas opciones, Angling and Scheming es la prioridad habitual. Kitasan Black también es una herencia valiosa para esta edición."
+          "value": "**Seiun Sky** es una herencia clave por **Angling and Scheming** y **Break It Down!**. Si solo puedes priorizar una, elige **Angling and Scheming**. **Kitasan Black** también es una opción importante para esta carrera."
         },
         {
           "name": "Pace Chasers",
-          "value": "Commander Special Week puede aportar velocidad en la curva final si se cumple su condición de activación. Seiun Sky u Oguri Cap pueden considerarse según las habilidades disponibles y la estrategia concreta."
+          "value": "**Commander Special Week** puede aportar velocidad en la curva final si se activa su condición. **Seiun Sky** puede aportar aceleración, pero **Victory Cheer!** y **Break It Down!** requieren estar en segunda posición al comienzo de la fase tardía."
         },
         {
           "name": "Late Surgers",
-          "value": "Mejiro Dober es una opción para buscar Moving Past, and Beyond, aunque su activación puede ser tardía y no siempre resulta sencilla. Commander Special Week puede complementar la build con velocidad en la curva final."
+          "value": "**Mejiro Dober** puede aportar **Moving Past, and Beyond** como aceleración secundaria. **Commander Special Week** también puede aportar velocidad en la curva final."
         },
         {
           "name": "End Closers",
-          "value": "Considera Commander Special Week para velocidad en la curva final y Mejiro Dober o Mejiro Ryan según las habilidades heredables disponibles. Mantén habilidades propias del estilo que ayuden a acelerar a tiempo."
+          "value": "**Mejiro Dober** y **Mejiro Ryan** pueden ser opciones de herencia. **Commander Special Week** aporta velocidad en la curva final; prioriza también las habilidades de aceleración propias del estilo."
         },
         {
-          "name": "Antes de elegir padres",
-          "value": "Comprueba que la habilidad heredada corresponda a tu estilo y pueda activarse en el recorrido de esta carrera. No elijas una herencia únicamente por el nombre de la Uma."
+          "name": "Habilidades generales heredadas",
+          "value": "**∴win Q.E.D.** y **Barcarole of Blessings** son opciones de velocidad en la curva final para varios estilos. **Inside Scoop** también puede ser útil y servir como activación para **Dreams Donned with Pride!**."
         }
       ]
     },
     "supports_whale": {
       "title": "Supports Whale",
-      "description": "Configuración orientada a aprovechar cartas fuertes y mejorar el control de estadísticas, recuperación y habilidades específicas del estilo.",
+      "description": "Mazo orientado a conseguir estadísticas altas y cubrir las necesidades de la carrera con cartas fuertes.",
       "fields": [
         {
-          "name": "Base del mazo",
-          "value": "Con crecimiento de Speed: 2 Speed, 1 Stamina, 2 Wit y Light Hello como utilidad.\nSin crecimiento de Speed: 3 Speed, 1 Stamina, 1 Wit y Light Hello como utilidad.\n\nAjusta los espacios si una carta no aporta lo suficiente a la build."
+          "name": "Distribución principal",
+          "value": "Con crecimiento de **Speed**: **2 Speed**, **1 Stamina**, **2 Wit** y **Light Hello**.\nSin crecimiento de **Speed**: **3 Speed**, **1 Stamina**, **1 Wit** y **Light Hello**."
         },
         {
           "name": "Stamina y recuperación",
-          "value": "Super Creek es una opción fuerte para conseguir recuperación dorada y buen rendimiento de entrenamiento. La necesidad real de Stamina depende del estilo y de los factores heredados."
+          "value": "**Super Creek**: **Swinging Maestro** y buen rendimiento de entrenamiento.\n**Mejiro Palmer**: opción para **Front Runners**, con **Taking the Lead**.\n**Symboli Kris S**: opción para **Late Surgers**, con **Claw Forward**."
         },
         {
-          "name": "Opciones por estilo",
-          "value": "Front Runners: Speed Maruzensky y, cuando sea útil, Mejiro Palmer.\nPace Chasers: Speed Agnes Tachyon o Wit Tokai Teio.\nLate Surgers: Speed Seeking the Pearl, Wit Air Groove o Speed Eishin Flash.\nEnd Closers: Wit Mr. C.B.\n\nLa mejor combinación depende de los limit breaks y de las habilidades que necesite tu Uma."
+          "name": "Supports de Speed",
+          "value": "**Kitasan Black**: entrenamiento de Speed y habilidades útiles.\n**Maruzensky**: opción para **Front Runners**.\n**Agnes Tachyon**: opción para **Pace Chasers**.\n**Seeking the Pearl** y **Eishin Flash**: opciones para **Late Surgers**."
         },
         {
-          "name": "Recuperaciones alternativas",
-          "value": "Mayano Top Gun, Tosen Jordan, Zenno Rob Roy, Air Shakur y Mejiro Ardan pueden aportar opciones de recuperación según la carta concreta y las habilidades disponibles. Verifica cuál encaja con tu build antes de sustituir una carta."
+          "name": "Supports de Wit",
+          "value": "**Tokai Teio**: opción para **Pace Chasers**.\n**Air Groove**: opción para **Late Surgers**.\n**Mr. C.B.**: opción para **End Closers**."
+        },
+        {
+          "name": "Recuperación desde Speed",
+          "value": "**Mayano Top Gun**: **Restless**.\n**Tosen Jordan**: **Breath of Fresh Air**.\n**Zenno Rob Roy**: **Lie in Wait**.\n**Air Shakur**: **Serenity**.\n**Mejiro Ardan**: **Race Planner**."
         }
       ]
     },
     "supports_f2p": {
       "title": "Supports F2P",
-      "description": "La prioridad F2P es construir alrededor de las cartas que tengas más desarrolladas, usar bien los espacios del mazo y cubrir las necesidades de esta carrera sin depender de una colección premium.",
+      "description": "Opciones concretas de cartas **SR**, **R** y **SSR gratuitas** para preparar Sagittarius Cup sin depender de un mazo premium.",
       "fields": [
         {
-          "name": "Principio de la build",
-          "value": "Prioriza cartas gratuitas de evento y SR que tengas con buenos limit breaks. Una carta más desarrollada puede rendir mejor que una SSR sin mejoras si sus efectos encajan con el entrenamiento que necesitas."
+          "name": "Speed — SR y SSR gratuitas",
+          "value": "**Sweep Tosho (SR)**: opción de Speed para completar el mazo.\n**Shinko Windy (SR)**: alternativa para entrenamiento de Speed.\n**King Halo (SR)**: opción de Speed y habilidades útiles según la build.\n**Narita Brian (SSR gratuita)**: alternativa de Speed obtenida mediante contenido del juego."
         },
         {
-          "name": "Distribución sugerida",
-          "value": "Con crecimiento de Speed: intenta 2 Speed, 1 Stamina y 2 Wit, reservando el último espacio para utilidad o recuperación según tus cartas.\nSin crecimiento de Speed: prueba 3 Speed, 1 Stamina y 1 Wit, con el último espacio para utilidad.\n\nSi no puedes alcanzar suficiente Stamina con los factores heredados, conserva la carta de Stamina aunque tengas que cambiar la distribución."
+          "name": "Stamina — SR y SSR gratuitas",
+          "value": "**Manhattan Cafe (SR)**: carta de Stamina para entrenar la estadística necesaria en 2500 m.\n**Zenno Rob Roy (SR)**: opción de Stamina.\n**Mayano Top Gun (SR)**: alternativa de Stamina.\n**Mejiro McQueen (SSR gratuita)**: opción de Stamina para completar el mazo."
         },
         {
-          "name": "Qué buscar en tus cartas",
-          "value": "Speed: entrenamiento y efectos que ayuden a elevar la estadística principal.\nStamina: entrenamiento y recuperación útil para completar 2500 m.\nPower: efectos de entrenamiento o bonificaciones que ayuden a equilibrar la build.\nWit: entrenamiento consistente y habilidades útiles para tu estrategia.\nUtilidad: una carta como Light Hello puede ser una opción si la tienes disponible y encaja en tu mazo."
+          "name": "Power — SR y SSR gratuitas",
+          "value": "**Hishi Amazon (SR)**: opción de Power; puede ser útil si necesitas acceder a **Straightaway Spurt**.\n**Winning Ticket (SSR gratuita)**: alternativa de Power para reforzar el entrenamiento."
         },
         {
-          "name": "Cuándo pedir prestada una support",
-          "value": "Aprovecha el espacio de préstamo para cubrir la carencia más importante de tu cuenta: una carta fuerte de Stamina con recuperación, o una carta específica para tu estilo. No copies una build Whale completa si tus otras cartas no pueden sostener sus estadísticas."
+          "name": "Wit — SR",
+          "value": "**Matikanefukukitaru (SR)**: opción destacada de Wit dentro de las alternativas económicas."
         },
         {
-          "name": "Prioridades para esta carrera",
-          "value": "1. Alcanzar Speed alta.\n2. Cubrir Stamina para 2500 m y añadir recuperación cuando sea necesario.\n3. Mantener Power y Wit suficientes para que la build funcione.\n4. Elegir habilidades compatibles con tu estilo y que puedan activarse durante la carrera.\n\nEs preferible una build equilibrada con cartas accesibles a perseguir una distribución ideal que tu cuenta no puede alcanzar."
+          "name": "Utilidad — R",
+          "value": "**R Riko Kashimoto**, si la tienes con limit breaks, puede ocupar el espacio de utilidad del mazo. La distribución habitual es **2 Speed / 1 Stamina / 2 Wit / R Riko** para Umas con crecimiento de Speed, o **3 Speed / 1 Stamina / 1 Wit / R Riko** sin ese crecimiento."
+        },
+        {
+          "name": "Distribución F2P sugerida",
+          "value": "Con crecimiento de **Speed**: **2 Speed**, **1 Stamina**, **2 Wit** y **R Riko**.\nSin crecimiento de **Speed**: **3 Speed**, **1 Stamina**, **1 Wit** y **R Riko**.\n\nSi tu Uma necesita más Stamina, puedes usar una segunda carta de Stamina y reducir un espacio de Speed o Wit."
+        },
+        {
+          "name": "Build F2P para Gold Ship",
+          "value": "**Gold Ship**: prueba **4 Speed**, **R Riko** y una carta de **Power**. **Hishi Amazon (SR)** es útil si necesitas obtener **Straightaway Spurt**. Prioriza factores heredados de **Stamina** y distancia **Long**; busca **Uma Stan**, **No Stopping Me!**, **Straightaway Spurt** y recuperación como **Go-Home Specialist** cuando estén disponibles."
+        },
+        {
+          "name": "Build F2P para Mayano Top Gun",
+          "value": "**Mayano Top Gun** como **End Closer**: una base de **4 Speed**, **R Riko** y una carta de **Power** puede funcionar si los factores heredados cubren la Stamina. Prioriza **No Stopping Me!**, **Swinging Maestro** y **Straightaway Spurt** cuando puedas conseguirlas."
         }
       ]
     },
     "skills": {
-      "title": "Skills por estrategia",
-      "description": "Prioriza aceleración que pueda activarse en la fase tardía, que comienza en el metro 1667. La utilidad de cada habilidad depende de su condición de activación y del estilo de carrera.",
+      "title": "Skills recomendadas",
+      "description": "La fase tardía comienza en el metro **1667**. Prioriza habilidades que aceleren en la recta opuesta o en la curva inmediatamente posterior.",
       "fields": [
         {
           "name": "Front Runners",
-          "value": "Angling and Scheming y Break It Down! son habilidades de aceleración importantes para esta estrategia. Let’s Pump Some Iron!, Moving Past, and Beyond también pueden ser opciones según las condiciones de activación."
+          "value": "**Angling and Scheming** y **Break It Down!** son opciones importantes de aceleración. **Let's Pump Some Iron!** también puede ser útil según la build."
         },
         {
           "name": "Pace Chasers",
-          "value": "My True Strength necesita que la Uma esté dentro de cuatro cuerpos de la líder al inicio de la fase tardía. Victory Cheer! y Break It Down! exigen una posición muy adelantada en ese momento. Combínalas con velocidad de mitad de carrera para alcanzar las posiciones necesarias."
+          "value": "**My True Strength** requiere estar dentro de cuatro cuerpos de la líder al comenzar la fase tardía. **Victory Cheer!** y **Break It Down!** requieren estar en segunda posición en ese momento. Usa habilidades de velocidad de fase media para alcanzar esas posiciones."
         },
         {
           "name": "Late Surgers",
-          "value": "Scramble/Claw Forward consume un 2% de energía y requiere estar entre los puestos 4 y 9. Considera un margen adicional de Stamina y una alternativa de aceleración como Nimble Navigator o Moving Past, and Beyond."
+          "value": "**Claw Forward** ofrece aceleración inmediata, pero consume un **2% de energía** y requiere estar entre los puestos **4 y 9**. Considera **Nimble Navigator** como aceleración secundaria."
         },
         {
           "name": "End Closers",
-          "value": "Nimble Navigator y No Stopping Me! pueden ser opciones útiles para estilos que no sean Front Runner. Prioriza también las habilidades de aceleración propias del estilo que puedan activarse a tiempo."
+          "value": "**Straightaway Spurt** y **Encroaching Shadow** son habilidades importantes para acelerar en la recta. **Uma Stan** y **Daring Strike** también son opciones valiosas para este estilo."
         },
         {
-          "name": "Selección de habilidades",
-          "value": "La ubicación de la fase tardía importa: una habilidad que acelera demasiado tarde puede aportar poco en este recorrido. Da prioridad a las condiciones de activación y al momento en que ocurre la aceleración."
+          "name": "Habilidades para varios estilos",
+          "value": "**Nimble Navigator** y **No Stopping Me!** son opciones para estilos distintos de **Front Runner**. **Moving Past, and Beyond** puede servir como aceleración secundaria para **Late Surgers** y **End Closers**."
         }
       ]
     }
