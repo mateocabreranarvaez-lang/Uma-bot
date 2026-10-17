@@ -109,8 +109,6 @@ class CMSectionSelect(Select):
             embed.set_image(url=self.cm_data["image_url"])
             
         embed.set_footer(text="Umalator CM Helper")
-        
-        # Corrección: Pasamos el contenido como embed=embed para evitar el error de objeto en texto
         await interaction.response.edit_message(content=None, embed=embed, view=self.view)
 
 class CMSectionView(View):
@@ -159,6 +157,25 @@ async def slash_cm(interaction: discord.Interaction, nombre_copa: str):
     embed_init.add_field(name="📅 Inicia", value=f"<t:{start_ts}:F> (<t:{start_ts}:R>)", inline=False)
     
     if cm_data.get("image_url"):
+        embed_init.set_image(url=cm_data["image_url"])
+        
+    embed_init.set_footer(text="Umalator CM Helper")
+
+    await interaction.response.send_message(embed=embed_init, view=CMSectionView(cm_data))
+
+# --- EVENTO AL ENCENDER ---
+@bot.event
+async def on_ready():
+    try:
+        synced = await bot.tree.sync()
+        print(f"Sincronizados {len(synced)} comandos Slash.")
+    except Exception as e:
+        print(f"Error sincronizando comandos: {e}")
+    print(f'Bot encendido correctamente como {bot.user}')
+
+TOKEN = os.getenv("DISCORD_TOKEN")
+if TOKEN:
+    bot.run(TOKEN)t("image_url"):
         embed_init.set_image(url=cm_data["image_url"])
         
     embed_init.set_footer(text="Umalator CM Helper")
