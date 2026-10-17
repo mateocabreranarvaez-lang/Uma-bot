@@ -34,7 +34,7 @@
         ]
       },
       "stats": {
-        "title": "Recommended Stats & Decks",
+        "title": "Recommended Stats & Builds",
         "description": "Objetivos de estadísticas según liga y distribución de mazos.",
         "fields": [
           {
@@ -86,68 +86,84 @@
         ]
       },
       "supports_whale": {
-        "title": "Support Cards (Whale)",
-        "description": "Mazo optimizado para tope de estadísticas.",
+        "title": "Support Cards (Whale / Optimizado)",
+        "description": "Mazo orientado a maximizar estadísticas y asegurar habilidades clave de alta prioridad.",
         "fields": [
           {
-            "name": "Stamina & Recovery",
-            "value": "**Super Creek** (*Swinging Maestro*)\n**Mejiro Palmer** (*Taking the Lead* — Front)\n**Symboli Kris S** (*Claw Forward* — Late)"
+            "name": "Distribución General",
+            "value": "• **Con crecimiento de Speed:** 2 Speed / 1 Stamina / 2 Wit / Light Hello\n• **Sin crecimiento de Speed:** 3 Speed / 1 Stamina / 1 Wit / Light Hello"
           },
           {
-            "name": "Speed & Wit Core",
-            "value": "⚡ **Speed:** Kitasan Black, Maruzensky, Agnes Tachyon, Seeking the Pearl, Eishin Flash\n🧠 **Wit:** Tokai Teio, Air Groove, Mr. C.B."
+            "name": "Stamina y Recuperación",
+            "value": "• **Super Creek (SSR):** Excelente rendimiento de entrenamiento y acceso vital a **Swinging Maestro**.\n• **Mejiro Palmer (SSR):** Opción clave para **Front Runners** por su habilidad **Taking the Lead**.\n• **Symboli Kris S (SSR):** Opción sólida para **Late Surgers** que aporta **Claw Forward**."
           },
           {
-            "name": "Speed Recoveries",
-            "value": "**Mayano Top Gun** (*Restless*), **Tosen Jordan** (*Breath of Fresh Air*), **Zenno Rob Roy** (*Lie in Wait*), **Mejiro Ardan** (*Race Planner*)."
+            "name": "Supports de Speed",
+            "value": "• **Kitasan Black (SSR):** Base obligatoria por eficiencia de entrenamiento y utilidades de carrera.\n• **Maruzensky (SSR):** Opción orientada a estrategias de **Front Runner**.\n• **Agnes Tachyon (SSR):** Recomendada para estrategias de **Pace Chaser**.\n• **Seeking the Pearl / Eishin Flash:** Alternativas eficientes para **Late Surgers**."
+          },
+          {
+            "name": "Supports de Wit",
+            "value": "• **Tokai Teio (SSR):** Mazo orientado a **Pace Chasers**.\n• **Air Groove (SSR):** Excelente para **Late Surgers**.\n• **Mr. C.B. (SSR):** Cobertura prioritaria para **End Closers**."
+          },
+          {
+            "name": "Recuperación Secundarias desde Speed",
+            "value": "• **Mayano Top Gun:** Aporta **Restless**.\n• **Tosen Jordan:** Aporta **Breath of Fresh Air**.\n• **Zenno Rob Roy:** Aporta **Lie in Wait**.\n• **Mejiro Ardan:** Aporta **Race Planner**."
           }
         ]
       },
       "supports_f2p": {
-        "title": "Support Cards (F2P)",
-        "description": "Opciones SR y SSR gratuitas accesibles.",
+        "title": "Support Cards (F2P / Accesible)",
+        "description": "Alternativas económicas utilizando cartas SR, R y SSR gratuitas para Nakayama 2500m.",
         "fields": [
           {
-            "name": "Speed (SR / Free SSR)",
-            "value": "Sweep Tosho (SR), Shinko Windy (SR), King Halo (SR), Narita Brian (Free SSR)"
+            "name": "Speed — Cartas SR y Gratuitas",
+            "value": "• **Sweep Tosho (SR):** Excelente carta F2P para completar el stat de Speed.\n• **Shinko Windy (SR):** Gran alternativa por sus bonos de entrenamiento.\n• **King Halo (SR):** Aporta utilidades situacionales según la build.\n• **Narita Brian (SSR Gratuita):** Alternativa accesible de Speed obtenida en eventos."
           },
           {
-            "name": "Stamina & Power (SR / Free SSR)",
-            "value": "🫀 **Stamina:** Manhattan Cafe (SR), Zenno Rob Roy (SR), Mayano Top Gun (SR), Mejiro McQueen (Free SSR)\n💥 **Power:** Hishi Amazon (SR), Winning Ticket (Free SSR)"
+            "name": "Stamina — Cartas SR y Gratuitas",
+            "value": "• **Manhattan Cafe (SR):** Carta clave para alcanzar la Stamina requerida en 2500m.\n• **Zenno Rob Roy (SR) / Mayano Top Gun (SR):** Buenas alternativas de soporte en Stamina.\n• **Mejiro McQueen (SSR Gratuita):** Opción accesible para estabilizar el mazo."
           },
           {
-            "name": "Wit & Utility",
-            "value": "🧠 **Wit:** Matikanefukukitaru (SR)\n🛠️ **Utility:** R Riko Kashimoto"
+            "name": "Power y Wit — Cartas SR y Gratuitas",
+            "value": "• **Hishi Amazon (SR - Power):** Útil para acceder a **Straightaway Spurt**.\n• **Winning Ticket (SSR Gratuita - Power):** Refuerzo de entrenamiento de Power.\n• **Matikanefukukitaru (SR - Wit):** La mejor opción económica para el stat de Wit."
           },
           {
-            "name": "Gold Ship F2P Build",
-            "value": "4 Speed + R Riko + 1 Power (Hishi Amazon SR para *Straightaway Spurt*). Herencia a Stamina / Long."
+            "name": "Utilidad — Carta R",
+            "value": "• **R Riko Kashimoto:** Con limit breaks puede ocupar el espacio de utilidad del mazo.\n• *Distribución recomendada:* **2 Speed / 1 Stamina / 2 Wit / R Riko** (con crecimiento de Speed) o **3 Speed / 1 Stamina / 1 Wit / R Riko** (sin crecimiento)."
           },
           {
-            "name": "Mayano Top Gun F2P Build",
-            "value": "4 Speed + R Riko + 1 Power. Prioriza *No Stopping Me!*, *Swinging Maestro* y *Straightaway Spurt*."
+            "name": "Build F2P Específica: Gold Ship",
+            "value": "• **Mazo:** 4 Speed + R Riko + 1 Power (**Hishi Amazon SR** para **Straightaway Spurt**).\n• **Estrategia:** Prioriza factores heredados de Stamina y distancia Long. Busca habilidades como **Uma Stan**, **No Stopping Me!** y recuperaciones como **Go-Home Specialist**."
+          },
+          {
+            "name": "Build F2P Específica: Mayano Top Gun",
+            "value": "• **Mazo (End Closer):** 4 Speed + R Riko + 1 Power (si los factores cubren la Stamina).\n• **Estrategia:** Prioriza **No Stopping Me!**, **Swinging Maestro** y **Straightaway Spurt**."
           }
         ]
       },
       "skills": {
-        "title": "Key Skills & Priority",
-        "description": "Habilidades clave para el metro 1667.",
+        "title": "Key Skills & Priorities",
+        "description": "La fase tardía comienza en la recta opuesta (metro 1667). Prioriza aceleraciones que se activen en esa zona o en la curva inmediata.",
         "fields": [
           {
             "name": "Front Runners",
-            "value": "✨ **Angling and Scheming**\n✨ **Break It Down!**\n✨ **Let's Pump Some Iron!**"
+            "value": "• **Angling and Scheming:** Aceleración heredada clave para el primer lugar.\n• **Break It Down!:** Aceleración y posicionamiento temprano.\n• **Let's Pump Some Iron!:** Opción secundaria útil según la build."
           },
           {
             "name": "Pace Chasers",
-            "value": "✨ **My True Strength** (a <4 cuerpos de la líder)\n✨ **Victory Cheer!** / **Break It Down!**"
+            "value": "• **My True Strength:** Requiere estar a menos de 4 cuerpos de la líder al iniciar la fase tardía.\n• **Victory Cheer! / Break It Down!:** Requieren estar en 2° posición al comenzar la fase tardía. Usa habilidades de velocidad en fase media para alcanzar dicha posición."
           },
           {
             "name": "Late Surgers",
-            "value": "✨ **Claw Forward** (aceleración inmediata, -2% energía, pos. 4-9)\n✨ **Nimble Navigator**"
+            "value": "• **Claw Forward:** Aceleración inmediata en puestos 4 al 9 (consume 2% extra de energía).\n• **Nimble Navigator:** Aceleración secundaria para ganar terreno en la curva."
           },
           {
             "name": "End Closers",
-            "value": "✨ **Straightaway Spurt**\n✨ **Encroaching Shadow**\n✨ **Uma Stan**\n✨ **Daring Strike**"
+            "value": "• **Straightaway Spurt / Encroaching Shadow:** Aceleración fundamental en la recta opuesta para rematar.\n• **Uma Stan / Daring Strike:** Herramientas de velocidad y aceleración de gran valor para el estilo."
+          },
+          {
+            "name": "Habilidades Generales / Multiestilo",
+            "value": "• **Nimble Navigator / No Stopping Me!:** Excelentes opciones para estilos fuera de Front Runner.\n• **Moving Past, and Beyond:** Funciona como aceleración secundaria para Late Surgers y End Closers."
           }
         ]
       }
