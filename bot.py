@@ -22,15 +22,12 @@ def run_dummy_server():
 
 threading.Thread(target=run_dummy_server, daemon=True).start()
 
-# --- CARGAR BASE DE DATOS ---
+# --- CARGAR BASE DE DATOS DE COPAS ---
 def load_cm_database():
     path = os.path.join("data", "cm.json")
     if os.path.exists(path):
         with open(path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-            if "sections" in data or "name" in data:
-                return {"sagittarius_cup": data}
-            return data
+            return json.load(f)
     return {}
 
 CM_DATABASE = load_cm_database()
@@ -39,14 +36,18 @@ intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-# --- FORMATO DE EMBED ESTILO TAZUNA BOT ---
+# --- CREACIÓN DEL EMBED ESTILO TAZUNABOT (DOS FOTOS) ---
 def build_cm_embed(cm_data, section_key):
     embed = discord.Embed(
-        color=discord.Color.from_rgb(47, 49, 54) # Fondo oscuro elegante estilo Tazuna
+        color=discord.Color.from_rgb(47, 49, 54) # Estilo Tazuna Dark
     )
 
     if section_key == "track_overview":
-        embed.title = cm_data.get("name", "Sagittarius Cup")
+        embed.title = cm_data.get("name", "Champions Meeting")
+        
+        # Foto 4 (Banner Principal arriba de la información)
+        if cm_data.get("banner_url"):
+            embed.set_thumbnail(url=cm_data["banner_url"])
         
         track = cm_data.get("track", {})
         if track:
@@ -59,6 +60,10 @@ def build_cm_embed(cm_data, section_key):
         
         if cm_data.get("summary"):
             embed.add_field(name="Overview & Advice", value=cm_data["summary"], inline=False)
+
+        # Foto 2 (Diagrama de fases del circuito abajo del Embed)
+        if cm_data.get("track_map_url"):
+            embed.set_image(url=cm_data["track_map_url"])
 
     else:
         sections = cm_data.get("sections", {})
@@ -75,13 +80,13 @@ def build_cm_embed(cm_data, section_key):
                 inline=False
             )
 
-    if cm_data.get("image_url"):
-        embed.set_image(url=cm_data["image_url"])
+        if cm_data.get("banner_url"):
+            embed.set_thumbnail(url=cm_data["banner_url"])
 
-    embed.set_footer(text="Umalator CM Helper")
+    embed.set_footer(text="Umalator CM Helper • GameTora Data")
     return embed
 
-# --- MENÚ INTERACTIVO ---
+# --- MENÚ SELECTOR DE SECCIONES ---
 class CMSectionSelect(Select):
     def __init__(self, cm_data):
         self.cm_data = cm_data
@@ -105,27 +110,60 @@ class CMSectionView(View):
         super().__init__()
         self.add_item(CMSectionSelect(cm_data))
 
-# --- AUTOCOMPLETADO Y COMANDO ---
-async def cm_autocomplete(interaction: discord.Interaction, current: str):
-    choices = []
-    for key, data in CM_DATABASE.items():
-        name = data.get("name", key)
-        if not current or current.lower() in name.lower():
-            choices.append(app_commands.Choice(name=name, value=key))
-    return choices[:25]
+# --- BÚSQUEDA INTERACTIVA DE CARRERAS / COPAS ("Found matches") ---
+class SearchMatchSelect(Select):
+    def __init__(self, matches):
+        self.matches = matches
+        options = [
+            discord.SelectOption(label=data.get("name", key), value=key, emoji="🏆")
+            for key, data in matches.items()
+        ]
+        super().__init__(placeholder="Choose a Race / Champions Meeting...", options=options)
 
-@bot.tree.command(name="cm", description="Guía de Champions Meeting")
-@app_commands.describe(nombre_copa="Selecciona la copa")
-@app_commands.autocomplete(nombre_copa=cm_autocomplete)
-async def slash_cm(interaction: discord.Interaction, nombre_copa: str):
-    cm_data = CM_DATABASE.get(nombre_copa) or next(iter(CM_DATABASE.values()), None)
+    async def callback(self, interaction: discord.Interaction):
+        selected_key = self.values[0]
+        cm_data = CM_DATABASE[selected_key]
+        embed = build_cm_embed(cm_data, "track_overview")
+        await interaction.response.edit_message(content=f"✅ You selected **{cm_data.get('name')}**", embed=embed, view=CMSectionView(cm_data))
 
-    if not cm_data:
+class SearchMatchView(View):
+    def __init__(self, matches):
+        super().__init__()
+        self.add_item(SearchMatchSelect(matches))
+
+# --- COMANDO /race O /cm CON COINCIDENCIAS ---
+@bot.tree.command(name="cm", description="Busca y muestra guías de Champions Meeting")
+@app_commands.describe(busqueda="Nombre o término de la copa (ej: Sagittarius, Arima, Nakayama)")
+async def slash_cm(interaction: discord.Interaction, busqueda: str = None):
+    if not CM_DATABASE:
         await interaction.response.send_message("❌ No hay datos en `data/cm.json`.", ephemeral=True)
         return
 
-    embed_init = build_cm_embed(cm_data, "track_overview")
-    await interaction.response.send_message(embed=embed_init, view=CMSectionView(cm_data))
+    # Si no especifica búsqueda, muestra la copa actual por defecto
+    if not busqueda:
+        cm_data = next(iter(CM_DATABASE.values()))
+        embed = build_cm_embed(cm_data, "track_overview")
+        await interaction.response.send_message(embed=embed, view=CMSectionView(cm_data))
+        return
+
+    # Filtrar coincidencias
+    matches = {
+        key: data for key, data in CM_DATABASE.items()
+        if busqueda.lower() in data.get("name", "").lower() or busqueda.lower() in key.lower() or busqueda.lower() in data.get("track", {}).get("venue", "").lower()
+    }
+
+    if not matches:
+        await interaction.response.send_message(f"🔍 No matches found for **{busqueda}**.", ephemeral=True)
+    elif len(matches) == 1:
+        cm_data = list(matches.values())[0]
+        embed = build_cm_embed(cm_data, "track_overview")
+        await interaction.response.send_message(embed=embed, view=CMSectionView(cm_data))
+    else:
+        # Si hay 2 o más coincidencias, muestra el menú "Found X matches. Pick one:" (Foto 3)
+        await interaction.response.send_message(
+            f"🔍 **Found {len(matches)} matches. Pick one:**",
+            view=SearchMatchView(matches)
+        )
 
 @bot.event
 async def on_ready():
