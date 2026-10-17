@@ -26,7 +26,7 @@ intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-# --- BASE DE DATOS COMPLETA DE CMs (GAMETORA + UMALATOR) ---
+# --- BASE DE DATOS COMPLETA DE CMs (CON NOMBRES OFICIALES DEL JUEGO) ---
 CM_DATABASE = {
     "taurus_cup": {
         "name": "Taurus Cup (Tokyo 2400m)",
@@ -35,9 +35,9 @@ CM_DATABASE = {
         "sections": {
             "track_overview": "🏟️ **TRACK INFO & GENERAL OVERVIEW**\n\n📍 **Pista:** Tokyo Turf 2400m (Medium) - Left - Spring - Firm\n\n💡 **Distancia Ideal:** Exigencia alta de velocidad y stamina base. La recta larga de Tokyo premia los bursts de velocidad final.",
             "best_umas": "🏇 **BEST UMAS & RUNNING STYLES**\n\n🏃 **Front Runner:** Silence Suzuka, Seiun Sky\n🏃 **Pace Chaser:** Narita Brian, Vodka\n🏃 **Late Surger:** Mejiro Ryan\n🏃 **End Closer:** Gold Ship\n🏃 **Debuffer:** Nice Nature",
-            "inheritance": "🧬 **INHERITANCE & STAT FACTORS**\n\n📊 **Target Stat Factors:**\n• ★9 Stamina - ★9 Power\n\n🐴 **Recommended Parents / Grandparents:**\n• Super Creek (*Arc Maestro*)\n• Mejiro Ryan (*Anabolic*)\n\n⚡ **Key Inherited Unique Skills & Priorities:**\n• *Arc Maestro* [Prioridad Alta]\n• *Anabolic* [Prioridad Media]",
+            "inheritance": "🧬 **INHERITANCE & STAT FACTORS**\n\n📊 **Target Stat Factors:**\n• ★9 Stamina - ★9 Power\n\n🐴 **Recommended Parents / Grandparents:**\n• Super Creek (*Swinging Maestro*)\n• Mejiro Ryan (*Feel the Burn*)\n\n⚡ **Key Inherited Unique Skills & Priorities:**\n• *Swinging Maestro* [Prioridad Alta]\n• *Feel the Burn* [Prioridad Media]",
             "support_cards": "🎴 **SUPPORT CARDS (WHALE VS F2P)**\n\n🐋 **Decks Whale / P2P:**\n• 👟3 Speed + 🫀2 Stamina + 🧠1 Wit\n• Borrow: Super Creek SSR\n\n🆓 **Decks F2P:**\n• 👟3 Speed + 🫀2 Stamina + 🔥1 Guts\n• Opciones: Rice Shower SR, Manhattan Cafe SR",
-            "skills_priority": "⚡ **KEY SKILLS, PRIORITY & RANKING POINTS**\n\n• *Arc Maestro* [○ 200 pts / ◎ 300 pts] -> Rentable: ○\n• *Medium Straight* [○ 130 pts / ◎ 210 pts]\n• *Non-stop Girl* [○ 200 pts / ◎ 320 pts]"
+            "skills_priority": "⚡ **KEY SKILLS, PRIORITY & RANKING POINTS**\n\n• *Swinging Maestro* [○ 200 pts / ◎ 300 pts] -> Rentable: ○\n• *Medium Straight* [○ 130 pts / ◎ 210 pts]\n• *Non-Stop Girl* [○ 200 pts / ◎ 320 pts]"
         }
     },
     "gemini_cup": {
@@ -47,9 +47,9 @@ CM_DATABASE = {
         "sections": {
             "track_overview": "🏟️ **TRACK INFO & GENERAL OVERVIEW**\n\n📍 **Pista:** Kyoto Turf 3200m (Long) - Right - Spring - Firm\n\n💡 **Distancia Ideal:** La carrera más larga del circuito inicial. La stamina y los recoveries múltiples son innegociables.",
             "best_umas": "🏇 **BEST UMAS & RUNNING STYLES**\n\n🏃 **Front Runner:** Rice Shower, Maya No Top Gun\n🏃 **Pace Chaser:** Narita Brian\n🏃 **Late Surger:** Mejiro Ryan\n🏃 **End Closer:** Gold Ship (Reina indiscutible)\n🏃 **Debuffer:** Nice Nature",
-            "inheritance": "🧬 **INHERITANCE & STAT FACTORS**\n\n📊 **Target Stat Factors:**\n• ★12 Stamina - ★6 Guts\n\n🐴 **Recommended Parents / Grandparents:**\n• Super Creek (*Arc Maestro*)\n\n⚡ **Key Inherited Unique Skills & Priorities:**\n• *Arc Maestro* [Prioridad Máxima]",
+            "inheritance": "🧬 **INHERITANCE & STAT FACTORS**\n\n📊 **Target Stat Factors:**\n• ★12 Stamina - ★6 Guts\n\n🐴 **Recommended Parents / Grandparents:**\n• Super Creek (*Swinging Maestro*)\n\n⚡ **Key Inherited Unique Skills & Priorities:**\n• *Swinging Maestro* [Prioridad Máxima]",
             "support_cards": "🎴 **SUPPORT CARDS (WHALE VS F2P)**\n\n🐋 **Decks Whale / P2P:**\n• 👟2 Speed + 🫀3 Stamina + 🧠1 Wit\n• Borrow: Super Creek SSR\n\n🆓 **Decks F2P:**\n• 👟2 Speed + 🫀3 Stamina + 🔥1 Guts\n• Opciones: Marvelous Sunday SR",
-            "skills_priority": "⚡ **KEY SKILLS, PRIORITY & RANKING POINTS**\n\n• *Arc Maestro* [○ 200 pts / ◎ 300 pts]\n• *Professor of Recovery* [○ 180 pts / ◎ 270 pts]\n• *Long Distance Straight* [○ 130 pts / ◎ 210 pts]"
+            "skills_priority": "⚡ **KEY SKILLS, PRIORITY & RANKING POINTS**\n\n• *Swinging Maestro* [○ 200 pts / ◎ 300 pts]\n• *Professor of Curvature* [○ 180 pts / ◎ 270 pts]\n• *Long Distance Straights* [○ 130 pts / ◎ 210 pts]"
         }
     },
     "sagittarius_cup": {
@@ -59,9 +59,9 @@ CM_DATABASE = {
         "sections": {
             "track_overview": "🏟️ **TRACK INFO & GENERAL OVERVIEW**\n\n📍 **Pista:** Nakayama Turf 2500m (Long) - Right / Inner - Winter - Fair\n\n💡 **Distancia Ideal:** Requiere doble recuperación de stamina y excelente aceleración en bajada.",
             "best_umas": "🏇 **BEST UMAS & RUNNING STYLES**\n\n🏃 **Front Runner:** Seiun Sky\n🏃 **Pace Chaser:** Narita Brian\n🏃 **Late Surger:** Mejiro Ryan\n🏃 **End Closer:** Gold Ship\n🏃 **Debuffer:** Nice Nature",
-            "inheritance": "🧬 **INHERITANCE & STAT FACTORS**\n\n📊 **Target Stat Factors:**\n• ★6 Power - ★12 Stamina\n\n🐴 **Recommended Parents / Grandparents:**\n• Super Creek (*Arc Maestro*), Mejiro Dober (*Kanata*)\n\n⚡ **Key Inherited Unique Skills & Priorities:**\n• *Anabolic* [Prioridad Alta]",
+            "inheritance": "🧬 **INHERITANCE & STAT FACTORS**\n\n📊 **Target Stat Factors:**\n• ★6 Power - ★12 Stamina\n\n🐴 **Recommended Parents / Grandparents:**\n• Super Creek (*Swinging Maestro*), Mejiro Dober (*Kanata*)\n\n⚡ **Key Inherited Unique Skills & Priorities:**\n• *Feel the Burn* [Prioridad Alta]",
             "support_cards": "🎴 **SUPPORT CARDS (WHALE VS F2P)**\n\n🐋 **Decks Whale / P2P:**\n• 👟2 Speed + 🫀2 Stamina + 🧠2 Wit\n• Borrow: Super Creek SSR\n\n🆓 **Decks F2P:**\n• 👟3 Speed + 🫀2 Stamina + 🧠1 Wit",
-            "skills_priority": "⚡ **KEY SKILLS, PRIORITY & RANKING POINTS**\n\n• *Arc Maestro* [○ 200 pts / ◎ 300 pts]\n• *Non-stop Girl* [○ 200 pts / ◎ 320 pts]"
+            "skills_priority": "⚡ **KEY SKILLS, PRIORITY & RANKING POINTS**\n\n• *Swinging Maestro* [○ 200 pts / ◎ 300 pts]\n• *Non-Stop Girl* [○ 200 pts / ◎ 320 pts]"
         }
     },
     "capricorn_cup": {
@@ -71,9 +71,9 @@ CM_DATABASE = {
         "sections": {
             "track_overview": "🏟️ **TRACK INFO & GENERAL OVERVIEW**\n\n📍 **Pista:** Chukyo Turf 1200m (Short) - Left - Winter - Firm\n\n💡 **Distancia Ideal:** Máxima prioridad en velocidad pura y aceleración explosiva en recta corta.",
             "best_umas": "🏇 **BEST UMAS & RUNNING STYLES**\n\n🏃 **Front Runner:** Sakura Bakushin O, Taiki Shuttle\n🏃 **Pace Chaser:** Curren Chan\n🏃 **Late Surger:** Air Groove\n🏃 **End Closer:** Nishino Flower\n🏃 **Debuffer:** Grass Wonder",
-            "inheritance": "🧬 **INHERITANCE & STAT FACTORS**\n\n📊 **Target Stat Factors:**\n• ★9 Speed - ★9 Power\n\n🐴 **Recommended Parents / Grandparents:**\n• Maruzensky (*Red Flame*)\n\n⚡ **Key Inherited Unique Skills & Priorities:**\n• *Red Flame* [Prioridad Alta]",
+            "inheritance": "🧬 **INHERITANCE & STAT FACTORS**\n\n📊 **Target Stat Factors:**\n• ★9 Speed - ★9 Power\n\n🐴 **Recommended Parents / Grandparents:**\n• Maruzensky (*Red Shift*)\n\n⚡ **Key Inherited Unique Skills & Priorities:**\n• *Red Shift* [Prioridad Alta]",
             "support_cards": "🎴 **SUPPORT CARDS (WHALE VS F2P)**\n\n🐋 **Decks Whale / P2P:**\n• 👟3 Speed + 🔥2 Guts + 🧠1 Wit\n• Borrow: Kitasan Black SSR\n\n🆓 **Decks F2P:**\n• 👟3 Speed + 🔥1 Guts + 🧠2 Wit",
-            "skills_priority": "⚡ **KEY SKILLS, PRIORITY & RANKING POINTS**\n\n• *Sprint Turbo* [○ 180 pts / ◎ 280 pts]\n• *Non-stop Girl* [○ 200 pts / ◎ 320 pts]"
+            "skills_priority": "⚡ **KEY SKILLS, PRIORITY & RANKING POINTS**\n\n• *Sprint Turbo* [○ 180 pts / ◎ 280 pts]\n• *Non-Stop Girl* [○ 200 pts / ◎ 320 pts]"
         }
     }
 }
@@ -109,7 +109,9 @@ class CMSectionSelect(Select):
             embed.set_image(url=self.cm_data["image_url"])
             
         embed.set_footer(text="Umalator CM Helper")
-        await interaction.response.edit_message(content=None, embed=embed, view=self.view)
+        
+        # Se asegura que content sea explícitamente "" o None para evitar mostrar objetos como texto
+        await interaction.response.edit_message(content="", embed=embed, view=self.view)
 
 class CMSectionView(View):
     def __init__(self, cm_data):
@@ -161,7 +163,7 @@ async def slash_cm(interaction: discord.Interaction, nombre_copa: str):
         
     embed_init.set_footer(text="Umalator CM Helper")
 
-    await interaction.response.send_message(embed_init, view=CMSectionView(cm_data))
+    await interaction.response.send_message(embed=embed_init, view=CMSectionView(cm_data))
 
 # --- EVENTO AL ENCENDER ---
 @bot.event
