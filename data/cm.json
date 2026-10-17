@@ -1,6 +1,29 @@
 {
+  "libra_cup": {
+    "name": "Libra Cup (Pasada)",
+    "banner_url": "https://gametora.com/images/umamusume/races/banner_libra.png",
+    "track_map_url": "https://gametora.com/images/umamusume/tracks/kyoto_2000m.png",
+    "summary": "🏆 **Champions Meeting — Libra Cup**\n\n📅 **Estado:** Evento Finalizado.\n\n🏟️ **Circuito:** Kyoto 2000m (Medium) - Right - Outward.",
+    "track": {
+      "venue": "Kyoto",
+      "distance_m": "Medium (2000m)",
+      "surface": "Turf",
+      "conditions": "Autumn • Good • Right-Handed",
+      "similar": "Tenno Sho (Autumn)"
+    },
+    "sections": {
+      "umas": {"title": "Best Umas", "description": "Opciones destacadas de la copa anterior.", "fields": [{"name": "Meta", "value": "Dominado por Front y Pace Chasers con velocidad alta."}]},
+      "stats": {"title": "Stats", "description": "Estadísticas requeridas.", "fields": [{"name": "Objetivo", "value": "Speed 1200+, Stamina 800+ con 1 recovery."}]},
+      "inheritance": {"title": "Inheritance", "description": "Herencia clave.", "fields": [{"name": "Prioridad", "value": "Velocidad en curva y factores de Medium."}]},
+      "supports_whale": {"title": "Supports Whale", "description": "Mazos óptimos.", "fields": [{"name": "Meta Whales", "value": "Kitasan Black, Super Creek."}]},
+      "supports_f2p": {"title": "Supports F2P", "description": "Mazos accesibles.", "fields": [{"name": "Meta F2P", "value": "Sweep Tosho, Manhattan Cafe."}]},
+      "skills": {"title": "Key Skills", "description": "Habilidades esenciales.", "fields": [{"name": "Aceleración", "value": "Professor of Curvature y rectas de media distancia."}]}
+    }
+  },
   "sagittarius_cup": {
-    "name": "Sagittarius Cup 2026",
+    "name": "Sagittarius Cup 2026 (Actual)",
+    "banner_url": "https://gametora.com/images/umamusume/races/banner_arima_kinen.png",
+    "track_map_url": "https://gametora.com/images/umamusume/tracks/nakayama_2500m.png",
     "summary": "🏆 **Champions Meeting — Sagittarius Cup**\n\n📅 **Finalizó:** <t:1792187940:F>\n\n⚡ **Dato Clave:** La fase tardía comienza en la recta opuesta (metro **1667**). Prioriza habilidades de aceleración activables en esa zona.",
     "track": {
       "venue": "Nakayama",
@@ -9,164 +32,239 @@
       "conditions": "Winter • Good • Right-Handed • Cloudy",
       "similar": "Arima Kinen"
     },
-    "image_url": "https://i.imgur.com/EjemploMapaNakayama.png",
     "sections": {
       "umas": {
         "title": "Best Umas & Running Styles",
         "description": "Las opciones más destacadas se dividen según su estrategia en pista.",
         "fields": [
-          {
-            "name": "Front Runners",
-            "value": "**Kitasan Black**, **Seiun Sky**, **Maruzensky**\n*La ventaja inicial y aceleración temprana son clave en Nakayama 2500m. **Angling and Scheming** es herencia prioritaria.*"
-          },
-          {
-            "name": "End Closers",
-            "value": "**Gold Ship**, **Narita Taishin**, **Tamamo Cross**, **Mayano Top Gun**\n*Gold Ship destaca por recuperación propia y **Daring Strike**. Claves: **Straightaway Spurt** y **Encroaching Shadow**.*"
-          },
-          {
-            "name": "Late Surgers",
-            "value": "**New Year T.M. Opera O**, **Christmas Oguri Cap**, **Mejiro Ryan**\n*New Year Opera O combina fase tardía con recuperación. Christmas Oguri aprovecha su única y **Claw Forward**.*"
-          },
-          {
-            "name": "Pace Chasers",
-            "value": "**Christmas Oguri Cap**, **Summer Mejiro McQueen**, **Halloween Rice Shower**\n*Requieren velocidad en fase media para entrar en posición de aceleración.*"
-          }
+          {"name": "Front Runners", "value": "**Kitasan Black**, **Seiun Sky**, **Maruzensky**\n*La ventaja inicial y aceleración temprana son clave en Nakayama 2500m. **Angling and Scheming** es herencia prioritaria.*"},
+          {"name": "End Closers", "value": "**Gold Ship**, **Narita Taishin**, **Tamamo Cross**, **Mayano Top Gun**\n*Gold Ship destaca por recuperación propia y **Daring Strike**. Claves: **Straightaway Spurt** y **Encroaching Shadow**.*"},
+          {"name": "Late Surgers", "value": "**New Year T.M. Opera O**, **Christmas Oguri Cap**, **Mejiro Ryan**\n*New Year Opera O combina fase tardía con recuperación. Christmas Oguri aprovecha su única y **Claw Forward**.*"},
+          {"name": "Pace Chasers", "value": "**Christmas Oguri Cap**, **Summer Mejiro McQueen**, **Halloween Rice Shower**\n*Requieren velocidad en fase media para entrar en posición de aceleración.*"}
         ]
       },
       "stats": {
-        "title": "Recommended Stats & Builds",
+        "title": "Recommended Stats & Decks",
         "description": "Objetivos de estadísticas según liga y distribución de mazos.",
         "fields": [
-          {
-            "name": "Graded League (Competitive)",
-            "value": "⚡ **Speed:** 1500+\n🫀 **Stamina:** ~900 (con 1 recuperación dorada)\n💥 **Power:** 1000+\n🔥 **Guts:** ~600\n🧠 **Wit:** 1000+"
-          },
-          {
-            "name": "Target A+ (Accessible Build)",
-            "value": "⚡ **Speed:** 1150–1200+\n🫀 **Stamina:** ~900 (con 1 recuperación dorada)\n💥 **Power:** 800–900+\n🔥 **Guts:** 400–500\n🧠 **Wit:** 400–600"
-          },
-          {
-            "name": "Deck Spread",
-            "value": "• **Con crecimiento Speed:** 2 Speed / 1 Stamina / 2 Wit / Light Hello\n• **Sin crecimiento Speed:** 3 Speed / 1 Stamina / 1 Wit / Light Hello"
-          },
-          {
-            "name": "Stamina & Recoveries",
-            "value": "Si faltan factores de Stamina, usa 1 carta del atributo. **Super Creek** es ideal por **Swinging Maestro**."
-          }
+          {"name": "Graded League (Competitive)", "value": "⚡ **Speed:** 1500+\n🫀 **Stamina:** ~900 (con 1 recuperación dorada)\n💥 **Power:** 1000+\n🔥 **Guts:** ~600\n🧠 **Wit:** 1000+"},
+          {"name": "Target A+ (Accessible Build)", "value": "⚡ **Speed:** 1150–1200+\n🫀 **Stamina:** ~900 (con 1 recuperación dorada)\n💥 **Power:** 800–900+\n🔥 **Guts:** 400–500\n🧠 **Wit:** 400–600"},
+          {"name": "Deck Spread", "value": "• **Con crecimiento Speed:** 2 Speed / 1 Stamina / 2 Wit / Light Hello\n• **Sin crecimiento Speed:** 3 Speed / 1 Stamina / 1 Wit / Light Hello"},
+          {"name": "Stamina & Recoveries", "value": "Si faltan factores de Stamina, usa 1 carta del atributo. **Super Creek** es ideal por **Swinging Maestro**."}
         ]
       },
       "inheritance": {
         "title": "Inheritance & Skill Factors",
         "description": "Prioridades de herencia para 2500m Long.",
         "fields": [
-          {
-            "name": "Stamina Factors",
-            "value": "Apunta a **~16★ de Stamina** en herencia para liberar espacio de cartas en el mazo."
-          },
-          {
-            "name": "Front Runners",
-            "value": "**Seiun Sky** es clave por **Angling and Scheming** y **Break It Down!**. **Kitasan Black** es muy recomendada."
-          },
-          {
-            "name": "Pace Chasers",
-            "value": "**Commander Special Week** (velocidad en curva final). **Seiun Sky** apoya si entra 2da al inicio de la fase tardía."
-          },
-          {
-            "name": "Late Surgers",
-            "value": "**Mejiro Dober** (**Moving Past, and Beyond**) como aceleración secundaria. **Commander Special Week** para curva final."
-          },
-          {
-            "name": "End Closers",
-            "value": "**Mejiro Dober** y **Mejiro Ryan**. **Commander Special Week** para velocidad."
-          },
-          {
-            "name": "General Skills",
-            "value": "**∴win Q.E.D.**, **Barcarole of Blessings** e **Inside Scoop**."
-          }
+          {"name": "Stamina Factors", "value": "Apunta a **~16★ de Stamina** en herencia para liberar espacio de cartas en el mazo."},
+          {"name": "Front Runners", "value": "**Seiun Sky** es clave por **Angling and Scheming** y **Break It Down!**. **Kitasan Black** es muy recomendada."},
+          {"name": "Pace Chasers", "value": "**Commander Special Week** (velocidad en curva final). **Seiun Sky** apoya si entra 2da al inicio de la fase tardía."},
+          {"name": "Late Surgers", "value": "**Mejiro Dober** (**Moving Past, and Beyond**) como aceleración secundaria. **Commander Special Week** para curva final."},
+          {"name": "End Closers", "value": "**Mejiro Dober** y **Mejiro Ryan**. **Commander Special Week** para velocidad."},
+          {"name": "General Skills", "value": "**∴win Q.E.D.**, **Barcarole of Blessings** e **Inside Scoop**."}
         ]
       },
       "supports_whale": {
         "title": "Support Cards (Whale / Optimizado)",
         "description": "Mazo orientado a maximizar estadísticas y asegurar habilidades clave de alta prioridad.",
         "fields": [
-          {
-            "name": "Distribución General",
-            "value": "• **Con crecimiento de Speed:** 2 Speed / 1 Stamina / 2 Wit / Light Hello\n• **Sin crecimiento de Speed:** 3 Speed / 1 Stamina / 1 Wit / Light Hello"
-          },
-          {
-            "name": "Stamina y Recuperación",
-            "value": "• **Super Creek (SSR):** Excelente rendimiento de entrenamiento y acceso vital a **Swinging Maestro**.\n• **Mejiro Palmer (SSR):** Opción clave para **Front Runners** por su habilidad **Taking the Lead**.\n• **Symboli Kris S (SSR):** Opción sólida para **Late Surgers** que aporta **Claw Forward**."
-          },
-          {
-            "name": "Supports de Speed",
-            "value": "• **Kitasan Black (SSR):** Base obligatoria por eficiencia de entrenamiento y utilidades de carrera.\n• **Maruzensky (SSR):** Opción orientada a estrategias de **Front Runner**.\n• **Agnes Tachyon (SSR):** Recomendada para estrategias de **Pace Chaser**.\n• **Seeking the Pearl / Eishin Flash:** Alternativas eficientes para **Late Surgers**."
-          },
-          {
-            "name": "Supports de Wit",
-            "value": "• **Tokai Teio (SSR):** Mazo orientado a **Pace Chasers**.\n• **Air Groove (SSR):** Excelente para **Late Surgers**.\n• **Mr. C.B. (SSR):** Cobertura prioritaria para **End Closers**."
-          },
-          {
-            "name": "Recuperación Secundarias desde Speed",
-            "value": "• **Mayano Top Gun:** Aporta **Restless**.\n• **Tosen Jordan:** Aporta **Breath of Fresh Air**.\n• **Zenno Rob Roy:** Aporta **Lie in Wait**.\n• **Mejiro Ardan:** Aporta **Race Planner**."
-          }
+          {"name": "Distribución General", "value": "• **Con crecimiento de Speed:** 2 Speed / 1 Stamina / 2 Wit / Light Hello\n• **Sin crecimiento de Speed:** 3 Speed / 1 Stamina / 1 Wit / Light Hello"},
+          {"name": "Stamina y Recuperación", "value": "• **Super Creek (SSR):** Excelente rendimiento de entrenamiento y acceso vital a **Swinging Maestro**.\n• **Mejiro Palmer (SSR):** Opción clave para **Front Runners** por su habilidad **Taking the Lead**.\n• **Symboli Kris S (SSR):** Opción sólida para **Late Surgers** que aporta **Claw Forward**."},
+          {"name": "Supports de Speed", "value": "• **Kitasan Black (SSR):** Base obligatoria por eficiencia de entrenamiento y utilidades de carrera.\n• **Maruzensky (SSR):** Opción orientada a estrategias de **Front Runner**.\n• **Agnes Tachyon (SSR):** Recomendada para estrategias de **Pace Chaser**.\n• **Seeking the Pearl / Eishin Flash:** Alternativas eficientes para **Late Surgers**."},
+          {"name": "Supports de Wit", "value": "• **Tokai Teio (SSR):** Mazo orientado a **Pace Chasers**.\n• **Air Groove (SSR):** Excelente para **Late Surgers**.\n• **Mr. C.B. (SSR):** Cobertura prioritaria para **End Closers**."},
+          {"name": "Recuperación Secundarias desde Speed", "value": "• **Mayano Top Gun:** Aporta **Restless**.\n• **Tosen Jordan:** Aporta **Breath of Fresh Air**.\n• **Zenno Rob Roy:** Aporta **Lie in Wait**.\n• **Mejiro Ardan:** Aporta **Race Planner**."}
         ]
       },
       "supports_f2p": {
         "title": "Support Cards (F2P / Accesible)",
         "description": "Alternativas económicas utilizando cartas SR, R y SSR gratuitas para Nakayama 2500m.",
         "fields": [
-          {
-            "name": "Speed — Cartas SR y Gratuitas",
-            "value": "• **Sweep Tosho (SR):** Excelente carta F2P para completar el stat de Speed.\n• **Shinko Windy (SR):** Gran alternativa por sus bonos de entrenamiento.\n• **King Halo (SR):** Aporta utilidades situacionales según la build.\n• **Narita Brian (SSR Gratuita):** Alternativa accesible de Speed obtenida en eventos."
-          },
-          {
-            "name": "Stamina — Cartas SR y Gratuitas",
-            "value": "• **Manhattan Cafe (SR):** Carta clave para alcanzar la Stamina requerida en 2500m.\n• **Zenno Rob Roy (SR) / Mayano Top Gun (SR):** Buenas alternativas de soporte en Stamina.\n• **Mejiro McQueen (SSR Gratuita):** Opción accesible para estabilizar el mazo."
-          },
-          {
-            "name": "Power y Wit — Cartas SR y Gratuitas",
-            "value": "• **Hishi Amazon (SR - Power):** Útil para acceder a **Straightaway Spurt**.\n• **Winning Ticket (SSR Gratuita - Power):** Refuerzo de entrenamiento de Power.\n• **Matikanefukukitaru (SR - Wit):** La mejor opción económica para el stat de Wit."
-          },
-          {
-            "name": "Utilidad — Carta R",
-            "value": "• **R Riko Kashimoto:** Con limit breaks puede ocupar el espacio de utilidad del mazo.\n• *Distribución recomendada:* **2 Speed / 1 Stamina / 2 Wit / R Riko** (con crecimiento de Speed) o **3 Speed / 1 Stamina / 1 Wit / R Riko** (sin crecimiento)."
-          },
-          {
-            "name": "Build F2P Específica: Gold Ship",
-            "value": "• **Mazo:** 4 Speed + R Riko + 1 Power (**Hishi Amazon SR** para **Straightaway Spurt**).\n• **Estrategia:** Prioriza factores heredados de Stamina y distancia Long. Busca habilidades como **Uma Stan**, **No Stopping Me!** y recuperaciones como **Go-Home Specialist**."
-          },
-          {
-            "name": "Build F2P Específica: Mayano Top Gun",
-            "value": "• **Mazo (End Closer):** 4 Speed + R Riko + 1 Power (si los factores cubren la Stamina).\n• **Estrategia:** Prioriza **No Stopping Me!**, **Swinging Maestro** y **Straightaway Spurt**."
-          }
+          {"name": "Speed — Cartas SR y Gratuitas", "value": "• **Sweep Tosho (SR):** Excelente carta F2P para completar el stat de Speed.\n• **Shinko Windy (SR):** Gran alternativa por sus bonos de entrenamiento.\n• **King Halo (SR):** Aporta utilidades situacionales según la build.\n• **Narita Brian (SSR Gratuita):** Alternativa accesible de Speed obtenida en eventos."},
+          {"name": "Stamina — Cartas SR y Gratuitas", "value": "• **Manhattan Cafe (SR):** Carta clave para alcanzar la Stamina requerida en 2500m.\n• **Zenno Rob Roy (SR) / Mayano Top Gun (SR):** Buenas alternativas de soporte en Stamina.\n• **Mejiro McQueen (SSR Gratuita):** Opción accesible para estabilizar el mazo."},
+          {"name": "Power y Wit — Cartas SR y Gratuitas", "value": "• **Hishi Amazon (SR - Power):** Útil para acceder a **Straightaway Spurt**.\n• **Winning Ticket (SSR Gratuita - Power):** Refuerzo de entrenamiento de Power.\n• **Matikanefukukitaru (SR - Wit):** La mejor opción económica para el stat de Wit."},
+          {"name": "Utilidad — Carta R", "value": "• **R Riko Kashimoto:** Con limit breaks puede ocupar el espacio de utilidad del mazo.\n• *Distribución recomendada:* **2 Speed / 1 Stamina / 2 Wit / R Riko** (con crecimiento de Speed) o **3 Speed / 1 Stamina / 1 Wit / R Riko** (sin crecimiento)."},
+          {"name": "Build F2P Específica: Gold Ship", "value": "• **Mazo:** 4 Speed + R Riko + 1 Power (**Hishi Amazon SR** para **Straightaway Spurt**).\n• **Estrategia:** Prioriza factores heredados de Stamina y distancia Long. Busca habilidades como **Uma Stan**, **No Stopping Me!** y recuperaciones como **Go-Home Specialist**."},
+          {"name": "Build F2P Específica: Mayano Top Gun", "value": "• **Mazo (End Closer):** 4 Speed + R Riko + 1 Power (si los factores cubren la Stamina).\n• **Estrategia:** Prioriza **No Stopping Me!**, **Swinging Maestro** y **Straightaway Spurt**."}
         ]
       },
       "skills": {
         "title": "Key Skills & Priorities",
         "description": "La fase tardía comienza en la recta opuesta (metro 1667). Prioriza aceleraciones que se activen en esa zona o en la curva inmediata.",
         "fields": [
-          {
-            "name": "Front Runners",
-            "value": "• **Angling and Scheming:** Aceleración heredada clave para el primer lugar.\n• **Break It Down!:** Aceleración y posicionamiento temprano.\n• **Let's Pump Some Iron!:** Opción secundaria útil según la build."
-          },
-          {
-            "name": "Pace Chasers",
-            "value": "• **My True Strength:** Requiere estar a menos de 4 cuerpos de la líder al iniciar la fase tardía.\n• **Victory Cheer! / Break It Down!:** Requieren estar en 2° posición al comenzar la fase tardía. Usa habilidades de velocidad en fase media para alcanzar dicha posición."
-          },
-          {
-            "name": "Late Surgers",
-            "value": "• **Claw Forward:** Aceleración inmediata en puestos 4 al 9 (consume 2% extra de energía).\n• **Nimble Navigator:** Aceleración secundaria para ganar terreno en la curva."
-          },
-          {
-            "name": "End Closers",
-            "value": "• **Straightaway Spurt / Encroaching Shadow:** Aceleración fundamental en la recta opuesta para rematar.\n• **Uma Stan / Daring Strike:** Herramientas de velocidad y aceleración de gran valor para el estilo."
-          },
-          {
-            "name": "Habilidades Generales / Multiestilo",
-            "value": "• **Nimble Navigator / No Stopping Me!:** Excelentes opciones para estilos fuera de Front Runner.\n• **Moving Past, and Beyond:** Funciona como aceleración secundaria para Late Surgers y End Closers."
-          }
+          {"name": "Front Runners", "value": "• **Angling and Scheming:** Aceleración heredada clave para el primer lugar.\n• **Break It Down!:** Aceleración y posicionamiento temprano.\n• **Let's Pump Some Iron!:** Opción secundaria útil según la build."},
+          {"name": "Pace Chasers", "value": "• **My True Strength:** Requiere estar a menos de 4 cuerpos de la líder al iniciar la fase tardía.\n• **Victory Cheer! / Break It Down!:** Requieren estar en 2° posición al comenzar la fase tardía. Usa habilidades de velocidad en fase media para alcanzar dicha posición."},
+          {"name": "Late Surgers", "value": "• **Claw Forward:** Aceleración inmediata en puestos 4 al 9 (consume 2% extra de energía).\n• **Nimble Navigator:** Aceleración secundaria para ganar terreno en la curva."},
+          {"name": "End Closers", "value": "• **Straightaway Spurt / Encroaching Shadow:** Aceleración fundamental en la recta opuesta para rematar.\n• **Uma Stan / Daring Strike:** Herramientas de velocidad y aceleración de gran valor para el estilo."},
+          {"name": "Habilidades Generales / Multiestilo", "value": "• **Nimble Navigator / No Stopping Me!:** Excelentes opciones para estilos fuera de Front Runner.\n• **Moving Past, and Beyond:** Funciona como aceleración secundaria para Late Surgers y End Closers."}
         ]
       }
+    }
+  },"capricorn_cup": {
+    "name": "Capricorn Cup (Futura 1)",
+    "banner_url": "https://gametora.com/images/umamusume/races/banner_capricorn.png",
+    "track_map_url": "https://gametora.com/images/umamusume/tracks/chukyo_1200m.png",
+    "summary": "🏆 **Champions Meeting — Capricorn Cup**\n\n🏟️ **Circuito:** Chukyo 1200m (Sprint) - Left - Short.",
+    "track": {
+      "venue": "Chukyo",
+      "distance_m": "Sprint (1200m)",
+      "surface": "Turf",
+      "conditions": "Winter • Good • Left-Handed",
+      "similar": "CBC Sho"
+    },
+    "sections": {
+      "umas": {"title": "Umas", "description": "Sprint meta", "fields": [{"name": "Top", "value": "Maruzensky y Bakushin O"}]},
+      "stats": {"title": "Stats", "description": "Sprint stats", "fields": [{"name": "Meta", "value": "Speed 1500+, Power 1200+"}]},
+      "inheritance": {"title": "Inheritance", "description": "Herencia sprint", "fields": [{"name": "Prioridad", "value": "Aceleración de corta distancia"}]},
+      "supports_whale": {"title": "Whale", "description": "Soportes whale", "fields": [{"name": "Cartas", "value": "Kitasan Black Speed"}]},
+      "supports_f2p": {"title": "F2P", "description": "Soportes f2p", "fields": [{"name": "Cartas", "value": "Sweep Tosho"}]},
+      "skills": {"title": "Skills", "description": "Habilidades", "fields": [{"name": "Clave", "value": "Sprint Turbo y Non-Stop Girl"}]}
+    }
+  },
+  "aquarius_cup": {
+    "name": "Aquarius Cup (Futura 2)",
+    "banner_url": "https://gametora.com/images/umamusume/races/banner_aquarius.png",
+    "track_map_url": "https://gametora.com/images/umamusume/tracks/tokyo_1600m.png",
+    "summary": "🏆 **Champions Meeting — Aquarius Cup**\n\n🏟️ **Circuito:** Tokyo 1600m (Mile - Dirt) - Left.",
+    "track": {
+      "venue": "Tokyo",
+      "distance_m": "Mile (1600m)",
+      "surface": "Dirt",
+      "conditions": "Winter • Good • Left-Handed",
+      "similar": "February Stakes"
+    },
+    "sections": {
+      "umas": {"title": "Umas", "description": "Dirt meta", "fields": [{"name": "Top", "value": "Smart Falcon y El Condor Pasa"}]},
+      "stats": {"title": "Stats", "description": "Dirt stats", "fields": [{"name": "Meta", "value": "Speed 1500+, Power 1100+"}]},
+      "inheritance": {"title": "Inheritance", "description": "Dirt", "fields": [{"name": "Herencia", "value": "Factores de Dirt y Mile"}]},
+      "supports_whale": {"title": "Whale", "description": "Whale", "fields": [{"name": "Cartas", "value": "Smart Falcon SSR"}]},
+      "supports_f2p": {"title": "F2P", "description": "F2P", "fields": [{"name": "Cartas", "value": "Agnes Digital SR"}]},
+      "skills": {"title": "Skills", "description": "Skills", "fields": [{"name": "Clave", "value": "Habilidades de Dirt y Mile"}]}
+    }
+  },
+  "pisces_cup": {
+    "name": "Pisces Cup (Futura 3)",
+    "banner_url": "https://gametora.com/images/umamusume/races/banner_pisces.png",
+    "track_map_url": "https://gametora.com/images/umamusume/tracks/hanshin_3000m.png",
+    "summary": "🏆 **Champions Meeting — Pisces Cup**\n\n🏟️ **Circuito:** Hanshin 3000m (Long) - Right.",
+    "track": {
+      "venue": "Hanshin",
+      "distance_m": "Long (3000m)",
+      "surface": "Turf",
+      "conditions": "Spring • Good • Right-Handed",
+      "similar": "Kikkasho"
+    },
+    "sections": {
+      "umas": {"title": "Umas", "description": "Long meta", "fields": [{"name": "Top", "value": "Gold Ship y Mejiro McQueen"}]},
+      "stats": {"title": "Stats", "description": "Stamina", "fields": [{"name": "Meta", "value": "Stamina 1000+ y 2 recoveries doradas"}]},
+      "inheritance": {"title": "Inheritance", "description": "Herencia", "fields": [{"name": "Herencia", "value": "Stamina masiva"}]},
+      "supports_whale": {"title": "Whale", "description": "Whale", "fields": [{"name": "Cartas", "value": "Super Creek SSR"}]},
+      "supports_f2p": {"title": "F2P", "description": "F2P", "fields": [{"name": "Cartas", "value": "Manhattan Cafe SR"}]},
+      "skills": {"title": "Skills", "description": "Skills", "fields": [{"name": "Clave", "value": "Swinging Maestro y Long Straights"}]}
+    }
+  },
+  "aries_cup": {
+    "name": "Aries Cup (Futura 4)",
+    "banner_url": "https://gametora.com/images/umamusume/races/banner_aries.png",
+    "track_map_url": "https://gametora.com/images/umamusume/tracks/nakayama_2000m.png",
+    "summary": "🏆 **Champions Meeting — Aries Cup**\n\n🏟️ **Circuito:** Nakayama 2000m (Medium) - Right.",
+    "track": {
+      "venue": "Nakayama",
+      "distance_m": "Medium (2000m)",
+      "surface": "Turf",
+      "conditions": "Spring • Good • Right-Handed",
+      "similar": "Satsuki Sho"
+    },
+    "sections": {
+      "umas": {"title": "Umas", "description": "Medium meta", "fields": [{"name": "Top", "value": "Oguri Cap y Narita Brian"}]},
+      "stats": {"title": "Stats", "description": "Stats", "fields": [{"name": "Meta", "value": "Speed y Power altos"}]},
+      "inheritance": {"title": "Inheritance", "description": "Herencia", "fields": [{"name": "Herencia", "value": "Prof. of Curvature"}]},
+      "supports_whale": {"title": "Whale", "description": "Whale", "fields": [{"name": "Cartas", "value": "Kitasan Black"}]},
+      "supports_f2p": {"title": "F2P", "description": "F2P", "fields": [{"name": "Cartas", "value": "Sweep Tosho"}]},
+      "skills": {"title": "Skills", "description": "Skills", "fields": [{"name": "Clave", "value": "Medium Straightaways"}]}
+    }
+  },"taurus_cup": {
+    "name": "Taurus Cup (Futura 5)",
+    "banner_url": "https://gametora.com/images/umamusume/races/banner_taurus.png",
+    "track_map_url": "https://gametora.com/images/umamusume/tracks/tokyo_2400m.png",
+    "summary": "🏆 **Champions Meeting — Taurus Cup**\n\n🏟️ **Circuito:** Tokyo 2400m (Medium) - Left.",
+    "track": {
+      "venue": "Tokyo",
+      "distance_m": "Medium (2400m)",
+      "surface": "Turf",
+      "conditions": "Spring • Firm • Left-Handed",
+      "similar": "Tokyo Yushun"
+    },
+    "sections": {
+      "umas": {"title": "Umas", "description": "Derby meta", "fields": [{"name": "Top", "value": "Silence Suzuka y Special Week"}]},
+      "stats": {"title": "Stats", "description": "Stats", "fields": [{"name": "Meta", "value": "Speed 1500+, Stamina 900+"}]},
+      "inheritance": {"title": "Inheritance", "description": "Herencia", "fields": [{"name": "Herencia", "value": "Angling and Scheming"}]},
+      "supports_whale": {"title": "Whale", "description": "Whale", "fields": [{"name": "Cartas", "value": "Super Creek y Kitasan"}]},
+      "supports_f2p": {"title": "F2P", "description": "F2P", "fields": [{"name": "Cartas", "value": "Manhattan Cafe SR"}]},
+      "skills": {"title": "Skills", "description": "Skills", "fields": [{"name": "Clave", "value": "Tenacious and Fast"}]}
+    }
+  },
+  "gemini_cup": {
+    "name": "Gemini Cup (Futura 6)",
+    "banner_url": "https://gametora.com/images/umamusume/races/banner_gemini.png",
+    "track_map_url": "https://gametora.com/images/umamusume/tracks/kyoto_3200m.png",
+    "summary": "🏆 **Champions Meeting — Gemini Cup**\n\n🏟️ **Circuito:** Kyoto 3200m (Long) - Right.",
+    "track": {
+      "venue": "Kyoto",
+      "distance_m": "Long (3200m)",
+      "surface": "Turf",
+      "conditions": "Spring • Good • Right-Handed",
+      "similar": "Tenno Sho (Spring)"
+    },
+    "sections": {
+      "umas": {"title": "Umas", "description": "Tenno Sho Spring", "fields": [{"name": "Top", "value": "Gold Ship y Rice Shower"}]},
+      "stats": {"title": "Stats", "description": "Stamina extrema", "fields": [{"name": "Meta", "value": "Stamina 1100+ y 2 o 3 recoveries doradas"}]},
+      "inheritance": {"title": "Inheritance", "description": "Herencia", "fields": [{"name": "Herencia", "value": "Stamina Factors"}]},
+      "supports_whale": {"title": "Whale", "description": "Whale", "fields": [{"name": "Cartas", "value": "Super Creek SSR"}]},
+      "supports_f2p": {"title": "F2P", "description": "F2P", "fields": [{"name": "Cartas", "value": "Mejiro McQueen Free SSR"}]},
+      "skills": {"title": "Skills", "description": "Skills", "fields": [{"name": "Clave", "value": "Swinging Maestro obligatorio"}]}
+    }
+  },
+  "cancer_cup": {
+    "name": "Cancer Cup (Futura 7)",
+    "banner_url": "https://gametora.com/images/umamusume/races/banner_cancer.png",
+    "track_map_url": "https://gametora.com/images/umamusume/tracks/hanshin_1600m.png",
+    "summary": "🏆 **Champions Meeting — Cancer Cup**\n\n🏟️ **Circuito:** Hanshin 1600m (Mile) - Right.",
+    "track": {
+      "venue": "Hanshin",
+      "distance_m": "Mile (1600m)",
+      "surface": "Turf",
+      "conditions": "Summer • Good • Right-Handed",
+      "similar": "Yasuda Kinen"
+    },
+    "sections": {
+      "umas": {"title": "Umas", "description": "Mile meta", "fields": [{"name": "Top", "value": "Vodka y Daiwa Scarlet"}]},
+      "stats": {"title": "Stats", "description": "Stats", "fields": [{"name": "Meta", "value": "Speed y Power máximos"}]},
+      "inheritance": {"title": "Inheritance", "description": "Herencia", "fields": [{"name": "Herencia", "value": "Mile straightaways"}]},
+      "supports_whale": {"title": "Whale", "description": "Whale", "fields": [{"name": "Cartas", "value": "Biko Pegasus"}]},
+      "supports_f2p": {"title": "F2P", "description": "F2P", "fields": [{"name": "Cartas", "value": "King Halo SR"}]},
+      "skills": {"title": "Skills", "description": "Skills", "fields": [{"name": "Clave", "value": "Mile Straightaways y Connoisseur"}]}
+    }
+  },
+  "leo_cup": {
+    "name": "Leo Cup (Futura 8)",
+    "banner_url": "https://gametora.com/images/umamusume/races/banner_leo.png",
+    "track_map_url": "https://gametora.com/images/umamusume/tracks/niigata_1800m.png",
+    "summary": "🏆 **Champions Meeting — Leo Cup**\n\n🏟️ **Circuito:** Niigata 1800m (Mile/Medium) - Left.",
+    "track": {
+      "venue": "Niigata",
+      "distance_m": "Mile (1800m)",
+      "surface": "Turf",
+      "conditions": "Summer • Good • Left-Handed",
+      "similar": "Sekiya Kinen"
+    },
+    "sections": {
+      "umas": {"title": "Umas", "description": "Niigata straight", "fields": [{"name": "Top", "value": "Taiki Shuttle y Grass Wonder"}]},
+      "stats": {"title": "Stats", "description": "Stats", "fields": [{"name": "Meta", "value": "Speed 1500+"}]},
+      "inheritance": {"title": "Inheritance", "description": "Herencia", "fields": [{"name": "Herencia", "value": "Left-Handed proficiency"}]},
+      "supports_whale": {"title": "Whale", "description": "Whale", "fields": [{"name": "Cartas", "value": "Kitasan Black"}]},
+      "supports_f2p": {"title": "F2P", "description": "F2P", "fields": [{"name": "Cartas", "value": "Sweep Tosho"}]},
+      "skills": {"title": "Skills", "description": "Skills", "fields": [{"name": "Clave", "value": "Left-Handed ○ / ◎"}]}
     }
   }
 }
