@@ -161,6 +161,22 @@ async def slash_cm(interaction: discord.Interaction, nombre_copa: str):
         
     embed_init.set_footer(text="Umalator CM Helper")
 
+    await interaction.response.send_message(embed_init, view=CMSectionView(cm_data))
+
+# --- EVENTO AL ENCENDER ---
+@bot.event
+async def on_ready():
+    try:
+        synced = await bot.tree.sync()
+        print(f"Sincronizados {len(synced)} comandos Slash.")
+    except Exception as e:
+        print(f"Error sincronizando comandos: {e}")
+    print(f'Bot encendido correctamente como {bot.user}')
+
+TOKEN = os.getenv("DISCORD_TOKEN")
+if TOKEN:
+    bot.run(TOKEN)t="Umalator CM Helper")
+
     await interaction.response.send_message(embed=embed_init, view=CMSectionView(cm_data))
 
 # --- EVENTO AL ENCENDER ---
