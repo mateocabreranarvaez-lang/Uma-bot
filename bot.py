@@ -20,7 +20,6 @@ def run_dummy_server():
     server = HTTPServer(('0.0.0.0', port), DummyHandler)
     server.serve_forever()
 
-# Iniciar servidor dummy en segundo plano
 threading.Thread(target=run_dummy_server, daemon=True).start()
 
 # --- CONFIGURACIÓN DEL BOT ---
@@ -112,11 +111,10 @@ class CMView(View):
         super().__init__()
         self.add_item(CMSelect(cm_info))
 
-# --- COMANDO PRINCIPAL ---
+# --- COMANDO PRINCIPAL PREFIJO (!) ---
 @bot.command(name="cm")
 async def cmd_cm(ctx):
     cm_info = fetch_latest_cm_data()
-    
     embed = discord.Embed(
         title="🏆 Guía de Champions Meeting",
         description="Selecciona una opción del menú para consultar el horario dinámico y los accels meta.",
@@ -124,8 +122,15 @@ async def cmd_cm(ctx):
     )
     await ctx.send(embed=embed, view=CMView(cm_info))
 
+# --- EVENTO AL ENCENDER ---
 @bot.event
 async def on_ready():
+    # Sincronizar árbol de comandos para evitar errores de comandos desincronizados
+    try:
+        synced = await bot.tree.sync()
+        print(f"Sincronizados {len(synced)} comandos slash.")
+    except Exception as e:
+        print(f"Error sincronizando comandos: {e}")
     print(f'Bot encendido con éxito como {bot.user}')
 
 # --- INICIALIZAR BOT ---
