@@ -7,7 +7,7 @@ from discord import app_commands
 from discord.ext import commands
 from discord.ui import Select, View
 
-# --- MINI SERVIDOR WEB PARA RENDER ---
+# --- MINI SERVIDOR WEB PARA RENDER (24/7) ---
 class DummyHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
@@ -27,35 +27,92 @@ intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-# --- BASE DE DATOS DE CMs Y SUS SECCIONES DE UMALATOR ---
+# --- BASE DE DATOS DE CMs Y SECCIONES DE UMALATOR ---
 CM_DATABASE = {
     "sagittarius_cup": {
-        "name": "Sagittarius Cup (Nakayama 2500m)",
-        "start_time": 1800000000, # Reemplazar con timestamp Unix real
-        "end_time": 1800500000,
+        "name": "Sagittarius Cup (Long / 2500m)",
+        "track": "Nakayama 2500m (Long - Derecha - Interior)",
+        "category": "Long (Largo)",
+        "start_time": 1800000000,  # Timestamp Unix de inicio
+        "end_time": 1800500000,    # Timestamp Unix de fin
         "sections": {
-            "stats": "📊 **Stats Recomendadas:**\n• Speed: 1200+\n• Stamina: 900+ (con 2 Gold Recovery)\n• Power: 1000+\n• Guts: 600+\n• Wit: 800+",
-            "umas": "🐴 **Umas Meta Recomendadas:**\n• **Runners:** Seiun Sky, Daiwa Scarlet\n• **Leaders:** Narita Brian, Grass Wonder\n• **Betweeners:** Mejiro Ryan, Symboli Rudolf\n• **Chasers:** Gold Ship",
-            "inherits": "🧬 **Herencias / Inherits Principales:**\n• *Angling x Scheming* (Seiun Sky)\n• *Anabolic* (Mejiro Ryan)\n• *Kanata, Until the Skies Scream* (Mejiro Dober)",
-            "skills": "⚡ **Accels y Skills Clave:**\n• *Non-stop Girl*\n• *Straightaway Spurt* / *Spurt Acceleration*\n• Gold Recovery Skills (*Arc Maestro*, *Cool Down*)",
-            "estilos": "🏃 **Estrategia por Estilo:**\n• **Runner:** Dominar recta inicial y activar Seiun inherit.\n• **Leader:** Mantener posición alta sin gastar stamina extra.\n• **Betweener/Chaser:** Guardar stamina para burst en la 3ra/4ta curva."
+            "stats": (
+                "📊 **Stats Recomendadas:**\n"
+                "• **Speed:** 1200+ (Máximo)\n"
+                "• **Stamina:** 900+ (Obligatorio con al menos 2 Skills Gold Recovery)\n"
+                "• **Power:** 1000+\n"
+                "• **Guts:** 600+\n"
+                "• **Wit:** 800+"
+            ),
+            "umas": (
+                "🐴 **Umas Meta Recomendadas:**\n"
+                "• **Front Runners:** Seiun Sky, Daiwa Scarlet\n"
+                "• **Pace Chasers:** Narita Brian, Grass Wonder\n"
+                "• **Late Surgers:** Mejiro Ryan, Symboli Rudolf\n"
+                "• **End Closers:** Gold Ship"
+            ),
+            "inherits": (
+                "🧬 **Herencias / Inherits Principales:**\n"
+                "• *Angling x Scheming* (Seiun Sky) - Imprescindible para Front Runners\n"
+                "• *Anabolic* (Mejiro Ryan) - Clave para Late Surgers y End Closers\n"
+                "• *Kanata, Until the Skies Scream* (Mejiro Dober)"
+            ),
+            "skills": (
+                "⚡ **Accels y Skills Clave:**\n"
+                "• *Non-stop Girl* / *Acceleration Unleashed*\n"
+                "• *Straightaway Spurt* / *Spurt Acceleration*\n"
+                "• Gold Recovery: *Arc Maestro*, *Cool Down*"
+            ),
+            "estilos": (
+                "🏃 **Estrategia por Estilo:**\n"
+                "• **Front Runners:** Asegurar el primer puesto antes de la bajada final.\n"
+                "• **Pace Chasers:** Mantener buen ritmo de posición intermedia.\n"
+                "• **Late Surgers & End Closers:** Guardar stamina y desatar aceleración en la última curva."
+            )
         }
     },
     "sprint_cup": {
-        "name": "Sprint Cup (Nakayama 1200m)",
+        "name": "Sprint Cup (Short / 1200m)",
+        "track": "Nakayama 1200m (Short - Derecha - Exterior)",
+        "category": "Short (Corto)",
         "start_time": 1802000000,
         "end_time": 1802500000,
         "sections": {
-            "stats": "📊 **Stats Recomendadas:**\n• Speed: 1200+\n• Stamina: 450-500\n• Power: 1100+\n• Guts: 800+\n• Wit: 900+",
-            "umas": "🐴 **Umas Meta Recomendadas:**\n• **Runners:** Bakushin O, Taiki Shuttle\n• **Leaders:** Curren Chan, King Halo\n• **Betweeners/Chasers:** Air Groove, Nishino Flower",
-            "inherits": "🧬 **Herencias / Inherits Principales:**\n• *Red Flame* (Maruzensky)\n• *Plan X* / Accels de distancia corta",
-            "skills": "⚡ **Accels y Skills Clave:**\n• *Sprint Turbo*\n• *Sprint Acceleration*\n• *Upbeat Spurt*",
-            "estilos": "🏃 **Estrategia por Estilo:**\n• **Runner/Leader:** Aceleración explosiva en salida.\n• **Betweener:** Posicionarse temprano antes de la recta corta."
+            "stats": (
+                "📊 **Stats Recomendadas:**\n"
+                "• **Speed:** 1200+ (Prioridad absoluta)\n"
+                "• **Stamina:** 450-500 (Baja exigencia)\n"
+                "• **Power:** 1100+\n"
+                "• **Guts:** 800+\n"
+                "• **Wit:** 900+"
+            ),
+            "umas": (
+                "🐴 **Umas Meta Recomendadas:**\n"
+                "• **Front Runners:** Bakushin O, Taiki Shuttle\n"
+                "• **Pace Chasers:** Curren Chan, King Halo\n"
+                "• **Late Surgers / End Closers:** Air Groove, Nishino Flower"
+            ),
+            "inherits": (
+                "🧬 **Herencias / Inherits Principales:**\n"
+                "• *Red Flame* (Maruzensky)\n"
+                "• *Plan X* / Aceleraciones de recta corta"
+            ),
+            "skills": (
+                "⚡ **Accels y Skills Clave:**\n"
+                "• *Sprint Turbo*\n"
+                "• *Sprint Acceleration*\n"
+                "• *Upbeat Spurt*"
+            ),
+            "estilos": (
+                "🏃 **Estrategia por Estilo:**\n"
+                "• **Front Runners & Pace Chasers:** Dominar la salida explosiva desde el inicio.\n"
+                "• **Late Surgers & End Closers:** Posicionarse bien antes de la recta corta para evitar bloqueos."
+            )
         }
     }
 }
 
-# --- MENÚ DESPLEGABLE DE SECCIONES (STATS, UMAS, HERENCIAS, SKILLS, ESTILOS) ---
+# --- MENÚ DESPLEGABLE DE SECCIONES (ACTUALIZA EL MENSAJE EN VEZ DE ENVIAR OTRO) ---
 class CMSectionSelect(Select):
     def __init__(self, cm_data):
         self.cm_data = cm_data
@@ -64,7 +121,7 @@ class CMSectionSelect(Select):
             discord.SelectOption(label="Umas Meta", value="umas", emoji="🐴", description="Ver personajes recomendados"),
             discord.SelectOption(label="Herencias / Inherits", value="inherits", emoji="🧬", description="Ver habilidades a heredar"),
             discord.SelectOption(label="Accels y Skills", value="skills", emoji="⚡", description="Ver aceleraciones clave"),
-            discord.SelectOption(label="Estilos de Carrera", value="estilos", emoji="🏃", description="Estrategia por posición")
+            discord.SelectOption(label="Estilos de Carrera", value="estilos", emoji="🏃", description="Front Runners, Pace, etc.")
         ]
         super().__init__(placeholder="SELECCIONA UNA SECCIÓN DE LA CM...", options=options)
 
@@ -77,69 +134,56 @@ class CMSectionSelect(Select):
             description=content,
             color=discord.Color.gold()
         )
+        embed.set_footer(text="Umalator CM Helper • Usa el menú de abajo para cambiar de sección")
         
-        start_ts = self.cm_data["start_time"]
-        end_ts = self.cm_data["end_time"]
-        embed.add_field(name="📅 Fecha de Inicio", value=f"<t:{start_ts}:F> (<t:{start_ts}:R>)", inline=False)
-        embed.add_field(name="🏁 Fecha de Fin", value=f"<t:{end_ts}:F> (<t:{end_ts}:R>)", inline=False)
-        embed.set_footer(text="Umalator CM Helper • Usa el menú para cambiar de sección")
-        
-        # Publico para todo el canal
-        await interaction.response.send_message(embed=embed)
+        # Edita el mensaje existente en lugar de enviar uno nuevo
+        await interaction.response.edit_message(embed=embed, view=self.view)
 
 class CMSectionView(View):
     def __init__(self, cm_data):
         super().__init__()
         self.add_item(CMSectionSelect(cm_data))
 
-# --- COMANDO SLASH CON BÚSQUEDA POR NOMBRE ---
-@bot.tree.command(name="cm", description="Busca la guía de una Champions Meeting específica")
-@app_commands.describe(nombre_copa="Escribe el nombre de la CM (ej: Sagittarius, Sprint)")
-async def slash_cm(interaction: discord.Interaction, nombre_copa: Optional[str] = None):
-    # Si el usuario NO escribe nada en nombre_copa
-    if not nombre_copa:
-        copas_disponibles = "\n• ".join([data["name"] for data in CM_DATABASE.values()])
-        embed_error = discord.Embed(
-            title="⚠️ Especifica una Champions Meeting",
-            description=(
-                "Por favor, escribe el nombre de la Champions Meeting que quieras buscar.\n\n"
-                f"**Copas disponibles actualmente:**\n• {copas_disponibles}\n\n"
-                "**Ejemplo de uso:** `/cm Sagittarius`"
-            ),
-            color=discord.Color.orange()
-        )
-        await interaction.response.send_message(embed=embed_error, ephemeral=True)
-        return
+# --- AUTOCOMPLETADO PARA EL COMANDO /CM ---
+async def cm_autocomplete(interaction: discord.Interaction, current: str):
+    choices = [
+        app_commands.Choice(name="Sagittarius Cup (Long / 2500m)", value="sagittarius_cup"),
+        app_commands.Choice(name="Sprint Cup (Short / 1200m)", value="sprint_cup")
+    ]
+    return [choice for choice in choices if current.lower() in choice.name.lower()]
 
-    # Buscar coincidencia en la base de datos
-    busqueda = nombre_copa.lower().strip()
-    cm_encontrada = None
+# --- COMANDO SLASH CON AUTOCOMPLETADO ---
+@bot.tree.command(name="cm", description="Busca la guía y los datos de una Champions Meeting específica")
+@app_commands.describe(nombre_copa="Selecciona o escribe la Champions Meeting")
+@app_commands.autocomplete(nombre_copa=cm_autocomplete)
+async def slash_cm(interaction: discord.Interaction, nombre_copa: str):
+    cm_data = CM_DATABASE.get(nombre_copa)
     
-    for key, data in CM_DATABASE.items():
-        if busqueda in key or busqueda in data["name"].lower():
-            cm_encontrada = data
-            break
-
-    # Si escribió algo pero no se encontró
-    if not cm_encontrada:
+    if not cm_data:
         await interaction.response.send_message(
-            f"❌ No se encontró la Champions Meeting **'{nombre_copa}'**. Por favor revisa el nombre e intenta de nuevo.",
+            "❌ No se encontró esa Champions Meeting. Por favor selecciónala de la lista de autocompletado.",
             ephemeral=True
         )
         return
 
-    # Si se encontró la copa, mostramos el menú con sus 5 secciones
+    # Tarjeta de presentación general con pista y fechas (tal como lo pediste)
     embed_init = discord.Embed(
-        title=f"🏆 {cm_encontrada['name']}",
-        description="Selecciona abajo la sección que deseas consultar (Stats, Umas, Herencias, Skills o Estilos):",
+        title=f"🏆 {cm_data['name']}",
+        description=(
+            f"📍 **Pista:** {cm_data['track']}\n"
+            f"📏 **Categoría:** {cm_data['category']}\n\n"
+            "Umalator CM Helper • Usa el menú de abajo para cambiar de sección."
+        ),
         color=discord.Color.blue()
     )
-    start_ts = cm_encontrada["start_time"]
-    end_ts = cm_encontrada["end_time"]
-    embed_init.add_field(name="📅 Inicio", value=f"<t:{start_ts}:F>", inline=True)
-    embed_init.add_field(name="🏁 Fin", value=f"<t:{end_ts}:F>", inline=True)
     
-    await interaction.response.send_message(embed=embed_init, view=CMSectionView(cm_encontrada))
+    start_ts = cm_data["start_time"]
+    end_ts = cm_data["end_time"]
+    embed_init.add_field(name="📅 Inicio", value=f"<t:{start_ts}:F> (<t:{start_ts}:R>)", inline=False)
+    embed_init.add_field(name="🏁 Finalización", value=f"<t:{end_ts}:F> (<t:{end_ts}:R>)", inline=False)
+    embed_init.set_footer(text="Umalator CM Helper • Selecciona una sección en el menú")
+
+    await interaction.response.send_message(embed=embed_init, view=CMSectionView(cm_data))
 
 # --- EVENTO AL ENCENDER ---
 @bot.event
