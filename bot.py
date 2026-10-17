@@ -1,3 +1,22 @@
+import os
+import threading
+from http.server import HTTPServer, BaseHTTPRequestHandler
+
+# Mini servidor web para mantener a Render feliz en el plan gratis (Web Service)
+class DummyHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header('Content-type', 'text/html')
+        self.end_headers()
+        self.wfile.write(b"Bot activo 24/7")
+
+def run_dummy_server():
+    port = int(os.environ.get("PORT", 10000))
+    server = HTTPServer(('0.0.0.0', port), DummyHandler)
+    server.serve_forever()
+
+# Iniciar el servidor web en un hilo secundario
+threading.Thread(target=run_dummy_server, daemon=True).start()
 import discord
 from discord import app_commands
 from discord.ext import commands
