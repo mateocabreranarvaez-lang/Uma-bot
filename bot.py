@@ -127,12 +127,29 @@ class SearchMatchSelect(Select):
 class SearchMatchView(View):
     def __init__(self, matches):
         super().__init__()
-        self.add_item(SearchMatchSelect(matches))# --- COMANDO SLASH PRINCIPAL CON BÚSQUEDA ---
+        self.add_item(SearchMatchSelect(matches))# --- FUNCIÓN DE AUTOCOMPLETADO PARA DISCORD ---
+async def cm_autocomplete(interaction: discord.Interaction, current: str):
+    choices = []
+    for key, data in CM_DATABASE.items():
+        name = data.get("name", key)
+        if not current or current.lower() in name.lower() or current.lower() in key.lower():
+            choices.append(app_commands.Choice(name=name, value=key))
+    return choices[:25]
+
+# --- COMANDO SLASH PRINCIPAL CON BÚSQUEDA Y AUTOCOMPLETADO ---
 @bot.tree.command(name="cm", description="Busca y muestra guías de Champions Meeting")
-@app_commands.describe(busqueda="Nombre o término de la copa (ej: Sagittarius, Capricorn, Nakayama)")
+@app_commands.describe(busqueda="Selecciona o escribe la copa que buscas")
+@app_commands.autocomplete(busqueda=cm_autocomplete)
 async def slash_cm(interaction: discord.Interaction, busqueda: str = None):
     if not CM_DATABASE:
         await interaction.response.send_message("❌ No hay datos cargados en `data/cm.json`.", ephemeral=True)
+        return
+
+    # Si se selecciona directamente del autocompletado
+    if busqueda and busqueda in CM_DATABASE:
+        cm_data = CM_DATABASE[busqueda]
+        embed = build_cm_embed(cm_data, "track_overview")
+        await interaction.response.send_message(embed=embed, view=CMSectionView(cm_data))
         return
 
     # Si no escribe nada, por defecto muestra la actual (Sagittarius Cup)
@@ -142,7 +159,7 @@ async def slash_cm(interaction: discord.Interaction, busqueda: str = None):
         await interaction.response.send_message(embed=embed, view=CMSectionView(cm_data))
         return
 
-    # Buscar coincidencias exactas o parciales
+    # Búsqueda por texto parcial si escriben manual
     matches = {
         key: data for key, data in CM_DATABASE.items()
         if busqueda.lower() in data.get("name", "").lower() or busqueda.lower() in key.lower() or busqueda.lower() in data.get("track", {}).get("venue", "").lower()
@@ -155,7 +172,7 @@ async def slash_cm(interaction: discord.Interaction, busqueda: str = None):
         embed = build_cm_embed(cm_data, "track_overview")
         await interaction.response.send_message(embed=embed, view=CMSectionView(cm_data))
     else:
-        # Si hay varias coincidencias, despliega el menú interactivo estilo TazunaBot
+        # Menú desplegable si hay múltiples coincidencias
         await interaction.response.send_message(
             f"🔍 **Found {len(matches)} matches. Pick one:**",
             view=SearchMatchView(matches)
@@ -167,7 +184,7 @@ async def on_ready():
         synced = await bot.tree.sync()
         print(f"Sincronizados {len(synced)} comandos Slash.")
     except Exception as e:
-        print(f"Error sincronizando comandos: {e}")
+        print(f"Error sync: {e}")
     print(f"Bot listo como {bot.user}")
 
 TOKEN = os.getenv("DISCORD_TOKEN")
