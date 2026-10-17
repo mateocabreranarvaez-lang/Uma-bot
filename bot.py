@@ -36,16 +36,20 @@ intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-# --- CONSTRUCTOR DE EMBEDS (BANNER ARRIBA Y MAPA ABAJO) ---
+# --- CONSTRUCTOR DE EMBEDS CON ENLACE CLICKEABLE A GAMETORA (ESTILO TAZUNABOT) ---
 def build_cm_embed(cm_data, section_key):
+    # Obtiene el enlace oficial de GameTora configurado en el JSON (o uno por defecto)
+    target_url = cm_data.get("gametora_url", "https://gametora.com/umamusume/")
+    
     embed = discord.Embed(
-        color=discord.Color.from_rgb(47, 49, 54) # Estilo Tazuna Dark
+        url=target_url, # <-- Esto hace que el título sea clickeable y redirija a GameTora
+        color=discord.Color.from_rgb(47, 49, 54)
     )
 
     if section_key == "track_overview":
-        embed.title = cm_data.get("name", "Champions Meeting")
+        embed.title = f"🏆 {cm_data.get('name', 'Champions Meeting')} (Ver en GameTora)"
         
-        # Banner oficial de la carrera arriba (Thumbnail / Foto 4)
+        # Banner oficial de la carrera arriba (Thumbnail / Miniatura)
         if cm_data.get("banner_url"):
             embed.set_thumbnail(url=cm_data["banner_url"])
         
@@ -61,7 +65,7 @@ def build_cm_embed(cm_data, section_key):
         if cm_data.get("summary"):
             embed.add_field(name="Overview & Advice", value=cm_data["summary"], inline=False)
 
-        # Mapa de fases del circuito abajo en grande (Foto 2)
+        # Mapa de fases del circuito abajo en grande
         if cm_data.get("track_map_url"):
             embed.set_image(url=cm_data["track_map_url"])
 
@@ -69,7 +73,7 @@ def build_cm_embed(cm_data, section_key):
         sections = cm_data.get("sections", {})
         sec = sections.get(section_key, {})
         
-        embed.title = f"{cm_data.get('name', '')} — {sec.get('title', section_key.capitalize())}"
+        embed.title = f"{cm_data.get('name', '')} — {sec.get('title', section_key.capitalize())} (Ver en GameTora)"
         if sec.get("description"):
             embed.description = sec.get("description")
 
@@ -83,7 +87,7 @@ def build_cm_embed(cm_data, section_key):
         if cm_data.get("banner_url"):
             embed.set_thumbnail(url=cm_data["banner_url"])
 
-    embed.set_footer(text="Umalator CM Helper • GameTora Data")
+    embed.set_footer(text="Umalator CM Helper • Haz clic en el título para abrir GameTora")
     return embed# --- MENÚ DE SECCIONES DE LA GUÍA ---
 class CMSectionSelect(Select):
     def __init__(self, cm_data):
@@ -172,7 +176,7 @@ async def slash_cm(interaction: discord.Interaction, busqueda: str = None):
         embed = build_cm_embed(cm_data, "track_overview")
         await interaction.response.send_message(embed=embed, view=CMSectionView(cm_data))
     else:
-        # Menú desplegable si hay múltiples coincidencias
+        # Menú desplegable si hay múltiples coincidencias estilo TazunaBot
         await interaction.response.send_message(
             f"🔍 **Found {len(matches)} matches. Pick one:**",
             view=SearchMatchView(matches)
