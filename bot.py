@@ -2,6 +2,7 @@ import os
 import threading
 import json
 import urllib.request
+from http.server import HTTPServer, BaseHTTPRequestHandler
 import discord
 from discord.ext import commands
 from discord.ui import Select, View
@@ -19,6 +20,7 @@ def run_dummy_server():
     server = HTTPServer(('0.0.0.0', port), DummyHandler)
     server.serve_forever()
 
+# Iniciar servidor dummy en segundo plano
 threading.Thread(target=run_dummy_server, daemon=True).start()
 
 # --- CONFIGURACIÓN DEL BOT ---
@@ -57,7 +59,6 @@ def fetch_latest_cm_data():
             "https://raw.githubusercontent.com/uma-musume-db/cm-data/main/current_cm.json",
             headers={'User-Agent': 'Mozilla/5.0'}
         )
-        # Timeout súper rápido de 2 segundos para no hacer esperar a Discord
         with urllib.request.urlopen(req, timeout=2) as response:
             return json.loads(response.read().decode())
     except Exception as e:
@@ -114,7 +115,6 @@ class CMView(View):
 # --- COMANDO PRINCIPAL ---
 @bot.command(name="cm")
 async def cmd_cm(ctx):
-    # Obtener la información de forma ultra segura
     cm_info = fetch_latest_cm_data()
     
     embed = discord.Embed(
@@ -132,3 +132,5 @@ async def on_ready():
 TOKEN = os.getenv("DISCORD_TOKEN")
 if TOKEN:
     bot.run(TOKEN)
+else:
+    print("Error: No se encontró la variable DISCORD_TOKEN.")
