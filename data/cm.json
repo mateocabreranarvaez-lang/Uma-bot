@@ -1,9 +1,9 @@
 {
   "libra_cup": {
-    "name": "Libra Cup (Pasada)",
+    "name": "Libra Cup (Kyoto 2000m)",
     "banner_url": "https://gametora.com/images/umamusume/races/banner_libra.png",
     "track_map_url": "https://gametora.com/images/umamusume/tracks/kyoto_2000m.png",
-    "summary": "🏆 **Champions Meeting — Libra Cup**\n\n📅 **Estado:** Evento Finalizado.\n\n🏟️ **Circuito:** Kyoto 2000m (Medium) - Right - Outward.",
+    "summary": "🏆 **Champions Meeting — Libra Cup**\n\n🏟️ **Circuito:** Kyoto Turf 2000m (Medium) - Right - Outward.\n\n⚡ **Dato Clave:** Una pista de velocidad y aceleración en curva donde los Front y Pace Chasers dominan si logran mantener el liderazgo en la sección media.",
     "track": {
       "venue": "Kyoto",
       "distance_m": "Medium (2000m)",
@@ -12,12 +12,52 @@
       "similar": "Tenno Sho (Autumn)"
     },
     "sections": {
-      "umas": {"title": "Best Umas", "description": "Opciones destacadas de la copa anterior.", "fields": [{"name": "Meta", "value": "Dominado por Front y Pace Chasers con velocidad alta."}]},
-      "stats": {"title": "Stats", "description": "Estadísticas requeridas.", "fields": [{"name": "Objetivo", "value": "Speed 1200+, Stamina 800+ con 1 recovery."}]},
-      "inheritance": {"title": "Inheritance", "description": "Herencia clave.", "fields": [{"name": "Prioridad", "value": "Velocidad en curva y factores de Medium."}]},
-      "supports_whale": {"title": "Supports Whale", "description": "Mazos óptimos.", "fields": [{"name": "Meta Whales", "value": "Kitasan Black, Super Creek."}]},
-      "supports_f2p": {"title": "Supports F2P", "description": "Mazos accesibles.", "fields": [{"name": "Meta F2P", "value": "Sweep Tosho, Manhattan Cafe."}]},
-      "skills": {"title": "Key Skills", "description": "Habilidades esenciales.", "fields": [{"name": "Aceleración", "value": "Professor of Curvature y rectas de media distancia."}]}
+      "umas": {
+        "title": "Mejores Umas y Estilos",
+        "description": "El rendimiento depende fuertemente de la velocidad punta en fase media y la capacidad de asegurar una buena posición antes de entrar a la curva final.",
+        "fields": [
+          {"name": "Front Runners", "value": "**Silence Suzuka** y **Seiun Sky** destacan por la presión inicial. Necesitan mantener el primer puesto para activar aceleraciones clave."},
+          {"name": "Pace Chasers", "value": "**Oguri Cap** y **Narita Brian** son opciones sumamente sólidas gracias a sus habilidades únicas y su facilidad para sobrepasar rivales en la curva."},
+          {"name": "Late / End Closers", "value": "**Gold Ship** y **Mejiro Ryan** requieren una alta inversión en velocidad para cerrar la brecha en la recta final."}
+        ]
+      },
+      "stats": {
+        "title": "Stats Recomendadas",
+        "description": "Distribución orientada a Graded League y rendimiento competitivo en 2000m.",
+        "fields": [
+          {"name": "Graded League (Competitiva)", "value": "⚡ **Speed:** 1500+\n🫀 **Stamina:** ~800 con 1 recuperación dorada\n💥 **Power:** 1000+\n🔥 **Guts:** ~500\n🧠 **Wit:** 1000+"},
+          {"name": "Mazo Sugerido", "value": "• **Con crecimiento de Speed:** 3 Speed / 1 Stamina / 1 Wit / Light Hello\n• **Sin crecimiento de Speed:** 3 Speed / 1 Stamina / 1 Wit / 1 Power alternativo."}
+        ]
+      },
+      "inheritance": {
+        "title": "Herencia y Factores",
+        "description": "Prioridades de herencia para Kyoto 2000m.",
+        "fields": [
+          {"name": "Factores Clave", "value": "Prioriza factores de **Speed** y **Medium** para potenciar elflooding de velocidad en la segunda mitad de la carrera."},
+          {"name": "Habilidades Heredadas", "value": "**Professor of Curvature** y **Angling and Scheming** (si corres Front) son prácticamente obligatorias."}
+        ]
+      },
+      "supports_whale": {
+        "title": "Supports Whale (P2P)",
+        "description": "Cartas de alta gama para maximizar los entrenamientos de velocidad y wits.",
+        "fields": [
+          {"name": "Cartas Esenciales", "value": "**Kitasan Black (SSR)** para Speed, **Super Creek (SSR)** para asegurar recuperación si hace falta, y **Tokai Teio (SSR)** para Wit."}
+        ]
+      },
+      "supports_f2p": {
+        "title": "Supports F2P",
+        "description": "Alternativas accesibles para Graded League.",
+        "fields": [
+          {"name": "Cartas SR Recomendadas", "value": "**Sweep Tosho (SSR/SR)** de Speed, **Manhattan Cafe (SR)** de Stamina y **Matikanefukukitaru (SR)** de Wit."}
+        ]
+      },
+      "skills": {
+        "title": "Skills Recomendadas",
+        "description": "Prioridad de habilidades para asegurar el triunfo en Kyoto.",
+        "fields": [
+          {"name": "Habilidades Esenciales", "value": "✨ **Professor of Curvature**\n✨ **Medium Straightaways**\n✨ **Corner Recovery** para asegurar que no falte estamina en el tramo final."}
+        ]
+      }
     }
   },
   "sagittarius_cup": {
@@ -101,10 +141,10 @@
       }
     }
   },"capricorn_cup": {
-    "name": "Capricorn Cup (Futura 1)",
+    "name": "Capricorn Cup (Chukyo 1200m)",
     "banner_url": "https://gametora.com/images/umamusume/races/banner_capricorn.png",
     "track_map_url": "https://gametora.com/images/umamusume/tracks/chukyo_1200m.png",
-    "summary": "🏆 **Champions Meeting — Capricorn Cup**\n\n🏟️ **Circuito:** Chukyo 1200m (Sprint) - Left - Short.",
+    "summary": "🏆 **Champions Meeting — Capricorn Cup**\n\n🏟️ **Circuito:** Chukyo Turf 1200m (Sprint) - Left - Short.\n\n⚡ **Dato Clave:** Carrera de velocidad explosiva pura (Sprint). La estamina pasa a un segundo plano, exigiendo que la **Speed** y el **Power** alcancen los niveles máximos.",
     "track": {
       "venue": "Chukyo",
       "distance_m": "Sprint (1200m)",
@@ -113,19 +153,55 @@
       "similar": "CBC Sho"
     },
     "sections": {
-      "umas": {"title": "Umas", "description": "Sprint meta", "fields": [{"name": "Top", "value": "Maruzensky y Bakushin O"}]},
-      "stats": {"title": "Stats", "description": "Sprint stats", "fields": [{"name": "Meta", "value": "Speed 1500+, Power 1200+"}]},
-      "inheritance": {"title": "Inheritance", "description": "Herencia sprint", "fields": [{"name": "Prioridad", "value": "Aceleración de corta distancia"}]},
-      "supports_whale": {"title": "Whale", "description": "Soportes whale", "fields": [{"name": "Cartas", "value": "Kitasan Black Speed"}]},
-      "supports_f2p": {"title": "F2P", "description": "Soportes f2p", "fields": [{"name": "Cartas", "value": "Sweep Tosho"}]},
-      "skills": {"title": "Skills", "description": "Habilidades", "fields": [{"name": "Clave", "value": "Sprint Turbo y Non-Stop Girl"}]}
+      "umas": {
+        "title": "Mejores Umas y Estilos",
+        "description": "Las estrategias de velocidad corta dictan el meta absoluto en Chukyo.",
+        "fields": [
+          {"name": "Front / Sprinters", "value": "**Maruzensky (Summer)** y **Sakura Bakushin O** dominan por completo las opciones de velocidad inicial y su adaptabilidad al sprint."}
+        ]
+      },
+      "stats": {
+        "title": "Stats Recomendadas",
+        "description": "Enfoque total en atributos ofensivos de velocidad y aceleración.",
+        "fields": [
+          {"name": "Graded League (Competitiva)", "value": "⚡ **Speed:** 1500+\n🫀 **Stamina:** ~600 (sin requerir recuperaciones pesadas)\n💥 **Power:** 1200+\n🔥 **Guts:** ~600\n🧠 **Wit:** 800+"}
+        ]
+      },
+      "inheritance": {
+        "title": "Herencia y Factores",
+        "description": "Factores clave para carreras de corta distancia.",
+        "fields": [
+          {"name": "Prioridad", "value": "Factores de **Sprint** y habilidades de aceleración en recta corta como **Sprint Turbo** y **Non-Stop Girl**."}
+        ]
+      },
+      "supports_whale": {
+        "title": "Supports Whale (P2P)",
+        "description": "Cartas orientadas al entrenamiento intensivo de Speed y Power.",
+        "fields": [
+          {"name": "Cartas Clave", "value": "**Kitasan Black (SSR)** y cartas de velocidad con bonos de bonificación de especialidad elevados."}
+        ]
+      },
+      "supports_f2p": {
+        "title": "Supports F2P",
+        "description": "Opciones económicas para sprint.",
+        "fields": [
+          {"name": "Cartas SR", "value": "**Sweep Tosho (SR)** y **King Halo (SR)** para maximizar la velocidad de forma consistente."}
+        ]
+      },
+      "skills": {
+        "title": "Key Skills",
+        "description": "Habilidades indispensables para dominar el sprint.",
+        "fields": [
+          {"name": "Esenciales", "value": "✨ **Sprint Turbo**\n✨ **Non-Stop Girl**\n✨ **Sprint Straightaways**"}
+        ]
+      }
     }
   },
   "aquarius_cup": {
-    "name": "Aquarius Cup (Futura 2)",
+    "name": "Aquarius Cup (Tokyo 1600m Dirt)",
     "banner_url": "https://gametora.com/images/umamusume/races/banner_aquarius.png",
     "track_map_url": "https://gametora.com/images/umamusume/tracks/tokyo_1600m.png",
-    "summary": "🏆 **Champions Meeting — Aquarius Cup**\n\n🏟️ **Circuito:** Tokyo 1600m (Mile - Dirt) - Left.",
+    "summary": "🏆 **Champions Meeting — Aquarius Cup**\n\n🏟️ **Circuito:** Tokyo Dirt 1600m (Mile) - Left.\n\n⚡ **Dato Clave:** Primera gran copa en superficie de **Dirt (Arena)**. Requiere Umas con aptitud natural en tierra y una combinación equilibrada de Speed y Power.",
     "track": {
       "venue": "Tokyo",
       "distance_m": "Mile (1600m)",
@@ -134,19 +210,54 @@
       "similar": "February Stakes"
     },
     "sections": {
-      "umas": {"title": "Umas", "description": "Dirt meta", "fields": [{"name": "Top", "value": "Smart Falcon y El Condor Pasa"}]},
-      "stats": {"title": "Stats", "description": "Dirt stats", "fields": [{"name": "Meta", "value": "Speed 1500+, Power 1100+"}]},
-      "inheritance": {"title": "Inheritance", "description": "Dirt", "fields": [{"name": "Herencia", "value": "Factores de Dirt y Mile"}]},
-      "supports_whale": {"title": "Whale", "description": "Whale", "fields": [{"name": "Cartas", "value": "Smart Falcon SSR"}]},
-      "supports_f2p": {"title": "F2P", "description": "F2P", "fields": [{"name": "Cartas", "value": "Agnes Digital SR"}]},
-      "skills": {"title": "Skills", "description": "Skills", "fields": [{"name": "Clave", "value": "Habilidades de Dirt y Mile"}]}
+      "umas": {
+        "title": "Mejores Umas y Estilos",
+        "description": "Selección específica para la categoría de arena y milla.",
+        "fields": [
+          {"name": "Meta Principal", "value": "**Smart Falcon** y **El Condor Pasa** lideran las recomendaciones gracias a su alta adaptabilidad a Dirt y su rendimiento en milla."}
+        ]
+      },
+      "stats": {
+        "title": "Stats Recomendadas",
+        "description": "Distribución para carreras de tierra en distancia Mile.",
+        "fields": [
+          {"name": "Graded League", "value": "⚡ **Speed:** 1500+\n🫀 **Stamina:** ~700\n💥 **Power:** 1100+\n🔥 **Guts:** ~500\n🧠 **Wit:** 900+"}
+        ]
+      },
+      "inheritance": {
+        "title": "Herencia y Factores",
+        "description": "Necesidad absoluta de heredar aptitud de Dirt si la Uma no la tiene en rango A.",
+        "fields": [
+          {"name": "Factores", "value": "Busca factores de **Dirt** y **Mile** junto con habilidades de aceleración en recta de Tokio."}
+        ]
+      },
+      "supports_whale": {
+        "title": "Supports Whale",
+        "description": "Cartas especializadas en Dirt y Speed.",
+        "fields": [
+          {"name": "Cartas Clave", "value": "**Smart Falcon (SSR)** y soportes de alta gama con bonos de tierra y velocidad."}
+        ]
+      },
+      "supports_f2p": {
+        "title": "Supports F2P",
+        "description": "Alternativas accesibles para tierra.",
+        "fields": [
+          {"name": "Cartas SR", "value": "**Agnes Digital (SR)** y soportes de Speed económicos adaptados a la distancia."}
+        ]
+      },
+      "skills": {
+        "title": "Key Skills",
+        "description": "Habilidades clave para pistas de arena en milla.",
+        "fields": [
+          {"name": "Esenciales", "value": "✨ Habilidades de **Dirt Straightaways** y aceleraciones específicas para milla."}
+        ]
+      }
     }
-  },
-  "pisces_cup": {
-    "name": "Pisces Cup (Futura 3)",
+  },"pisces_cup": {
+    "name": "Pisces Cup (Hanshin 3000m)",
     "banner_url": "https://gametora.com/images/umamusume/races/banner_pisces.png",
     "track_map_url": "https://gametora.com/images/umamusume/tracks/hanshin_3000m.png",
-    "summary": "🏆 **Champions Meeting — Pisces Cup**\n\n🏟️ **Circuito:** Hanshin 3000m (Long) - Right.",
+    "summary": "🏆 **Champions Meeting — Pisces Cup**\n\n🏟️ **Circuito:** Hanshin Turf 3000m (Long) - Right.\n\n⚡ **Dato Clave:** Una de las pruebas de larga distancia más duras (Kikkasho). La estamina y los recuperadores múltiples son obligatorios para evitar el exhaustion.",
     "track": {
       "venue": "Hanshin",
       "distance_m": "Long (3000m)",
@@ -155,19 +266,55 @@
       "similar": "Kikkasho"
     },
     "sections": {
-      "umas": {"title": "Umas", "description": "Long meta", "fields": [{"name": "Top", "value": "Gold Ship y Mejiro McQueen"}]},
-      "stats": {"title": "Stats", "description": "Stamina", "fields": [{"name": "Meta", "value": "Stamina 1000+ y 2 recoveries doradas"}]},
-      "inheritance": {"title": "Inheritance", "description": "Herencia", "fields": [{"name": "Herencia", "value": "Stamina masiva"}]},
-      "supports_whale": {"title": "Whale", "description": "Whale", "fields": [{"name": "Cartas", "value": "Super Creek SSR"}]},
-      "supports_f2p": {"title": "F2P", "description": "F2P", "fields": [{"name": "Cartas", "value": "Manhattan Cafe SR"}]},
-      "skills": {"title": "Skills", "description": "Skills", "fields": [{"name": "Clave", "value": "Swinging Maestro y Long Straights"}]}
+      "umas": {
+        "title": "Mejores Umas y Estilos",
+        "description": "Estrategias de fondo basadas en End Closers y resistencia.",
+        "fields": [
+          {"name": "End Closers", "value": "**Gold Ship** y **Mejiro McQueen** brillan con luz propia debido a su enorme reserva de estamina y habilidades de recuperación integradas."}
+        ]
+      },
+      "stats": {
+        "title": "Stats Recomendadas",
+        "description": "Estadísticas de fondo con alta exigencia de estamina.",
+        "fields": [
+          {"name": "Graded League", "value": "⚡ **Speed:** 1400+\n🫀 **Stamina:** 1000+ con al menos **2 recuperaciones doradas**\n💥 **Power:** 900+\n🔥 **Guts:** ~600\n🧠 **Wit:** 900+"}
+        ]
+      },
+      "inheritance": {
+        "title": "Herencia y Factores",
+        "description": "Prioridad absoluta en factores de Stamina y Long.",
+        "fields": [
+          {"name": "Factores", "value": "Al menos 16★ de Stamina en herencia para compensar las carencias del mazo de soporte."}
+        ]
+      },
+      "supports_whale": {
+        "title": "Supports Whale",
+        "description": "Soportes óptimos para fondo.",
+        "fields": [
+          {"name": "Cartas Clave", "value": "**Super Creek (SSR)** por *Swinging Maestro* y Kitasan Black para mantener la velocidad."}
+        ]
+      },
+      "supports_f2p": {
+        "title": "Supports F2P",
+        "description": "Soportes accesibles de fondo.",
+        "fields": [
+          {"name": "Cartas Clave", "value": "**Manhattan Cafe (SR)** y **Mejiro McQueen (SSR Gratuita)**."}
+        ]
+      },
+      "skills": {
+        "title": "Key Skills",
+        "description": "Habilidades de recuperación y fondo.",
+        "fields": [
+          {"name": "Esenciales", "value": "✨ **Swinging Maestro**\n✨ **Long Distance Straightaways**\n✨ **Professor of Curvature**"}
+        ]
+      }
     }
   },
   "aries_cup": {
-    "name": "Aries Cup (Futura 4)",
+    "name": "Aries Cup (Nakayama 2000m)",
     "banner_url": "https://gametora.com/images/umamusume/races/banner_aries.png",
     "track_map_url": "https://gametora.com/images/umamusume/tracks/nakayama_2000m.png",
-    "summary": "🏆 **Champions Meeting — Aries Cup**\n\n🏟️ **Circuito:** Nakayama 2000m (Medium) - Right.",
+    "summary": "🏆 **Champions Meeting — Aries Cup**\n\n🏟️ **Circuito:** Nakayama Turf 2000m (Medium) - Right.\n\n⚡ **Dato Clave:** Satsuki Sho trial. Una pista de media distancia con pendientes exigentes donde la potencia y la velocidad se combinan.",
     "track": {
       "venue": "Nakayama",
       "distance_m": "Medium (2000m)",
@@ -176,18 +323,55 @@
       "similar": "Satsuki Sho"
     },
     "sections": {
-      "umas": {"title": "Umas", "description": "Medium meta", "fields": [{"name": "Top", "value": "Oguri Cap y Narita Brian"}]},
-      "stats": {"title": "Stats", "description": "Stats", "fields": [{"name": "Meta", "value": "Speed y Power altos"}]},
-      "inheritance": {"title": "Inheritance", "description": "Herencia", "fields": [{"name": "Herencia", "value": "Prof. of Curvature"}]},
-      "supports_whale": {"title": "Whale", "description": "Whale", "fields": [{"name": "Cartas", "value": "Kitasan Black"}]},
-      "supports_f2p": {"title": "F2P", "description": "F2P", "fields": [{"name": "Cartas", "value": "Sweep Tosho"}]},
-      "skills": {"title": "Skills", "description": "Skills", "fields": [{"name": "Clave", "value": "Medium Straightaways"}]}
+      "umas": {
+        "title": "Mejores Umas y Estilos",
+        "description": "Opciones versátiles para media distancia en Nakayama.",
+        "fields": [
+          {"name": "Meta Umas", "value": "**Oguri Cap** y **Narita Brian** destacan por su versatilidad y capacidad de remate en la curva final."}
+        ]
+      },
+      "stats": {
+        "title": "Stats Recomendadas",
+        "description": "Distribución equilibrada para 2000m exigentes.",
+        "fields": [
+          {"name": "Graded League", "value": "⚡ **Speed:** 1500+\n🫀 **Stamina:** ~850 + 1 recovery\n💥 **Power:** 1000+\n🔥 **Guts:** ~500\n🧠 **Wit:** 900+"}
+        ]
+      },
+      "inheritance": {
+        "title": "Herencia y Factores",
+        "description": "Factores recomendados para Nakayama.",
+        "fields": [
+          {"name": "Factores", "value": "Prioriza **Medium** y aceleraciones de curva como *Professor of Curvature*."}
+        ]
+      },
+      "supports_whale": {
+        "title": "Supports Whale",
+        "description": "Cartas óptimas.",
+        "fields": [
+          {"name": "Cartas", "value": "**Kitasan Black (SSR)** y soportes de alta gama orientados a Speed y Power."}
+        ]
+      },
+      "supports_f2p": {
+        "title": "Supports F2P",
+        "description": "Alternativas económicas.",
+        "fields": [
+          {"name": "Cartas", "value": "**Sweep Tosho (SR)** y **Matikanefukukitaru (SR)**."}
+        ]
+      },
+      "skills": {
+        "title": "Key Skills",
+        "description": "Habilidades prioritarias.",
+        "fields": [
+          {"name": "Esenciales", "value": "✨ **Medium Straightaways** y habilidades de posicionamiento en curva."}
+        ]
+      }
     }
-  },"taurus_cup": {
-    "name": "Taurus Cup (Futura 5)",
+  },
+  "taurus_cup": {
+    "name": "Taurus Cup (Tokyo 2400m)",
     "banner_url": "https://gametora.com/images/umamusume/races/banner_taurus.png",
     "track_map_url": "https://gametora.com/images/umamusume/tracks/tokyo_2400m.png",
-    "summary": "🏆 **Champions Meeting — Taurus Cup**\n\n🏟️ **Circuito:** Tokyo 2400m (Medium) - Left.",
+    "summary": "🏆 **Champions Meeting — Taurus Cup**\n\n🏟️ **Circuito:** Tokyo Turf 2400m (Medium) - Left - Spring.\n\n⚡ **Dato Clave:** El prestigioso Tokyo Yushun (Derby). La recta larga de Tokio premia enormemente los bursts de velocidad final y una gestión óptima de estamina.",
     "track": {
       "venue": "Tokyo",
       "distance_m": "Medium (2400m)",
@@ -196,19 +380,54 @@
       "similar": "Tokyo Yushun"
     },
     "sections": {
-      "umas": {"title": "Umas", "description": "Derby meta", "fields": [{"name": "Top", "value": "Silence Suzuka y Special Week"}]},
-      "stats": {"title": "Stats", "description": "Stats", "fields": [{"name": "Meta", "value": "Speed 1500+, Stamina 900+"}]},
-      "inheritance": {"title": "Inheritance", "description": "Herencia", "fields": [{"name": "Herencia", "value": "Angling and Scheming"}]},
-      "supports_whale": {"title": "Whale", "description": "Whale", "fields": [{"name": "Cartas", "value": "Super Creek y Kitasan"}]},
-      "supports_f2p": {"title": "F2P", "description": "F2P", "fields": [{"name": "Cartas", "value": "Manhattan Cafe SR"}]},
-      "skills": {"title": "Skills", "description": "Skills", "fields": [{"name": "Clave", "value": "Tenacious and Fast"}]}
+      "umas": {
+        "title": "Mejores Umas y Estilos",
+        "description": "Estrategias ideales para la larga recta de Tokio.",
+        "fields": [
+          {"name": "Meta Umas", "value": "**Silence Suzuka** y **Special Week** destacan por su rendimiento en trazados amplios."}
+        ]
+      },
+      "stats": {
+        "title": "Stats Recomendadas",
+        "description": "Exigencia alta en Speed y Stamina base.",
+        "fields": [
+          {"name": "Graded League", "value": "⚡ **Speed:** 1500+\n🫀 **Stamina:** ~900 + 1 recuperación dorada\n💥 **Power:** 1000+\n🔥 **Guts:** ~500\n🧠 **Wit:** 1000+"}
+        ]
+      },
+      "inheritance": {
+        "title": "Herencia y Factores",
+        "description": "Habilidades heredadas clave.",
+        "fields": [
+          {"name": "Factores", "value": "**Angling and Scheming** para Front Runners y factores de distancia Medium."}
+        ]
+      },
+      "supports_whale": {
+        "title": "Supports Whale",
+        "description": "Mazos óptimos.",
+        "fields": [
+          {"name": "Cartas", "value": "**Super Creek SSR** y **Kitasan Black SSR**."}
+        ]
+      },
+      "supports_f2p": {
+        "title": "Supports F2P",
+        "description": "Mazos accesibles.",
+        "fields": [
+          {"name": "Cartas", "value": "**Manhattan Cafe SR** y **Sweep Tosho SR**."}
+        ]
+      },
+      "skills": {
+        "title": "Key Skills",
+        "description": "Habilidades clave.",
+        "fields": [
+          {"name": "Esenciales", "value": "✨ **Swinging Maestro** y aceleraciones de recta final larga."}
+        ]
+      }
     }
-  },
-  "gemini_cup": {
-    "name": "Gemini Cup (Futura 6)",
+  },"gemini_cup": {
+    "name": "Gemini Cup (Kyoto 3200m)",
     "banner_url": "https://gametora.com/images/umamusume/races/banner_gemini.png",
     "track_map_url": "https://gametora.com/images/umamusume/tracks/kyoto_3200m.png",
-    "summary": "🏆 **Champions Meeting — Gemini Cup**\n\n🏟️ **Circuito:** Kyoto 3200m (Long) - Right.",
+    "summary": "🏆 **Champions Meeting — Gemini Cup**\n\n🏟️ **Circuito:** Kyoto Turf 3200m (Long) - Right - Spring.\n\n⚡ **Dato Clave:** Tenno Sho Spring. La carrera más larga del calendario inicial. La estamina y los recoveries múltiples son absolutamente innegociables.",
     "track": {
       "venue": "Kyoto",
       "distance_m": "Long (3200m)",
@@ -217,19 +436,55 @@
       "similar": "Tenno Sho (Spring)"
     },
     "sections": {
-      "umas": {"title": "Umas", "description": "Tenno Sho Spring", "fields": [{"name": "Top", "value": "Gold Ship y Rice Shower"}]},
-      "stats": {"title": "Stats", "description": "Stamina extrema", "fields": [{"name": "Meta", "value": "Stamina 1100+ y 2 o 3 recoveries doradas"}]},
-      "inheritance": {"title": "Inheritance", "description": "Herencia", "fields": [{"name": "Herencia", "value": "Stamina Factors"}]},
-      "supports_whale": {"title": "Whale", "description": "Whale", "fields": [{"name": "Cartas", "value": "Super Creek SSR"}]},
-      "supports_f2p": {"title": "F2P", "description": "F2P", "fields": [{"name": "Cartas", "value": "Mejiro McQueen Free SSR"}]},
-      "skills": {"title": "Skills", "description": "Skills", "fields": [{"name": "Clave", "value": "Swinging Maestro obligatorio"}]}
+      "umas": {
+        "title": "Mejores Umas y Estilos",
+        "description": "La reina indiscutible es Gold Ship y opciones de fondo extremo.",
+        "fields": [
+          {"name": "Meta Umas", "value": "**Gold Ship** y **Rice Shower** por su excelente rendimiento en fondo y recuperación natural."}
+        ]
+      },
+      "stats": {
+        "title": "Stats Recomendadas",
+        "description": "Estadísticas extremas de fondo.",
+        "fields": [
+          {"name": "Graded League", "value": "⚡ **Speed:** 1400+\n🫀 **Stamina:** 1100+ con **2 o 3 recuperaciones doradas**\n💥 **Power:** 900+\n🔥 **Guts:** ~600\n🧠 **Wit:** 900+"}
+        ]
+      },
+      "inheritance": {
+        "title": "Herencia y Factores",
+        "description": "Herencia masiva de estamina.",
+        "fields": [
+          {"name": "Factores", "value": "Maximizar factores de **Stamina** en padres y abuelos."}
+        ]
+      },
+      "supports_whale": {
+        "title": "Supports Whale",
+        "description": "Soportes de fondo óptimos.",
+        "fields": [
+          {"name": "Cartas", "value": "**Super Creek SSR** (*Swinging Maestro*) obligatoria."}
+        ]
+      },
+      "supports_f2p": {
+        "title": "Supports F2P",
+        "description": "Soportes de fondo accesibles.",
+        "fields": [
+          {"name": "Cartas", "value": "**Mejiro McQueen (SSR Gratuita)** y **Manhattan Cafe SR**."}
+        ]
+      },
+      "skills": {
+        "title": "Key Skills",
+        "description": "Habilidades indispensables.",
+        "fields": [
+          {"name": "Esenciales", "value": "✨ **Swinging Maestro** y múltiples skills de recuperación de estamina."}
+        ]
+      }
     }
   },
   "cancer_cup": {
-    "name": "Cancer Cup (Futura 7)",
+    "name": "Cancer Cup (Hanshin 1600m)",
     "banner_url": "https://gametora.com/images/umamusume/races/banner_cancer.png",
     "track_map_url": "https://gametora.com/images/umamusume/tracks/hanshin_1600m.png",
-    "summary": "🏆 **Champions Meeting — Cancer Cup**\n\n🏟️ **Circuito:** Hanshin 1600m (Mile) - Right.",
+    "summary": "🏆 **Champions Meeting — Cancer Cup**\n\n🏟️ **Circuito:** Hanshin Turf 1600m (Mile) - Right - Summer.\n\n⚡ **Dato Clave:** Yasuda Kinen trial. Velocidad pura en distancia Mile bajo condiciones de verano.",
     "track": {
       "venue": "Hanshin",
       "distance_m": "Mile (1600m)",
@@ -238,19 +493,55 @@
       "similar": "Yasuda Kinen"
     },
     "sections": {
-      "umas": {"title": "Umas", "description": "Mile meta", "fields": [{"name": "Top", "value": "Vodka y Daiwa Scarlet"}]},
-      "stats": {"title": "Stats", "description": "Stats", "fields": [{"name": "Meta", "value": "Speed y Power máximos"}]},
-      "inheritance": {"title": "Inheritance", "description": "Herencia", "fields": [{"name": "Herencia", "value": "Mile straightaways"}]},
-      "supports_whale": {"title": "Whale", "description": "Whale", "fields": [{"name": "Cartas", "value": "Biko Pegasus"}]},
-      "supports_f2p": {"title": "F2P", "description": "F2P", "fields": [{"name": "Cartas", "value": "King Halo SR"}]},
-      "skills": {"title": "Skills", "description": "Skills", "fields": [{"name": "Clave", "value": "Mile Straightaways y Connoisseur"}]}
+      "umas": {
+        "title": "Mejores Umas y Estilos",
+        "description": "Estrategias de milla enfocadas en agilidad y velocidad.",
+        "fields": [
+          {"name": "Meta Umas", "value": "**Vodka** y **Daiwa Scarlet** lideran el meta de milla."}
+        ]
+      },
+      "stats": {
+        "title": "Stats Recomendadas",
+        "description": "Enfoque en velocidad máxima.",
+        "fields": [
+          {"name": "Graded League", "value": "⚡ **Speed:** 1500+\n🫀 **Stamina:** ~700\n💥 **Power:** 1100+\n🔥 **Guts:** ~500\n🧠 **Wit:** 900+"}
+        ]
+      },
+      "inheritance": {
+        "title": "Inheritance",
+        "description": "Factores de milla.",
+        "fields": [
+          {"name": "Factores", "value": "Factores de **Mile** y velocidad en recta."}
+        ]
+      },
+      "supports_whale": {
+        "title": "Supports Whale",
+        "description": "Soportes óptimos.",
+        "fields": [
+          {"name": "Cartas", "value": "**Biko Pegasus SSR** y Kitasan Black."}
+        ]
+      },
+      "supports_f2p": {
+        "title": "Supports F2P",
+        "description": "Soportes f2p.",
+        "fields": [
+          {"name": "Cartas", "value": "**King Halo SR**."}
+        ]
+      },
+      "skills": {
+        "title": "Key Skills",
+        "description": "Habilidades de milla.",
+        "fields": [
+          {"name": "Esenciales", "value": "✨ **Mile Straightaways** y **Connoisseur**."}
+        ]
+      }
     }
   },
   "leo_cup": {
-    "name": "Leo Cup (Futura 8)",
+    "name": "Leo Cup (Niigata 1800m)",
     "banner_url": "https://gametora.com/images/umamusume/races/banner_leo.png",
     "track_map_url": "https://gametora.com/images/umamusume/tracks/niigata_1800m.png",
-    "summary": "🏆 **Champions Meeting — Leo Cup**\n\n🏟️ **Circuito:** Niigata 1800m (Mile/Medium) - Left.",
+    "summary": "🏆 **Champions Meeting — Leo Cup**\n\n🏟️ **Circuito:** Niigata Turf 1800m (Mile/Medium) - Left - Summer.\n\n⚡ **Dato Clave:** Sekiya Kinen. Pista caracterizada por su larguísima recta exterior, donde la velocidad sostenida marca la diferencia.",
     "track": {
       "venue": "Niigata",
       "distance_m": "Mile (1800m)",
@@ -259,12 +550,48 @@
       "similar": "Sekiya Kinen"
     },
     "sections": {
-      "umas": {"title": "Umas", "description": "Niigata straight", "fields": [{"name": "Top", "value": "Taiki Shuttle y Grass Wonder"}]},
-      "stats": {"title": "Stats", "description": "Stats", "fields": [{"name": "Meta", "value": "Speed 1500+"}]},
-      "inheritance": {"title": "Inheritance", "description": "Herencia", "fields": [{"name": "Herencia", "value": "Left-Handed proficiency"}]},
-      "supports_whale": {"title": "Whale", "description": "Whale", "fields": [{"name": "Cartas", "value": "Kitasan Black"}]},
-      "supports_f2p": {"title": "F2P", "description": "F2P", "fields": [{"name": "Cartas", "value": "Sweep Tosho"}]},
-      "skills": {"title": "Skills", "description": "Skills", "fields": [{"name": "Clave", "value": "Left-Handed ○ / ◎"}]}
+      "umas": {
+        "title": "Mejores Umas y Estilos",
+        "description": "Opciones para la recta exterior de Niigata.",
+        "fields": [
+          {"name": "Meta Umas", "value": "**Taiki Shuttle** y **Grass Wonder** destacan en esta configuración."}
+        ]
+      },
+      "stats": {
+        "title": "Stats Recomendadas",
+        "description": "Estadísticas para Niigata 1800m.",
+        "fields": [
+          {"name": "Graded League", "value": "⚡ **Speed:** 1500+\n🫀 **Stamina:** ~800\n💥 **Power:** 1000+\n🔥 **Guts:** ~500\n🧠 **Wit:** 900+"}
+        ]
+      },
+      "inheritance": {
+        "title": "Herencia y Factores",
+        "description": "Herencia recomendada.",
+        "fields": [
+          {"name": "Factores", "value": "**Left-Handed proficiency** y factores de velocidad."}
+        ]
+      },
+      "supports_whale": {
+        "title": "Supports Whale",
+        "description": "Soportes óptimos.",
+        "fields": [
+          {"name": "Cartas", "value": "**Kitasan Black SSR**."}
+        ]
+      },
+      "supports_f2p": {
+        "title": "Supports F2P",
+        "description": "Soportes f2p.",
+        "fields": [
+          {"name": "Cartas", "value": "**Sweep Tosho SR**."}
+        ]
+      },
+      "skills": {
+        "title": "Key Skills",
+        "description": "Habilidades clave.",
+        "fields": [
+          {"name": "Esenciales", "value": "✨ **Left-Handed ○ / ◎** y habilidades de recta."}
+        ]
+      }
     }
   }
 }
