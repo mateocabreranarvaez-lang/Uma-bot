@@ -1,606 +1,158 @@
-
 import os
 import json
-import logging
-from pathlib import Path
-
+import threading
+from http.server import HTTPServer, BaseHTTPRequestHandler
 import discord
 from discord import app_commands
 from discord.ext import commands
-from aiohttp import web
-from dotenv import load_dotenv
+from discord.ui import Select, View
 
-# =========================================================
-# CONFIGURACIÓN
-# =========================================================
+# --- SERVIDOR WEB 24/7 PARA RENDER ---
+class DummyHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header('Content-type', 'text/html')
+        self.end_headers()
+        self.wfile.write(b"Bot activo 24/7")
 
-load_dotenv()
+def run_dummy_server():
+    port = int(os.environ.get("PORT", 10000))
+    server = HTTPServer(('0.0.0.0', port), DummyHandler)
+    server.serve_forever()
 
-BASE_DIR = Path(__file__).resolve().parent
-DATA_DIR = BASE_DIR / "data"
+threading.Thread(target=run_dummy_server, daemon=True).start()
 
-TOKEN = os.getenv("DISCORD_TOKEN")
-DEV_GUILD_ID = os.getenv("DEV_GUILD_ID")
-PORT = int(os.getenv("PORT", "10000"))
+# --- CARGAR EL JSON DE LA CM ---
+def load_cm_database():
+    path = os.path.join("data", "cm.json")
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            if "sections" in data or "name" in data:
+                return {"sagittarius_cup": data}
+            return data
+    return {}
 
-BRAND = "Umalator CM Helper"
-COLOR = discord.Color.from_rgb(41, 67, 91)
-
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s | %(levelname)s | %(message)s"
-)
-
-log = logging.getLogger("umalat or_cm_helper")
-
-
-# =========================================================
-# CARGA DE DATOS
-# =========================================================
-
-def load_json(filename, fallback):
-    path = DATA_DIR / filename
-
-    try:
-        with path.open("r", encoding="utf-8") as file:
-            return json.load(file)
-    except FileNotFoundError:
-        log.warning("No existe el archivo: %s", path)
-    except json.JSONDecodeError:
-        log.exception("JSON inválido: %s", path)
-    except OSError:
-        log.exception("No se pudo leer: %s", path)
-
-    return fallback
-
-
-def load_dataset(filename):
-    data = load_json(filename, [])
-
-    if not isinstance(data, list):
-        log.warning("%s debe contener una lista JSON.", filename)
-        return []
-
-    return [item for item in data if isinstance(item, dict)]
-
-
-SKILLS = load_dataset("skills.json")
-SUPPORTS = load_dataset("supports.json")
-CM_DATABASE = load_json("cm.json", {})
-
-
-# =========================================================
-# BOT
-# IMPORTANTE: SE DEFINE ANTES DE LOS DECORADORES
-# =========================================================
+CM_DATABASE = load_cm_database()
 
 intents = discord.Intents.default()
+intents.message_content = True
+bot = commands.Bot(command_prefix="!", intents=intents)
 
+# --- CONSTRUCTOR QUE LEE EL 100% DE TUS CAMPOS SIN RECORTAR NADA ---
+def build_cm_embed(cm_data, section_key):
+    embed = discord.Embed(
+        title=f"🏆 {cm_data.get('name', 'Champions Meeting')}",
+        color=discord.Color.from_rgb(255, 165, 0) # Estilo Tazuna (Naranja)
+    )
 
-class UmalatorBot(commands.Bot):
+    if section_key == "track_overview":
+        # Muestra tu summary completo y los datos de track
+        embed.description = cm_data.get("summary", "Sin resumen disponible.")
+        
+        track = cm_data.get("track", {})
+        if track:
+            track_info = (
+                f"🏟️ **Superficie:** {track.get('venue', 'N/A')} ({track.get('surface', 'N/A')})\n"
+                f"📏 **Distancia:** {track.get('distance_m', 'N/A')}m ({track.get('distance_type', 'N/A')})\n"
+                f"🔄 **Sentido / Trazado:** {track.get('direction', 'N/A')} / {track.get('course', 'N/A')}\n"
+                f"❄️ **Estación / Clima:** {track.get('season', 'N/A')} / {track.get('weather', 'N/A')}"
+            )
+            embed.add_field(name="📍 Detalles del Circuito", value=track_info, inline=False)
+    else:
+        # Secciones dinámicas: extrae tal cual tu estructura de secciones
+        sections = cm_data.get("sections", {})
+        sec = sections.get(section_key, {})
+        
+        embed.title = f"🏆 {cm_data.get('name', '')} — {sec.get('title', section_key.capitalize())}"
+        
+        description = sec.get("description", "")
+        if description:
+            embed.description = description
 
-    async def setup_hook(self):
-        # Sincronizar los comandos slash.
-        try:
-            if DEV_GUILD_ID:
-                guild = discord.Object(id=int(DEV_GUILD_ID))
-                self.tree.copy_global_to(guild=guild)
-                synced = await self.tree.sync(guild=guild)
-                log.info(
-                    "Sincronizados %s comandos en el servidor de pruebas.",
-                    len(synced)
-                )
-            else:
-                synced = await self.tree.sync()
-                log.info(
-                    "Sincronizados %s comandos globales.",
-                    len(synced)
-                )
-        except Exception:
-            log.exception("Error al sincronizar los comandos.")
+        # Recorre CADA UNO de los fields que pusiste en tu JSON sin omitir ninguno
+        fields = sec.get("fields", [])
+        for field in fields:
+            name = field.get("name", "•")
+            value = field.get("value", "N/A")
+            # inline=False obliga a que cada bloque baje de línea, evitando que se vea amontonado
+            embed.add_field(name=f"📌 {name}", value=value, inline=False)
 
-        # Endpoint HTTP para comprobaciones de Render.
-        app = web.Application()
+    if cm_data.get("image_url"):
+        embed.set_image(url=cm_data["image_url"])
 
-        async def health(_request):
-            return web.json_response({
-                "status": "ok",
-                "bot": BRAND,
-                "discord_connected": self.is_ready()
-            })
+    embed.set_footer(text="Tazuna CM Assistant • GameTora & Umalator Data")
+    return embed
 
-        async def home(_request):
-            return web.Response(text=f"{BRAND} is running.")
+# --- MENÚ DESPLEGABLE CON LAS SECCIONES ---
+class CMSectionSelect(Select):
+    def __init__(self, cm_data):
+        self.cm_data = cm_data
+        options = [
+            discord.SelectOption(label="Track & Resumen", value="track_overview", emoji="🏟️"),
+            discord.SelectOption(label="Mejores Umas", value="umas", emoji="🏇"),
+            discord.SelectOption(label="Stats Recomendadas", value="stats", emoji="📊"),
+            discord.SelectOption(label="Herencia", value="inheritance", emoji="🧬"),
+            discord.SelectOption(label="Supports Whale", value="supports_whale", emoji="🐋"),
+            discord.SelectOption(label="Supports F2P", value="supports_f2p", emoji="🆓"),
+            discord.SelectOption(label="Skills Recomendadas", value="skills", emoji="⚡")
+        ]
+        super().__init__(placeholder="SELECCIONA UNA SECCIÓN DE LA GUÍA...", options=options)
 
-        app.router.add_get("/", home)
-        app.router.add_get("/health", health)
+    async def callback(self, interaction: discord.Interaction):
+        section_key = self.values[0]
+        embed = build_cm_embed(self.cm_data, section_key)
+        await interaction.response.edit_message(content="", embed=embed, view=self.view)
 
-        runner = web.AppRunner(app)
-        await runner.setup()
+class CMSectionView(View):
+    def __init__(self, cm_data):
+        super().__init__()
+        self.add_item(CMSectionSelect(cm_data))
 
-        site = web.TCPSite(runner, "0.0.0.0", PORT)
-        await site.start()
+# --- AUTOCOMPLETADO ---
+async def cm_autocomplete(interaction: discord.Interaction, current: str):
+    choices = []
+    for key, data in CM_DATABASE.items():
+        name = data.get("name", key)
+        if not current or current.lower() in name.lower() or current.lower() in key.lower():
+            choices.append(app_commands.Choice(name=name, value=key))
+    return choices[:25]
 
-        self._health_runner = runner
-        log.info("Servidor HTTP iniciado en el puerto %s.", PORT)
+# --- COMANDO /cm ---
+@bot.tree.command(name="cm", description="Muestra la guía completa de la Champions Meeting")
+@app_commands.describe(nombre_copa="Selecciona la Champions Meeting")
+@app_commands.autocomplete(nombre_copa=cm_autocomplete)
+async def slash_cm(interaction: discord.Interaction, nombre_copa: str):
+    cm_data = CM_DATABASE.get(nombre_copa)
+    
+    if not cm_data:
+        for key, data in CM_DATABASE.items():
+            if nombre_copa.lower() in data.get("name", "").lower():
+                cm_data = data
+                break
+                
+    if not cm_data and CM_DATABASE:
+        cm_data = next(iter(CM_DATABASE.values()))
 
+    if not cm_data:
+        await interaction.response.send_message(
+            "❌ **Copa no encontrada.** Revisa tu archivo `data/cm.json`.",
+            ephemeral=True
+        )
+        return
 
-bot = UmalatorBot(
-    command_prefix="!",
-    intents=intents
-)
-
+    embed_init = build_cm_embed(cm_data, "track_overview")
+    await interaction.response.send_message(embed=embed_init, view=CMSectionView(cm_data))
 
 @bot.event
 async def on_ready():
-    log.info(
-        "Conectado como %s (%s)",
-        bot.user,
-        bot.user.id
-    )
-
-
-# =========================================================
-# FUNCIONES AUXILIARES
-# =========================================================
-
-def make_embed(title, description=""):
-    embed = discord.Embed(
-        title=title,
-        description=description or "Información no disponible.",
-        color=COLOR
-    )
-    embed.set_footer(text=BRAND)
-    return embed
-
-
-def find_matches(dataset, query):
-    query = query.casefold().strip()
-
-    if not query:
-        return []
-
-    results = []
-
-    for item in dataset:
-        searchable = [
-            str(item.get("name", "")),
-            str(item.get("character", ""))
-        ]
-
-        aliases = item.get("aliases", [])
-        if isinstance(aliases, list):
-            searchable.extend(str(alias) for alias in aliases)
-
-        if any(query in value.casefold() for value in searchable):
-            results.append(item)
-
-    return results
-
-
-def display_value(value, fallback="No verificado"):
-    if value is None or value == "":
-        return fallback
-    return str(value)
-
-
-def source_field(embed, item):
-    url = item.get("source_url")
-
-    if isinstance(url, str) and url.startswith(("https://", "http://")):
-        embed.add_field(
-            name="Fuente",
-            value=f"[Consultar fuente]({url})",
-            inline=False
-        )
-
-
-def add_list_field(embed, title, values, limit=8):
-    if not isinstance(values, list) or not values:
-        return
-
-    text = "\n".join(f"• {value}" for value in values[:limit])
-
-    if len(text) > 1000:
-        text = text[:997] + "..."
-
-    embed.add_field(
-        name=title,
-        value=text,
-        inline=False
-    )
-
-
-# =========================================================
-# COMANDO /CM
-# =========================================================
-
-CM_SECTIONS = {
-    "overview": "Vista general",
-    "umas": "Mejores Umas",
-    "stats": "Stats: Graded y Open",
-    "inheritance": "Herencia",
-    "supports_whale": "Supports Whale",
-    "supports_f2p": "Supports F2P",
-    "skills": "Skills por estrategia"
-}
-
-
-def get_cm_section(section):
-    sections = CM_DATABASE.get("sections", {})
-
-    if isinstance(sections, dict):
-        data = sections.get(section, {})
-        if isinstance(data, dict):
-            return data
-
-    return {}
-
-
-def build_cm_embed(section):
-    cm_name = CM_DATABASE.get(
-        "name",
-        "Champions Meeting"
-    )
-
-    if section == "overview":
-        track = CM_DATABASE.get("track", {})
-
-        embed = make_embed(
-            f"🏁 {cm_name}",
-            CM_DATABASE.get(
-                "summary",
-                "Guía del Champions Meeting. Selecciona una sección "
-                "del menú para consultar sus recomendaciones."
-            )
-        )
-
-        if isinstance(track, dict) and track:
-            venue = track.get("venue", "No verificado")
-            distance = track.get("distance_m", "No verificado")
-            distance_type = track.get("distance_type", "No verificado")
-            surface = track.get("surface", "No verificado")
-            direction = track.get("direction", "No verificado")
-            course = track.get("course", "No verificado")
-            season = track.get("season", "No verificado")
-            weather = track.get("weather", "No verificado")
-            ground = track.get("ground", "No verificado")
-
-            embed.add_field(
-                name="🏟️ Circuito",
-                value=(
-                    f"**Sede:** {venue}\n"
-                    f"**Distancia:** {distance} m ({distance_type})\n"
-                    f"**Superficie:** {surface}\n"
-                    f"**Dirección:** {direction}\n"
-                    f"**Trazado:** {course}\n"
-                    f"**Estación:** {season}\n"
-                    f"**Clima:** {weather}\n"
-                    f"**Terreno:** {ground}"
-                ),
-                inline=False
-            )
-
-        embed.add_field(
-            name="📌 Guía",
-            value=(
-                "Consulta las estrategias y las builds de cada sección. "
-                "Los datos que no hayan sido verificados no se mostrarán "
-                "como recomendaciones definitivas."
-            ),
-            inline=False
-        )
-
-        sources = CM_DATABASE.get("sources", [])
-        if isinstance(sources, list):
-            links = []
-
-            for source in sources[:5]:
-                if not isinstance(source, dict):
-                    continue
-
-                name = source.get("name", "Fuente")
-                url = source.get("url", "")
-
-                if isinstance(url, str) and url.startswith("https://"):
-                    links.append(f"• [{name}]({url})")
-
-            if links:
-                embed.add_field(
-                    name="Fuentes",
-                    value="\n".join(links),
-                    inline=False
-                )
-
-        return embed
-
-    data = get_cm_section(section)
-
-    if not data:
-        return make_embed(
-            f"🏁 {cm_name} · {CM_SECTIONS.get(section, section)}",
-            "Esta sección todavía no tiene datos cargados."
-        )
-
-    embed = make_embed(
-        f"🏁 {cm_name} · {data.get('title', CM_SECTIONS.get(section, section))}",
-        data.get("description", "")
-    )
-
-    fields = data.get("fields", [])
-
-    if isinstance(fields, list):
-        for field in fields[:20]:
-            if not isinstance(field, dict):
-                continue
-
-            value = str(field.get("value", "Información no disponible."))
-
-            if len(value) > 1024:
-                value = value[:1021] + "..."
-
-            embed.add_field(
-                name=str(field.get("name", "Información"))[:256],
-                value=value or "Información no disponible.",
-                inline=bool(field.get("inline", False))
-            )
-
-    return embed
-
-
-class CMSelect(discord.ui.Select):
-
-    def __init__(self):
-        options = [
-            discord.SelectOption(
-                label="Vista general",
-                value="overview",
-                emoji="🏁",
-                default=True
-            ),
-            discord.SelectOption(
-                label="Mejores Umas",
-                value="umas",
-                emoji="🐎"
-            ),
-            discord.SelectOption(
-                label="Stats: Graded y Open",
-                value="stats",
-                emoji="📊"
-            ),
-            discord.SelectOption(
-                label="Herencia",
-                value="inheritance",
-                emoji="🧬"
-            ),
-            discord.SelectOption(
-                label="Supports Whale",
-                value="supports_whale",
-                emoji="💳"
-            ),
-            discord.SelectOption(
-                label="Supports F2P",
-                value="supports_f2p",
-                emoji="🆓"
-            ),
-            discord.SelectOption(
-                label="Skills por estrategia",
-                value="skills",
-                emoji="✨"
-            )
-        ]
-
-        super().__init__(
-            placeholder="Selecciona una sección de la guía...",
-            min_values=1,
-            max_values=1,
-            options=options
-        )
-
-    async def callback(self, interaction: discord.Interaction):
-        section = self.values[0]
-
-        for option in self.options:
-            option.default = option.value == section
-
-        await interaction.response.edit_message(
-            embed=build_cm_embed(section),
-            view=self.view
-        )
-
-
-class CMView(discord.ui.View):
-
-    def __init__(self, owner_id):
-        super().__init__(timeout=300)
-        self.owner_id = owner_id
-        self.add_item(CMSelect())
-
-    async def interaction_check(self, interaction):
-        if interaction.user.id != self.owner_id:
-            await interaction.response.send_message(
-                "Ejecuta `/cm` para abrir tu propia guía.",
-                ephemeral=True
-            )
-            return False
-
-        return True
-
-
-@bot.tree.command(
-    name="cm",
-    description="Consulta la guía del Champions Meeting."
-)
-async def cm(interaction: discord.Interaction):
-    await interaction.response.send_message(
-        embed=build_cm_embed("overview"),
-        view=CMView(interaction.user.id)
-    )
-
-
-# =========================================================
-# COMANDO /SKILL
-# =========================================================
-
-@bot.tree.command(
-    name="skill",
-    description="Busca una skill de Umamusume Global."
-)
-@app_commands.describe(
-    nombre="Nombre oficial o parte del nombre de la skill"
-)
-async def skill(
-    interaction: discord.Interaction,
-    nombre: str
-):
-    matches = find_matches(SKILLS, nombre)
-
-    if not matches:
-        await interaction.response.send_message(
-            f"No encontré **{discord.utils.escape_markdown(nombre)}** "
-            "en el dataset local de skills.",
-            ephemeral=True
-        )
-        return
-
-    if len(matches) > 1:
-        choices = "\n".join(
-            f"• {item.get('name', 'Sin nombre')}"
-            for item in matches[:10]
-        )
-
-        await interaction.response.send_message(
-            f"Encontré varias coincidencias:\n{choices}\n\n"
-            "Escribe un nombre más específico.",
-            ephemeral=True
-        )
-        return
-
-    item = matches[0]
-
-    embed = make_embed(
-        f"✨ {item.get('name', 'Skill')}",
-        item.get("description", "Descripción no verificada.")
-    )
-
-    embed.add_field(
-        name="Tipo",
-        value=display_value(item.get("type")),
-        inline=True
-    )
-    embed.add_field(
-        name="Coste SP",
-        value=display_value(item.get("sp_cost")),
-        inline=True
-    )
-    embed.add_field(
-        name="Rating ○",
-        value=display_value(item.get("rating_o")),
-        inline=True
-    )
-    embed.add_field(
-        name="Rating ◎",
-        value=display_value(item.get("rating_oo")),
-        inline=True
-    )
-
-    add_list_field(
-        embed,
-        "Variantes",
-        item.get("variants", [])
-    )
-
-    source_field(embed, item)
-
-    await interaction.response.send_message(embed=embed)
-
-
-# =========================================================
-# COMANDO /SUPPORT
-# =========================================================
-
-@bot.tree.command(
-    name="support",
-    description="Busca una Support Card de Umamusume Global."
-)
-@app_commands.describe(
-    nombre="Nombre de la carta o del personaje"
-)
-async def support(
-    interaction: discord.Interaction,
-    nombre: str
-):
-    matches = find_matches(SUPPORTS, nombre)
-
-    if not matches:
-        await interaction.response.send_message(
-            f"No encontré **{discord.utils.escape_markdown(nombre)}** "
-            "en el dataset local de supports.",
-            ephemeral=True
-        )
-        return
-
-    if len(matches) > 1:
-        choices = "\n".join(
-            f"• {item.get('name', 'Sin nombre')}"
-            for item in matches[:10]
-        )
-
-        await interaction.response.send_message(
-            f"Encontré varias cartas:\n{choices}\n\n"
-            "Escribe un nombre más específico.",
-            ephemeral=True
-        )
-        return
-
-    item = matches[0]
-
-    embed = make_embed(
-        f"🃏 {item.get('name', 'Support Card')}",
-        f"**Personaje:** {item.get('character', 'No verificado')}"
-    )
-
-    embed.add_field(
-        name="Rareza",
-        value=display_value(item.get("rarity")),
-        inline=True
-    )
-    embed.add_field(
-        name="Tipo",
-        value=display_value(item.get("type")),
-        inline=True
-    )
-    embed.add_field(
-        name="Limit Break",
-        value=display_value(item.get("limit_break")),
-        inline=True
-    )
-
-    add_list_field(
-        embed,
-        "Efectos",
-        item.get("effects", [])
-    )
-
-    add_list_field(
-        embed,
-        "Skills y hints",
-        item.get("hints", [])
-    )
-
-    source_field(embed, item)
-
-    await interaction.response.send_message(embed=embed)
-
-
-# =========================================================
-# INICIO
-# =========================================================
-
-if __name__ == "__main__":
-    if not TOKEN:
-        raise RuntimeError(
-            "No se encontró DISCORD_TOKEN en las variables de entorno."
-        )
-
+    try:
+        synced = await bot.tree.sync()
+        print(f"Sincronizados {len(synced)} comandos Slash.")
+    except Exception as e:
+        print(f"Error sincronizando comandos: {e}")
+    print(f'Bot encendido correctamente como {bot.user}')
+
+TOKEN = os.getenv("DISCORD_TOKEN")
+if TOKEN:
     bot.run(TOKEN)
