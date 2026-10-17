@@ -1,0 +1,231 @@
+
+{
+  "name": "Sagittarius Cup — CM20 (archivo)",
+  "summary": "Guía de referencia para Champions Meeting de Umamusume: Pretty Derby Global. Esta edición corresponde a Sagittarius Cup CM20, disputada en Nakayama sobre césped a 2500 m. La competición terminó el 16 de octubre de 2026; los consejos de esta guía describen esa pista y no deben interpretarse como el meta de una futura edición. Usa el menú para consultar el análisis del circuito, las estrategias, las estadísticas, la herencia, los supports y las habilidades.",
+  "track": {
+    "venue": "Nakayama",
+    "distance_m": 2500,
+    "distance_type": "Long",
+    "surface": "Turf",
+    "direction": "Right-handed",
+    "course": "Inner course",
+    "season": "Winter",
+    "weather": "Cloudy",
+    "ground": "Good"
+  },
+  "sources": [
+    {
+      "name": "Guía CM20 de uma.guide",
+      "url": "https://uma.guide/guides/cm20-guide"
+    },
+    {
+      "name": "Champions Meeting en GameTora",
+      "url": "https://gametora.com/umamusume/events/champions-meeting"
+    },
+    {
+      "name": "Guía PvP de Uma Reference",
+      "url": "https://www.umareference.com/guide/pvp-champions-meeting"
+    },
+    {
+      "name": "Aviso oficial de Sagittarius Cup",
+      "url": "https://umamusume.gg/the-league-selection-period-for-the-champions-meeting-sagittarius-cup-has-begun/"
+    },
+    {
+      "name": "Simulador Umalator Global",
+      "url": "https://alpha123.github.io/uma-tools/umalator-global/"
+    }
+  ],
+  "sections": {
+    "umas": {
+      "title": "Umas recomendadas por estrategia — CM20",
+      "description": "En Nakayama 2500 m, la fase de carrera tardía comienza en la recta opuesta, no en la recta final. La aceleración que se activa en la zona correcta es decisiva. Las siguientes opciones proceden de la guía específica de CM20; no son una tier list universal ni una recomendación para una futura pista.",
+      "fields": [
+        {
+          "name": "🥇 Front Runner — líder",
+          "value": "La estrategia más consistente descrita para esta edición. Puede abrir distancia antes de que las Umas de retaguardia completen su aceleración. Se recomienda priorizar una build capaz de mantener el liderazgo, con aceleración fiable y suficiente stamina para 2500 m. Angling and Scheming es una opción de aceleración relevante en esta pista. Evita construir una estrategia que dependa de una skill cuyo requisito de posición sea difícil de cumplir.",
+          "inline": false
+        },
+        {
+          "name": "🏇 Pace Chaser — perseguidora",
+          "value": "Necesita mantenerse cerca de las líderes y activar aceleración en la ventana correcta. My True Strength exige estar a cuatro cuerpos o menos de la líder al entrar en la fase tardía; una Runaway puede dificultar esa condición. Victory Cheer! y Break It Down! también requieren una posición concreta al inicio de la fase tardía. Compensa estas condiciones con buenas skills de velocidad de mitad de carrera.",
+          "inline": false
+        },
+        {
+          "name": "⚡ Late Surger — remontadora",
+          "value": "Claw Forward ofrece aceleración potente, pero consume un 2 % de HP y exige estar entre los puestos 4 y 9. La composición de la sala puede impedir su activación. Presupuesta stamina adicional y prepara una segunda fuente de aceleración, por ejemplo Nimble Navigator o Moving Past, and Beyond. No dependas de una sola skill condicional.",
+          "inline": false
+        },
+        {
+          "name": "🎯 End Closer — última perseguidora",
+          "value": "Encroaching Shadow puede aportar aceleración desde la recta, con menos dependencia de una posición exacta que algunas alternativas. Su problema principal es recuperar la distancia que las líderes pueden haber creado. Necesita skills de velocidad de mitad de carrera que le permitan mantenerse en contacto antes de la fase final. La consistencia de la build importa tanto como el valor de su aceleración.",
+          "inline": false
+        },
+        {
+          "name": "Cómo escoger tu Uma",
+          "value": "No elijas solo por popularidad o rareza. Comprueba aptitud de distancia Long, superficie Turf y estrategia; revisa la skill única y las heredadas, la recuperación disponible y la probabilidad real de activar aceleración. Las Umas recomendadas cambian con la pista y el conjunto de personajes disponibles en Global.",
+          "inline": false
+        }
+      ]
+    },
+    "stats": {
+      "title": "Estadísticas — Graded y Open",
+      "description": "Los objetivos de esta sección son referencias de la guía CM20 para una build competitiva en Grand Concert, no requisitos universales. La stamina y el guts son especialmente importantes en esta distancia por los umbrales de velocidad de la pista. Ajusta los valores según la skill única, la estrategia, las recuperaciones y el resultado del simulador.",
+      "fields": [
+        {
+          "name": "📊 Referencia de stats para Graded",
+          "value": "• Speed: 1500 o más, si el entrenamiento lo permite.\n• Stamina: alrededor de 900 como punto de partida.\n• Power: 1000 o más.\n• Guts: alrededor de 600 como mínimo orientativo.\n• Wit: 1000 o más.\n• Recuperación: planifica una recuperación dorada cuando la build la necesite.\nEstos valores son objetivos de referencia de CM20, no una garantía de victoria ni una receta idéntica para todas las Umas.",
+          "inline": false
+        },
+        {
+          "name": "🫀 Cómo evaluar la stamina",
+          "value": "Una build puede tener Speed alta y aun así perder rendimiento si no llega al final con stamina suficiente. La guía CM20 estima que 867–901 de stamina es un rango de referencia importante y recomienda considerar una recuperación dorada. No copies el número sin revisar el simulador: las necesidades cambian con la estrategia, las skills activadas, el consumo de stamina y la composición de la carrera.",
+          "inline": false
+        },
+        {
+          "name": "💪 Power, Guts y Wit",
+          "value": "Power ayuda a la aceleración y al movimiento durante la carrera; Guts influye en el rendimiento durante el tramo final y tiene umbrales específicos en esta pista; Wit contribuye a la consistencia de las skills y del comportamiento de carrera. No sacrifiques toda una estadística para elevar otra si eso hace que la Uma falle en una condición clave.",
+          "inline": false
+        },
+        {
+          "name": "🆓 Open League",
+          "value": "En Global, desde el cambio aplicado a partir de mayo de 2026, Open permite Umas veteranas con Career Rank A+ o inferior; una Uma de rango S no puede registrarse en Open. Entrenar dentro del límite es parte de la estrategia: revisa el rango final de la build antes de registrarla. No copies automáticamente las stats de Graded; optimiza dentro de la restricción de rango.",
+          "inline": false
+        },
+        {
+          "name": "🏆 Graded League",
+          "value": "Graded no impone el límite de rango de Open. Prioriza una build completa: aptitud de distancia alta, velocidad suficiente, stamina calculada, aceleración que funcione en la ventana correcta y skills de velocidad útiles. Una Uma con muchas skills no necesariamente es mejor si varias no se activan en la pista o si le falta stamina para completar los 2500 m.",
+          "inline": false
+        }
+      ]
+    },
+    "inheritance": {
+      "title": "Herencia — factores, aptitudes y skills",
+      "description": "La herencia sirve para mejorar la Uma antes del entrenamiento. Para CM, los factores deben elegirse con un objetivo claro: aptitud de Long, stats que falten y skills heredadas que funcionen en el circuito. Las estadísticas y las skills que tuvo una Uma en su entrenamiento no se transfieren directamente como valores; lo relevante para herencia son los factores y las skills heredables que se puedan obtener.",
+      "fields": [
+        {
+          "name": "🧬 Prioridad 1: aptitud de distancia",
+          "value": "Busca padres y abuelos que ayuden a alcanzar una aptitud de Long alta. Una aptitud S en la distancia puede aportar una mejora importante de rendimiento, por lo que es una prioridad competitiva cuando la build puede conseguirla. Comprueba también la aptitud de Turf y la estrategia; una buena herencia de stats no compensa una aptitud deficiente en la distancia del evento.",
+          "inline": false
+        },
+        {
+          "name": "⭐ Prioridad 2: factores de stats",
+          "value": "Usa factores de Speed, Stamina, Power, Guts o Wit según el problema de la build. En una carrera de 2500 m, no ignores Stamina por buscar únicamente Speed. Si la Uma ya obtiene suficiente stamina en el entrenamiento, puedes orientar la herencia a la aptitud de distancia y a mejorar otras estadísticas que estén por debajo del objetivo.",
+          "inline": false
+        },
+        {
+          "name": "✨ Prioridad 3: aceleración heredada",
+          "value": "Para CM20, la aceleración debe activarse durante la fase tardía que comienza en la recta opuesta. La guía específica señala skills como ∴win Q.E.D. y Barcarole of Blessings como opciones accesibles de aceleración de última curva para distintos estilos. Revisa siempre la condición y la zona de activación de cada skill; una skill de aceleración que se activa demasiado tarde puede aportar poco.",
+          "inline": false
+        },
+        {
+          "name": "👪 Cómo elegir padres",
+          "value": "1. Define la estrategia y la aptitud que necesitas.\n2. Revisa los factores de ambos padres y los factores de sus progenitores.\n3. Comprueba si las skills heredables encajan con la pista y el estilo.\n4. Evalúa si la herencia permite alcanzar los objetivos de stats sin forzar el entrenamiento.\n5. Antes de usar una herencia, verifica las probabilidades de activación y los requisitos en la ficha o simulador.",
+          "inline": false
+        },
+        {
+          "name": "⚠️ Error habitual",
+          "value": "No elijas una herencia solo porque tenga muchas estrellas. Un factor de 9★ no garantiza que obtengas la skill o la aptitud exacta que necesitas. Una herencia especializada para una pista distinta puede ser menos útil que una combinación con factores inferiores pero orientados a Long, Turf y a las skills que realmente activan en el circuito.",
+          "inline": false
+        }
+      ]
+    },
+    "supports_whale": {
+      "title": "Support Cards — build de inversión alta",
+      "description": "Esta sección describe una plantilla de supports para una cuenta con muchas cartas SSR y límites altos. No significa que debas gastar para competir: la composición debe adaptarse a las cartas que tengas, a los bonos de crecimiento de la Uma y a sus recuperaciones propias. Para CM20, la guía de uma.guide recomienda entrenar en Grand Concert por sus límites de Speed y la ganancia de Skill Points.",
+      "fields": [
+        {
+          "name": "💳 Plantilla principal",
+          "value": "Para una Uma con crecimiento de Speed, la guía recomienda como estructura frecuente 2 Speed, 1 Stamina, 2 Wit y Light Hello. Para una Uma sin crecimiento de Speed, una alternativa es 3 Speed, 1 Stamina, 1 Wit y Light Hello. Son plantillas de referencia, no una lista obligatoria: cambia una carta si necesitas cubrir recuperación, alcanzar un stat o conseguir una skill importante.",
+          "inline": false
+        },
+        {
+          "name": "🫀 Opciones de Stamina y recuperación",
+          "value": "Super Creek es una opción de Stamina por su acceso a Swinging Maestro y su rendimiento de entrenamiento. Mejiro Palmer puede interesar a Front Runners por Taking the Lead. Symboli Kris S puede aportar Claw Forward a Late Surgers, aunque esa skill consume HP y requiere cuidar el presupuesto de stamina. Las cartas concretas deben verificarse por versión, rareza y límite disponible en Global.",
+          "inline": false
+        },
+        {
+          "name": "🏃 Supports de Speed con recuperación",
+          "value": "La guía CM20 cita como posibles fuentes de recuperación dorada desde cartas de Speed a Mayano Top Gun (Restless), Tosen Jordan (Breath of Fresh Air), Zenno Rob Roy (Lie in Wait), Air Shakur (Serenity) y Mejiro Ardan (Race Planner). Escoge según la Uma y las condiciones de activación; no acumules recuperación sin comprobar que realmente la necesita.",
+          "inline": false
+        },
+        {
+          "name": "🎯 Cartas según estrategia",
+          "value": "Ejemplos de supports con utilidad específica que menciona la guía: Maruzensky para Front Runners; Agnes Tachyon y Tokai Teio para Pace Chasers; Seeking the Pearl, Air Groove y Eishin Flash para Late Surgers; Mr. C.B. para End Closers. Verifica qué versión de cada carta tienes y qué skills ofrece, porque los efectos cambian entre versiones.",
+          "inline": false
+        },
+        {
+          "name": "📌 Cómo optimizar una cuenta con cartas fuertes",
+          "value": "Prioriza niveles altos, bonos de entrenamiento, amistad, ganancia de Skill Points y una cobertura de stats que no deje a la Uma sin stamina. Una carta con una skill excelente no siempre justifica ocupar un slot si su rendimiento de entrenamiento es demasiado bajo. Compara la build completa y prueba el resultado en Umalator antes de decidir.",
+          "inline": false
+        }
+      ]
+    },
+    "supports_f2p": {
+      "title": "Support Cards — build F2P",
+      "description": "Una cuenta F2P puede preparar una build competitiva usando cartas gratuitas, SR y SSR obtenidas con el tiempo. El objetivo no es copiar la plantilla de una cuenta con todas las cartas al máximo: es alcanzar las estadísticas necesarias y conseguir las skills de mayor impacto con los recursos disponibles. La herencia puede reducir la presión sobre los supports de Stamina.",
+      "fields": [
+        {
+          "name": "🆓 Plantilla de referencia",
+          "value": "Empieza con una estructura de 2 Speed, 1 Stamina, 2 Wit y Light Hello si tienes acceso a esas cartas y la Uma tiene crecimiento de Speed. Si no tienes una pieza clave, adapta la plantilla con tus cartas de mejor rendimiento y usa factores de Stamina para aliviar la carga del entrenamiento. La estructura debe cambiar según las cartas disponibles y el resultado real de la build.",
+          "inline": false
+        },
+        {
+          "name": "📚 Qué priorizar al elegir cartas",
+          "value": "1. Bonos de entrenamiento y amistad que puedas activar con frecuencia.\n2. Stats que tu Uma necesita alcanzar.\n3. Recuperación adecuada para 2500 m.\n4. Skills útiles para la estrategia y la pista.\n5. Ganancia de Skill Points para completar la build.\nUna SR con límite alto y buenos bonos puede rendir mejor que una SSR de nivel bajo; compara los efectos de la carta en lugar de decidir solo por la rareza.",
+          "inline": false
+        },
+        {
+          "name": "🤝 Cuándo pedir una carta prestada",
+          "value": "Usa el slot de amistad para cubrir una carencia importante: una carta de Stamina con recuperación si no llegas a la stamina objetivo, o una carta de Speed/Wit con las skills que tu estrategia necesita. No pidas prestada una carta solo por ser popular. Asegúrate de que encaje con la distribución de stats y con el plan de entrenamiento.",
+          "inline": false
+        },
+        {
+          "name": "🫀 No sacrifiques la stamina",
+          "value": "En CM20, Stamina es uno de los stats más difíciles de cubrir. Si no tienes suficientes factores de Stamina, considera una carta de Stamina en el deck. Si la Uma posee recuperación innata, puede tener más flexibilidad en la selección de cartas, pero debes probar si la recuperación activa de forma fiable y si basta para terminar la carrera.",
+          "inline": false
+        },
+        {
+          "name": "🚫 Errores F2P que evitar",
+          "value": "No gastes todos los Skill Points en skills de bajo impacto; no copies un deck de ballena sin tener sus niveles y bonos; no elijas una carta solo por una skill si te hace perder demasiado entrenamiento; y no asumas que una build es válida para Open antes de revisar el Career Rank. Es preferible una build equilibrada y funcional a una build que parece fuerte en la ficha pero falla en carrera.",
+          "inline": false
+        }
+      ]
+    },
+    "skills": {
+      "title": "Skills por estrategia — CM20",
+      "description": "En CM20, la fase tardía empieza en la recta opuesta de Nakayama. La zona de activación importa más que el color o la rareza de la skill. Las siguientes opciones y advertencias proceden de la guía específica de Sagittarius Cup. Comprueba los nombres, condiciones y efectos en la versión Global antes de entrenar.",
+      "fields": [
+        {
+          "name": "🏁 Front Runner",
+          "value": "• Angling and Scheming: aceleración de última curva que puede encajar con esta pista.\n• Break It Down!: opción de aceleración ligada a una condición de posición.\n• Skills de velocidad de mitad de carrera: ayudan a crear o conservar la ventaja antes de la fase tardía.\nNo dependas de una única skill de aceleración; verifica el punto de activación y evita invertir puntos en skills que solo funcionen en otra parte del circuito.",
+          "inline": false
+        },
+        {
+          "name": "🏇 Pace Chaser",
+          "value": "• My True Strength: potente cuando se cumple la condición de proximidad a la líder.\n• Victory Cheer! y Break It Down!: pueden ser opciones, pero exigen una posición concreta al inicio de la fase tardía.\n• Skills de velocidad de mitad de carrera: ayudan a llegar a la zona de aceleración en posición competitiva.\nLa composición de la sala puede alterar las condiciones de activación; revisa el comportamiento de la Uma en varias simulaciones.",
+          "inline": false
+        },
+        {
+          "name": "⚡ Late Surger",
+          "value": "• Claw Forward: aceleración inmediata a cambio de consumir HP; necesita una posición entre los puestos 4 y 9.\n• Nimble Navigator: opción de respaldo mencionada para estilos que no son Front Runner.\n• Moving Past, and Beyond: posible segunda fuente de aceleración.\nLa skill principal puede fallar por posición, así que prepara una alternativa y comprueba si la stamina restante basta para completar la carrera.",
+          "inline": false
+        },
+        {
+          "name": "🎯 End Closer",
+          "value": "• Encroaching Shadow: aceleración desde la recta que puede ser útil sin depender de una posición tan estrecha.\n• Nimble Navigator: opción que puede ayudar a estilos de retaguardia.\n• Skills de velocidad de mitad de carrera: importantes para no perder demasiado terreno frente a las líderes.\nSi la Uma llega demasiado atrás al tramo final, una aceleración potente puede no bastar para alcanzar al grupo delantero.",
+          "inline": false
+        },
+        {
+          "name": "🟢 Skills verdes para el circuito",
+          "value": "La pista de CM20 permite considerar skills verdes relacionadas con Right-Handed, Nakayama Racecourse, Non-Standard Distance, Wet Conditions, Winter Runner y Cloudy Days. Comprueba el texto de cada skill en Global y su coste. Las verdes útiles pueden aumentar el rendimiento y ayudar a activar Groundwork, pero solo deben comprarse cuando coincidan con las condiciones exactas de la carrera.",
+          "inline": false
+        },
+        {
+          "name": "⛔ Skills que no conviene asumir como útiles",
+          "value": "La guía de CM20 advierte que las skills de aceleración pensadas para la recta final, como Victoria por plancha ☆ y Give Mummy a Hug ♡, no son la elección adecuada para esta zona de aceleración. También se deben revisar las condiciones: una skill que se activa fuera de la ventana de aceleración puede tener poco valor aunque su efecto escrito parezca potente.",
+          "inline": false
+        }
+      ]
+    }
+  }
+}
