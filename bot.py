@@ -26,107 +26,66 @@ intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-# --- BASE DE DATOS DE CMs Y LAS 5 SECCIONES DE UMALATOR ---
+# --- BASE DE DATOS DE CMs (ESTRUCTURA COMPLETA DEFINITIVA) ---
 CM_DATABASE = {
     "sagittarius_cup": {
-        "name": "Sagittarius Cup (Nakayama 2500m)",
-        "track": "Nakayama Turf 2500m (Long) - Right / Inner - Winter - Fair",
+        "name": "Sagittarius Cup",
         "start_time": 1800000000,
-        "end_time": 1800500000,
+        "image_url": None, # Espacio reservado para la imagen del circuito / Tazuna
         "sections": {
-            "track_stats": (
-                "🏟️ **Track Info & Target Stats**\n"
-                "• **Distance:** 2500m (Long)\n"
-                "• **Track:** Nakayama Turf (Right / Inner)\n"
-                "• **Speed Target:** 1200+\n"
-                "• **Stamina Target:** 900+ (Requires 2 Gold Stamina Recoveries)\n"
-                "• **Power Target:** 1000+\n"
-                "• **Guts Target:** 600+\n"
-                "• **Wit Target:** 800+"
+            "track_overview": (
+                "🏟️ **TRACK INFO & GENERAL OVERVIEW**\n\n"
+                "📍 **Pista:** Nakayama Turf 2500m (Long) - Right / Inner - Winter - Fair\n\n"
+                "💡 **Distancia Ideal:** Explicación detallada de la adaptación a la carrera..."
             ),
-            "styles_hierarchy": (
-                "🏆 **Running Styles Hierarchy**\n"
-                "• **Tier S:** Front Runner (Pacing advantage)\n"
-                "• **Tier A:** Pace Chaser / Late Surger\n"
-                "• **Tier B:** End Closer (Requires heavy acceleration skills)"
+            "best_umas": (
+                "🏇 **BEST UMAS & RUNNING STYLES**\n\n"
+                "🏃 **Front Runner:**\n• Uma 1: Explicación fría y técnica de su ulti...\n\n"
+                "🏃 **Pace Chaser:**\n• Uma 1: Explicación...\n\n"
+                "🏃 **Late Surger:**\n• Uma 1: Explicación...\n\n"
+                "🏃 **End Closer:**\n• Uma 1: Explicación...\n\n"
+                "🏃 **Debuffer:**\n• Uma 1: Explicación..."
             ),
-            "umas_inheritance": (
-                "🏇 **Umas & Inheritance**\n"
-                "• **Front Runner:** Seiun Sky, Daiwa Scarlet\n"
-                "• **Pace Chaser:** Narita Brian, Grass Wonder\n"
-                "• **Late Surger:** Mejiro Ryan, Symboli Rudolf\n"
-                "• **End Closer:** Gold Ship\n\n"
-                "🧬 **Key Inherited Skills:**\n"
-                "• *Angling x Scheming* (Seiun Sky)\n"
-                "• *Anabolic* (Mejiro Ryan)\n"
-                "• *Kanata, Until the Skies Scream* (Mejiro Dober)"
+            "inheritance": (
+                "🧬 **INHERITANCE & STAT FACTORS**\n\n"
+                "📊 **Target Stat Factors:**\n• ★6 Power - ★12 Stamina\n\n"
+                "🐴 **Recommended Parents / Grandparents (Herencia & Afinidad):**\n"
+                "• Parent Uma 1: Explicación de por qué es buena herencia / compatibilidad...\n"
+                "• Parent Uma 2: Explicación...\n\n"
+                "⚡ **Key Inherited Unique Skills & Priorities:**\n"
+                "• Unique Skill 1 (Prioridad Alta)\n"
+                "• Unique Skill 2 (Prioridad Media)"
             ),
             "support_cards": (
-                "🎴 **Support Cards (Whale vs F2P)**\n"
-                "• **Whale Deck:** Kitasan Black SSR, Fine Motion SSR, Super Creek SSR, Mr. C.B. SSR\n"
-                "• **F2P Deck:** Speed SSR (Event), Rice Shower SSR (Main Story), Marvelous Sunday SR, Sweep Tosho SR"
+                "🎴 **SUPPORT CARDS (WHALE VS F2P)**\n\n"
+                "🐋 **Decks Whale / P2P:**\n"
+                "• Configuración: 👟3 Speed + 🧠2 Wit + 👥1 Pal\n"
+                "• Opciones por slot...\n"
+                "• Carta a prestar (Borrow): ...\n\n"
+                "🆓 **Decks F2P:**\n"
+                "• Configuración: 👟3 Speed + 🔥1 Guts + 🧠2 Wit\n"
+                "• Opciones F2P por slot..."
             ),
             "skills_priority": (
-                "⚡ **Key Skills & Priority**\n"
-                "• **Core Accels:** *Non-stop Girl*, *Straightaway Spurt*, *Spurt Acceleration*\n"
-                "• **Stamina Recoveries:** *Arc Maestro*, *Cool Down*\n"
-                "• **Mid-leg Skills:** *Proficient Corner*, *Arc Position*"
-            )
-        }
-    },
-    "sprint_cup": {
-        "name": "Sprint Cup (Nakayama 1200m)",
-        "track": "Nakayama Turf 1200m (Short) - Right / Outer - Spring - Fair",
-        "start_time": 1802000000,
-        "end_time": 1802500000,
-        "sections": {
-            "track_stats": (
-                "🏟️ **Track Info & Target Stats**\n"
-                "• **Distance:** 1200m (Short)\n"
-                "• **Track:** Nakayama Turf (Right / Outer)\n"
-                "• **Speed Target:** 1200+ (Max priority)\n"
-                "• **Stamina Target:** 450-500\n"
-                "• **Power Target:** 1100+\n"
-                "• **Guts Target:** 800+\n"
-                "• **Wit Target:** 900+"
-            ),
-            "styles_hierarchy": (
-                "🏆 **Running Styles Hierarchy**\n"
-                "• **Tier S:** Front Runner / Pace Chaser\n"
-                "• **Tier A:** Late Surger\n"
-                "• **Tier B:** End Closer"
-            ),
-            "umas_inheritance": (
-                "🏇 **Umas & Inheritance**\n"
-                "• **Front Runner:** Sakura Bakushin O, Taiki Shuttle\n"
-                "• **Pace Chaser:** Curren Chan, King Halo\n"
-                "• **Late Surger / End Closer:** Air Groove, Nishino Flower\n\n"
-                "🧬 **Key Inherited Skills:**\n"
-                "• *Red Flame* (Maruzensky)\n"
-                "• *Plan X*"
-            ),
-            "support_cards": (
-                "🎴 **Support Cards (Whale vs F2P)**\n"
-                "• **Whale Deck:** Kitasan Black SSR, Sakura Bakushin O SSR, Biko Pegasus SSR\n"
-                "• **F2P Deck:** Eishin Flash SR, King Halo SR, Sweep Tosho SR"
-            ),
-            "skills_priority": (
-                "⚡ **Key Skills & Priority**\n"
-                "• **Core Accels:** *Sprint Turbo*, *Sprint Acceleration*, *Upbeat Spurt*\n"
-                "• **Positioning:** *Sprint Corner*, *Short Distance Straight*"
+                "⚡ **KEY SKILLS, PRIORITY & RANKING POINTS**\n\n"
+                "• **Front Runner Skills:**\n  - Skill 1 [○ 200 pts / ◎ 300 pts] -> Más rentable: ○\n\n"
+                "• **Pace Chaser Skills:**\n  - ...\n\n"
+                "• **Late Surger Skills:**\n  - ...\n\n"
+                "• **End Closer Skills:**\n  - ...\n\n"
+                "• **Debuffer Skills:**\n  - ..."
             )
         }
     }
 }
 
-# --- MENÚ DESPLEGABLE CON LAS 5 SECCIONES EXACTAS ---
+# --- MENÚ DESPLEGABLE CON LAS 5 SECCIONES DEFINITIVAS ---
 class CMSectionSelect(Select):
     def __init__(self, cm_data):
         self.cm_data = cm_data
         options = [
-            discord.SelectOption(label="Track & Stats", value="track_stats", emoji="🏟️"),
-            discord.SelectOption(label="Running Styles Hierarchy", value="styles_hierarchy", emoji="🏆"),
-            discord.SelectOption(label="Umas & Inheritance", value="umas_inheritance", emoji="🏇"),
+            discord.SelectOption(label="Track Info & Overview", value="track_overview", emoji="🏟️"),
+            discord.SelectOption(label="Best Umas & Styles", value="best_umas", emoji="🏇"),
+            discord.SelectOption(label="Inheritance & Factors", value="inheritance", emoji="🧬"),
             discord.SelectOption(label="Support Cards (Whale vs F2P)", value="support_cards", emoji="🎴"),
             discord.SelectOption(label="Key Skills & Priority", value="skills_priority", emoji="⚡")
         ]
@@ -141,7 +100,16 @@ class CMSectionSelect(Select):
             description=content,
             color=discord.Color.gold()
         )
-        embed.set_footer(text="Umalator CM Helper • Usa el menú de abajo para cambiar de sección")
+        
+        # Muestra la Fecha de Inicio solo si está en la Sección 1
+        if section_key == "track_overview":
+            start_ts = self.cm_data["start_time"]
+            embed.add_field(name="📅 Inicia", value=f"<t:{start_ts}:F> (<t:{start_ts}:R>)", inline=False)
+            
+        if self.cm_data.get("image_url"):
+            embed.set_image(url=self.cm_data["image_url"])
+            
+        embed.set_footer(text="Umalator CM Helper")
         
         # Edita el mensaje existente para mantener todo limpio
         await interaction.response.edit_message(embed=embed, view=self.view)
@@ -154,8 +122,7 @@ class CMSectionView(View):
 # --- AUTOCOMPLETADO PARA /CM ---
 async def cm_autocomplete(interaction: discord.Interaction, current: str):
     choices = [
-        app_commands.Choice(name="Sagittarius Cup (Nakayama 2500m)", value="sagittarius_cup"),
-        app_commands.Choice(name="Sprint Cup (Nakayama 1200m)", value="sprint_cup")
+        app_commands.Choice(name="Sagittarius Cup", value="sagittarius_cup")
     ]
     return [choice for choice in choices if current.lower() in choice.name.lower()]
 
@@ -168,26 +135,27 @@ async def slash_cm(interaction: discord.Interaction, nombre_copa: str):
     
     if not cm_data:
         await interaction.response.send_message(
-            "❌ Champions Meeting no encontrada. Por favor elígela usando el autocompletado.",
+            "❌ Champions Meeting no encontrada. Por favor selecciónala de la lista.",
             ephemeral=True
         )
         return
 
-    # Mensaje inicial con Info General + Timestamps de fechas locales
+    # La primera respuesta carga DIRECTAMENTE la Sección 1 (Track Info & Overview)
+    content = cm_data["sections"]["track_overview"]
+    start_ts = cm_data["start_time"]
+
     embed_init = discord.Embed(
         title=f"🏆 {cm_data['name']}",
-        description=(
-            f"📍 **Track Info:** {cm_data['track']}\n\n"
-            "Umalator CM Helper • Usa el menú de abajo para cambiar de sección"
-        ),
+        description=content,
         color=discord.Color.blue()
     )
     
-    start_ts = cm_data["start_time"]
-    end_ts = cm_data["end_time"]
-    embed_init.add_field(name="📅 Inicio", value=f"<t:{start_ts}:F> (<t:{start_ts}:R>)", inline=False)
-    embed_init.add_field(name="🏁 Finalización", value=f"<t:{end_ts}:F> (<t:{end_ts}:R>)", inline=False)
-    embed_init.set_footer(text="Umalator CM Helper • Selecciona una sección en el menú")
+    embed_init.add_field(name="📅 Inicia", value=f"<t:{start_ts}:F> (<t:{start_ts}:R>)", inline=False)
+    
+    if cm_data.get("image_url"):
+        embed_init.set_image(url=cm_data["image_url"])
+        
+    embed_init.set_footer(text="Umalator CM Helper")
 
     await interaction.response.send_message(embed=embed_init, view=CMSectionView(cm_data))
 
