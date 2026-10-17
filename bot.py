@@ -140,3 +140,39 @@ async def slash_cm(interaction: discord.Interaction, nombre_copa: str):
                 
     if not cm_data:
         await interaction.response.send_message(
+            "❌ **Copa no encontrada.** Por favor selecciona una opción de la lista flotante al usar /cm.",
+            ephemeral=True
+        )
+        return
+
+    content = cm_data["sections"]["track_overview"]
+    start_ts = cm_data["start_time"]
+
+    embed_init = discord.Embed(
+        title=f"🏆 {cm_data['name']}",
+        description=content,
+        color=discord.Color.blue()
+    )
+    
+    embed_init.add_field(name="📅 Inicia", value=f"<t:{start_ts}:F> (<t:{start_ts}:R>)", inline=False)
+    
+    if cm_data.get("image_url"):
+        embed_init.set_image(url=cm_data["image_url"])
+        
+    embed_init.set_footer(text="Umalator CM Helper")
+
+    await interaction.response.send_message(embed_init, view=CMSectionView(cm_data))
+
+# --- EVENTO AL ENCENDER ---
+@bot.event
+async def on_ready():
+    try:
+        synced = await bot.tree.sync()
+        print(f"Sincronizados {len(synced)} comandos Slash.")
+    except Exception as e:
+        print(f"Error sincronizando comandos: {e}")
+    print(f'Bot encendido correctamente como {bot.user}')
+
+TOKEN = os.getenv("DISCORD_TOKEN")
+if TOKEN:
+    bot.run(TOKEN)
