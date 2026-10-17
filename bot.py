@@ -7,7 +7,7 @@ from discord import app_commands
 from discord.ext import commands
 from discord.ui import Select, View
 
-# --- SERVIDOR WEB 24/7 ---
+# --- SERVIDOR WEB 24/7 PARA RENDER ---
 class DummyHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
@@ -22,7 +22,7 @@ def run_dummy_server():
 
 threading.Thread(target=run_dummy_server, daemon=True).start()
 
-# --- CARGAR BASE DE DATOS DE COPAS ---
+# --- CARGAR BASE DE DATOS DE LAS 10 CMS ---
 def load_cm_database():
     path = os.path.join("data", "cm.json")
     if os.path.exists(path):
@@ -36,7 +36,7 @@ intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-# --- CREACIÓN DEL EMBED ESTILO TAZUNABOT (DOS FOTOS) ---
+# --- CONSTRUCTOR DE EMBEDS (BANNER ARRIBA Y MAPA ABAJO) ---
 def build_cm_embed(cm_data, section_key):
     embed = discord.Embed(
         color=discord.Color.from_rgb(47, 49, 54) # Estilo Tazuna Dark
@@ -45,7 +45,7 @@ def build_cm_embed(cm_data, section_key):
     if section_key == "track_overview":
         embed.title = cm_data.get("name", "Champions Meeting")
         
-        # Foto 4 (Banner Principal arriba de la información)
+        # Banner oficial de la carrera arriba (Thumbnail / Foto 4)
         if cm_data.get("banner_url"):
             embed.set_thumbnail(url=cm_data["banner_url"])
         
@@ -61,7 +61,7 @@ def build_cm_embed(cm_data, section_key):
         if cm_data.get("summary"):
             embed.add_field(name="Overview & Advice", value=cm_data["summary"], inline=False)
 
-        # Foto 2 (Diagrama de fases del circuito abajo del Embed)
+        # Mapa de fases del circuito abajo en grande (Foto 2)
         if cm_data.get("track_map_url"):
             embed.set_image(url=cm_data["track_map_url"])
 
@@ -84,9 +84,7 @@ def build_cm_embed(cm_data, section_key):
             embed.set_thumbnail(url=cm_data["banner_url"])
 
     embed.set_footer(text="Umalator CM Helper • GameTora Data")
-    return embed
-
-# --- MENÚ SELECTOR DE SECCIONES ---
+    return embed# --- MENÚ DE SECCIONES DE LA GUÍA ---
 class CMSectionSelect(Select):
     def __init__(self, cm_data):
         self.cm_data = cm_data
@@ -110,7 +108,7 @@ class CMSectionView(View):
         super().__init__()
         self.add_item(CMSectionSelect(cm_data))
 
-# --- BÚSQUEDA INTERACTIVA DE CARRERAS / COPAS ("Found matches") ---
+# --- MENÚ DE BÚSQUEDA INTERACTIVA ("Found matches. Pick one:") ---
 class SearchMatchSelect(Select):
     def __init__(self, matches):
         self.matches = matches
@@ -118,7 +116,7 @@ class SearchMatchSelect(Select):
             discord.SelectOption(label=data.get("name", key), value=key, emoji="🏆")
             for key, data in matches.items()
         ]
-        super().__init__(placeholder="Choose a Race / Champions Meeting...", options=options)
+        super().__init__(placeholder="Choose a Champions Meeting...", options=options)
 
     async def callback(self, interaction: discord.Interaction):
         selected_key = self.values[0]
@@ -129,24 +127,22 @@ class SearchMatchSelect(Select):
 class SearchMatchView(View):
     def __init__(self, matches):
         super().__init__()
-        self.add_item(SearchMatchSelect(matches))
-
-# --- COMANDO /race O /cm CON COINCIDENCIAS ---
+        self.add_item(SearchMatchSelect(matches))# --- COMANDO SLASH PRINCIPAL CON BÚSQUEDA ---
 @bot.tree.command(name="cm", description="Busca y muestra guías de Champions Meeting")
-@app_commands.describe(busqueda="Nombre o término de la copa (ej: Sagittarius, Arima, Nakayama)")
+@app_commands.describe(busqueda="Nombre o término de la copa (ej: Sagittarius, Capricorn, Nakayama)")
 async def slash_cm(interaction: discord.Interaction, busqueda: str = None):
     if not CM_DATABASE:
-        await interaction.response.send_message("❌ No hay datos en `data/cm.json`.", ephemeral=True)
+        await interaction.response.send_message("❌ No hay datos cargados en `data/cm.json`.", ephemeral=True)
         return
 
-    # Si no especifica búsqueda, muestra la copa actual por defecto
+    # Si no escribe nada, por defecto muestra la actual (Sagittarius Cup)
     if not busqueda:
-        cm_data = next(iter(CM_DATABASE.values()))
+        cm_data = CM_DATABASE.get("sagittarius_cup", next(iter(CM_DATABASE.values())))
         embed = build_cm_embed(cm_data, "track_overview")
         await interaction.response.send_message(embed=embed, view=CMSectionView(cm_data))
         return
 
-    # Filtrar coincidencias
+    # Buscar coincidencias exactas o parciales
     matches = {
         key: data for key, data in CM_DATABASE.items()
         if busqueda.lower() in data.get("name", "").lower() or busqueda.lower() in key.lower() or busqueda.lower() in data.get("track", {}).get("venue", "").lower()
@@ -155,11 +151,11 @@ async def slash_cm(interaction: discord.Interaction, busqueda: str = None):
     if not matches:
         await interaction.response.send_message(f"🔍 No matches found for **{busqueda}**.", ephemeral=True)
     elif len(matches) == 1:
-        cm_data = list(matches.values())[0]
+        cm_data = next(iter(matches.values()))
         embed = build_cm_embed(cm_data, "track_overview")
         await interaction.response.send_message(embed=embed, view=CMSectionView(cm_data))
     else:
-        # Si hay 2 o más coincidencias, muestra el menú "Found X matches. Pick one:" (Foto 3)
+        # Si hay varias coincidencias, despliega el menú interactivo estilo TazunaBot
         await interaction.response.send_message(
             f"🔍 **Found {len(matches)} matches. Pick one:**",
             view=SearchMatchView(matches)
@@ -168,9 +164,10 @@ async def slash_cm(interaction: discord.Interaction, busqueda: str = None):
 @bot.event
 async def on_ready():
     try:
-        await bot.tree.sync()
+        synced = await bot.tree.sync()
+        print(f"Sincronizados {len(synced)} comandos Slash.")
     except Exception as e:
-        print(f"Error sync: {e}")
+        print(f"Error sincronizando comandos: {e}")
     print(f"Bot listo como {bot.user}")
 
 TOKEN = os.getenv("DISCORD_TOKEN")
