@@ -93,11 +93,11 @@ class CMSectionSelect(Select):
 
     async def callback(self, interaction: discord.Interaction):
         section_key = self.values[0]
-        content = self.cm_data["sections"].get(section_key, "Información no disponible.")
+        text_content = self.cm_data["sections"].get(section_key, "Información no disponible.")
         
         embed = discord.Embed(
             title=f"🏆 {self.cm_data['name']}",
-            description=content,
+            description=text_content,
             color=discord.Color.gold()
         )
         
@@ -109,7 +109,9 @@ class CMSectionSelect(Select):
             embed.set_image(url=self.cm_data["image_url"])
             
         embed.set_footer(text="Umalator CM Helper")
-        await interaction.response.edit_message(embed=embed, view=self.view)
+        
+        # Corrección: Pasamos el contenido como embed=embed para evitar el error de objeto en texto
+        await interaction.response.edit_message(content=None, embed=embed, view=self.view)
 
 class CMSectionView(View):
     def __init__(self, cm_data):
@@ -145,12 +147,12 @@ async def slash_cm(interaction: discord.Interaction, nombre_copa: str):
         )
         return
 
-    content = cm_data["sections"]["track_overview"]
+    text_content = cm_data["sections"]["track_overview"]
     start_ts = cm_data["start_time"]
 
     embed_init = discord.Embed(
         title=f"🏆 {cm_data['name']}",
-        description=content,
+        description=text_content,
         color=discord.Color.blue()
     )
     
@@ -161,7 +163,21 @@ async def slash_cm(interaction: discord.Interaction, nombre_copa: str):
         
     embed_init.set_footer(text="Umalator CM Helper")
 
-    await interaction.response.send_message(embed_init, view=CMSectionView(cm_data))
+    await interaction.response.send_message(embed=embed_init, view=CMSectionView(cm_data))
+
+# --- EVENTO AL ENCENDER ---
+@bot.event
+async def on_ready():
+    try:
+        synced = await bot.tree.sync()
+        print(f"Sincronizados {len(synced)} comandos Slash.")
+    except Exception as e:
+        print(f"Error sincronizando comandos: {e}")
+    print(f'Bot encendido correctamente como {bot.user}')
+
+TOKEN = os.getenv("DISCORD_TOKEN")
+if TOKEN:
+    bot.run(TOKEN) interaction.response.send_message(embed_init, view=CMSectionView(cm_data))
 
 # --- EVENTO AL ENCENDER ---
 @bot.event
