@@ -4,6 +4,7 @@ import json
 import urllib.request
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import discord
+from discord import app_commands
 from discord.ext import commands
 from discord.ui import Select, View
 
@@ -52,7 +53,7 @@ ACCEL_DATABASE = {
 }
 
 def fetch_latest_cm_data():
-    """Consulta segura a la API externa para evitar bloqueos."""
+    """Consulta segura a la API/web externa para evitar bloqueos."""
     try:
         req = urllib.request.Request(
             "https://raw.githubusercontent.com/uma-musume-db/cm-data/main/current_cm.json",
@@ -111,26 +112,27 @@ class CMView(View):
         super().__init__()
         self.add_item(CMSelect(cm_info))
 
-# --- COMANDO PRINCIPAL PREFIJO (!) ---
-@bot.command(name="cm")
-async def cmd_cm(ctx):
+# --- SLASH COMMANDS (CON /) ---
+
+@bot.tree.command(name="cm", description="Muestra el calendario y los accels meta de la Champions Meeting actual")
+async def slash_cm(interaction: discord.Interaction):
     cm_info = fetch_latest_cm_data()
     embed = discord.Embed(
         title="🏆 Guía de Champions Meeting",
-        description="Selecciona una opción del menú para consultar el horario dinámico y los accels meta.",
+        description="Selecciona una opción del menú desplegable para consultar las fechas locales y los accels recomendados.",
         color=discord.Color.blue()
     )
-    await ctx.send(embed=embed, view=CMView(cm_info))
+    await interaction.response.send_message(embed=embed, view=CMView(cm_info))
 
 # --- EVENTO AL ENCENDER ---
 @bot.event
 async def on_ready():
-    # Sincronizar árbol de comandos para evitar errores de comandos desincronizados
     try:
+        # Sincroniza los Slash Commands con Discord globalmente
         synced = await bot.tree.sync()
-        print(f"Sincronizados {len(synced)} comandos slash.")
+        print(f"Sincronizados exitosamente {len(synced)} comandos Slash.")
     except Exception as e:
-        print(f"Error sincronizando comandos: {e}")
+        print(f"Error al sincronizar comandos Slash: {e}")
     print(f'Bot encendido con éxito como {bot.user}')
 
 # --- INICIALIZAR BOT ---
