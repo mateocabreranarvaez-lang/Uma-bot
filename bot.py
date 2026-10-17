@@ -1,14 +1,13 @@
 import os
 import threading
-import json
-import urllib.request
-from http.server import HTTPServer, BaseHTTPRequestHandler
 import discord
 from discord import app_commands
 from discord.ext import commands
 from discord.ui import Select, View
 
 # --- MINI SERVIDOR WEB PARA RENDER ---
+from http.server import HTTPServer, BaseHTTPRequestHandler
+
 class DummyHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
@@ -28,116 +27,120 @@ intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-# --- BASE DE DATOS DE ACCELS META ---
-ACCEL_DATABASE = {
-    "Short": (
-        "• **Runner:** *Angling x Scheming* (Seiun Sky) + *Sprint Turbo*.\n"
-        "• **Leader:** *Red Flame* / Accels de recta corta.\n"
-        "• **Betweener / Chaser:** *Anabolic* (Ryan) + *Sprint Acceleration*."
-    ),
-    "Mile": (
-        "• **Runner:** *Angling x Scheming* (Seiun Sky Inherit - Obligatorio).\n"
-        "• **Leader:** *Red Flame* / Accels de aceleración en recta final.\n"
-        "• **Betweener / Chaser:** *Anabolic* (Ryan Inherit) + *Non-stop Girl*."
-    ),
-    "Medium": (
-        "• **Runner:** *Angling x Scheming* + *Do Ya Breaking*.\n"
-        "• **Leader:** *Victory Shot!* (Taiki) / Accels de 3ra curva.\n"
-        "• **Betweener / Chaser:** *Anabolic* + *Kanata* (Dober Inherit)."
-    ),
-    "Long": (
-        "• **Runner:** *Angling x Scheming* + Control estricto de Stamina/Gold Recovery.\n"
-        "• **Leader:** *Shadow Break* (Narita Brian).\n"
-        "• **Betweener / Chaser:** *Anabolic* + *Kanata* + Gold Recovery skills."
-    )
+# --- BASE DE DATOS DE CHAMPIONS MEETINGS ESPECÍFICAS ---
+# Puedes cambiar los títulos, pistas y timestamps aquí fácilmente.
+CM_DATABASE = {
+    "sagittarius_cup": {
+        "title": "🏆 Sagittarius Cup (Long / 2500m)",
+        "track": "Nakayama 2500m (Long - Derecha - Interior)",
+        "category": "Long",
+        "start_time": 1800000000,  # Reemplaza con tu timestamp real de Hammertime
+        "end_time": 1800500000,
+        "accels": (
+            "• **Runner:** *Angling x Scheming* (Seiun Sky) + *Do Ya Breaking*.\n"
+            "• **Leader:** *Shadow Break* (Narita Brian).\n"
+            "• **Betweener / Chaser:** *Anabolic* (Ryan) + *Kanata* (Dober)."
+        )
+    },
+    "sprint_cup": {
+        "title": "🏆 Champions Meeting de Sprint",
+        "track": "Nakayama 1200m (Sprint - Derecha - Exterior)",
+        "category": "Short",
+        "start_time": 1802000000,  # Reemplaza con tu timestamp real
+        "end_time": 1802500000,
+        "accels": (
+            "• **Runner:** *Angling x Scheming* + *Sprint Turbo*.\n"
+            "• **Leader:** *Red Flame* / Accels de recta corta.\n"
+            "• **Betweener / Chaser:** *Anabolic* + *Non-stop Girl*."
+        )
+    },
+    "tokyo_mile": {
+        "title": "🏆 Champions Meeting: Tokyo Mile",
+        "track": "Tokyo 1600m (Mile - Izquierda - Línea recta larga)",
+        "category": "Mile",
+        "start_time": 1815782400,
+        "end_time": 1816300800,
+        "accels": (
+            "• **Runner:** *Angling x Scheming* (Obligatorio).\n"
+            "• **Leader:** *Red Flame* / Accels de aceleración en recta final.\n"
+            "• **Betweener / Chaser:** *Anabolic* + *Non-stop Girl*."
+        )
+    }
 }
 
-def fetch_latest_cm_data():
-    """Consulta segura a la API/web externa para evitar bloqueos."""
-    try:
-        req = urllib.request.Request(
-            "https://raw.githubusercontent.com/uma-musume-db/cm-data/main/current_cm.json",
-            headers={'User-Agent': 'Mozilla/5.0'}
-        )
-        with urllib.request.urlopen(req, timeout=2) as response:
-            return json.loads(response.read().decode())
-    except Exception as e:
-        print(f"Aviso (usando respaldo): {e}")
-        return {
-            "name": "Champions Meeting (Próxima)",
-            "track": "Tokyo 1600m (Mile)",
-            "category": "Mile",
-            "start_time": 1815782400,
-            "end_time": 1816300800
-        }
-
-# --- INTERFAZ UI (SELECT MENU & EMBED) ---
+# --- MENÚ DESPLEGABLE CON MÚLTIPLES OPCIONES ---
 class CMSelect(Select):
-    def __init__(self, cm_info):
-        self.cm_info = cm_info
+    def __init__(self):
         options = [
             discord.SelectOption(
-                label=cm_info.get("name", "Champions Meeting Actual"),
-                description=f"Pista: {cm_info.get('track', 'Tokyo 1600m')}",
-                value="cm_auto",
+                label="Sagittarius Cup (Long)",
+                description="Nakayama 2500m",
+                value="sagittarius_cup",
+                emoji="🎯"
+            ),
+            discord.SelectOption(
+                label="Próxima CM de Sprint",
+                description="Nakayama 1200m",
+                value="sprint_cup",
+                emoji="⚡"
+            ),
+            discord.SelectOption(
+                label="CM Tokyo 1600m (Mile)",
+                description="Tokyo 1600m",
+                value="tokyo_mile",
                 emoji="🏆"
             )
         ]
-        super().__init__(placeholder="Selecciona una Champions Meeting...", options=options)
+        super().__init__(placeholder="Elige una Champions Meeting para consultar...", options=options)
 
     async def callback(self, interaction: discord.Interaction):
-        category = self.cm_info.get("category", "Mile")
-        accels = ACCEL_DATABASE.get(category, ACCEL_DATABASE["Mile"])
+        cm = CM_DATABASE.get(self.values[0])
         
-        embed = discord.Embed(
-            title=f"🏆 {self.cm_info.get('name')}",
-            description=f"📍 **Pista:** {self.cm_info.get('track')}",
-            color=discord.Color.gold()
-        )
-        
-        start_ts = self.cm_info.get("start_time", 1815782400)
-        end_ts = self.cm_info.get("end_time", 1816300800)
-        
-        inicio_fmt = f"<t:{start_ts}:F> (<t:{start_ts}:R>)"
-        fin_fmt = f"<t:{end_ts}:F> (<t:{end_ts}:R>)"
-        
-        embed.add_field(name="📅 Inicio", value=inicio_fmt, inline=False)
-        embed.add_field(name="🏁 Finalización", value=fin_fmt, inline=False)
-        embed.add_field(name="⚡ Accels Meta Recomendados", value=accels, inline=False)
-        
-        await interaction.response.send_message(embed=embed, ephemeral=True)
+        if cm:
+            embed = discord.Embed(
+                title=cm["title"],
+                description=f"📍 **Pista:** {cm['track']}",
+                color=discord.Color.gold()
+            )
+            
+            start_ts = cm["start_time"]
+            end_ts = cm["end_time"]
+            
+            inicio_fmt = f"<t:{start_ts}:F> (<t:{start_ts}:R>)"
+            fin_fmt = f"<t:{end_ts}:F> (<t:{end_ts}:R>)"
+            
+            embed.add_field(name="📅 Inicio", value=inicio_fmt, inline=False)
+            embed.add_field(name="🏁 Finalización", value=fin_fmt, inline=False)
+            embed.add_field(name="⚡ Accels Meta Recomendados", value=cm["accels"], inline=False)
+            
+            # NOTA: Sin ephemeral=True para que salga visible para todo el canal
+            await interaction.response.send_message(embed=embed)
 
 class CMView(View):
-    def __init__(self, cm_info):
+    def __init__(self):
         super().__init__()
-        self.add_item(CMSelect(cm_info))
+        self.add_item(CMSelect())
 
-# --- SLASH COMMANDS (CON /) ---
-
-@bot.tree.command(name="cm", description="Muestra el calendario y los accels meta de la Champions Meeting actual")
+# --- SLASH COMMAND ---
+@bot.tree.command(name="cm", description="Muestra el menú para consultar los datos y horarios de las Champions Meetings")
 async def slash_cm(interaction: discord.Interaction):
-    cm_info = fetch_latest_cm_data()
     embed = discord.Embed(
-        title="🏆 Guía de Champions Meeting",
-        description="Selecciona una opción del menú desplegable para consultar las fechas locales y los accels recomendados.",
+        title="🏆 Guía de Champions Meeting - Uma Musume",
+        description="Selecciona en el menú desplegable de abajo la Champions Meeting que quieras consultar:",
         color=discord.Color.blue()
     )
-    await interaction.response.send_message(embed=embed, view=CMView(cm_info))
+    await interaction.response.send_message(embed=embed, view=CMView())
 
 # --- EVENTO AL ENCENDER ---
 @bot.event
 async def on_ready():
     try:
-        # Sincroniza los Slash Commands con Discord globalmente
         synced = await bot.tree.sync()
-        print(f"Sincronizados exitosamente {len(synced)} comandos Slash.")
+        print(f"Sincronizados {len(synced)} comandos Slash.")
     except Exception as e:
-        print(f"Error al sincronizar comandos Slash: {e}")
-    print(f'Bot encendido con éxito como {bot.user}')
+        print(f"Error al sincronizar comandos: {e}")
+    print(f'Bot encendido correctamente como {bot.user}')
 
-# --- INICIALIZAR BOT ---
 TOKEN = os.getenv("DISCORD_TOKEN")
 if TOKEN:
     bot.run(TOKEN)
-else:
-    print("Error: No se encontró la variable DISCORD_TOKEN.")
