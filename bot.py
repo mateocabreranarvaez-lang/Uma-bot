@@ -26,7 +26,7 @@ intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-# --- BASE DE DATOS COMPLETA DE CMs BASADA EN GAMETORA ---
+# --- BASE DE DATOS COMPLETA DE CMs (GAMETORA + UMALATOR) ---
 CM_DATABASE = {
     "taurus_cup": {
         "name": "Taurus Cup (Tokyo 2400m)",
@@ -139,78 +139,7 @@ CM_DATABASE = {
         }
     },
     "capricorn_cup": {
-        "name": "Capricorn Cup (Chukyo 1200m)",
-        "start_time": 1802000000,
-        "image_url": None,
-        "sections": {
-            "track_overview": (
-                "🏟️ **TRACK INFO & GENERAL OVERVIEW**\n\n"
-                "📍 **Pista:** Chukyo Turf 1200m (Short) - Left - Winter - Firm\n\n"
-                "💡 **Distancia Ideal:** Máxima prioridad en velocidad pura y aceleración explosiva en recta corta."
-            ),
-            "best_umas": (
-                "🏇 **BEST UMAS & RUNNING STYLES**\n\n"
-                "🏃 **Front Runner:** Sakura Bakushin O, Taiki Shuttle\n"
-                "🏃 **Pace Chaser:** Curren Chan\n"
-                "🏃 **Late Surger:** Air Groove\n"
-                "🏃 **End Closer:** Nishino Flower\n"
-                "🏃 **Debuffer:** Grass Wonder"
-            ),
-            "inheritance": (
-                "🧬 **INHERITANCE & STAT FACTORS**\n\n"
-                "📊 **Target Stat Factors:**\n• ★9 Speed - ★9 Power\n\n"
-                "🐴 **Recommended Parents / Grandparents:**\n• Maruzensky (*Red Flame*)\n\n"
-                "⚡ **Key Inherited Unique Skills & Priorities:**\n• *Red Flame* [Prioridad Alta]"
-            ),
-            "support_cards": (
-                "🎴 **SUPPORT CARDS (WHALE VS F2P)**\n\n"
-                "🐋 **Decks Whale / P2P:**\n• 👟3 Speed + 🔥2 Guts + 🧠1 Wit\n• Borrow: Kitasan Black SSR\n\n"
-                "🆓 **Decks F2P:**\n• 👟3 Speed + 🔥1 Guts + 🧠2 Wit"
-            ),
-            "skills_priority": (
-                "⚡ **KEY SKILLS, PRIORITY & RANKING POINTS**\n\n"
-                "• *Sprint Turbo* [○ 180 pts / ◎ 280 pts]\n"
-                "• *Non-stop Girl* [○ 200 pts / ◎ 320 pts]"
-            )
-        }
-    }
-}
-
-# --- MENÚ DESPLEGABLE CON LAS 5 SECCIONES DEFINITIVAS ---
-class CMSectionSelect(Select):
-    def __init__(self, cm_data):
-        self.cm_data = cm_data
-        options = [
-            discord.SelectOption(label="Track Info & Overview", value="track_overview", emoji="🏟️"),
-            discord.SelectOption(label="Best Umas & Styles", value="best_umas", emoji="🏇"),
-            discord.SelectOption(label="Inheritance & Factors", value="inheritance", emoji="🧬"),
-            discord.SelectOption(label="Support Cards (Whale vs F2P)", value="support_cards", emoji="🎴"),
-            discord.SelectOption(label="Key Skills & Priority", value="skills_priority", emoji="⚡")
-        ]
-        super().__init__(placeholder="SELECCIONA UNA SECCIÓN DE LA CM...", options=options)
-
-    async def callback(self, interaction: discord.Interaction):
-        section_key = self.values[0]
-        content = self.cm_data["sections"].get(section_key, "Información no disponible.")
-        
-        embed = discord.Embed(
-            title=f"🏆 {self.cm_data['name']}",
-            description=content,
-            color=discord.Color.gold()
-        )
-        
-        # Muestra la Fecha de Inicio solo en la Sección 1
-        if section_key == "track_overview":
-            start_ts = self.cm_data["start_time"]
-            embed.add_field(name="📅 Inicia", value=f"<t:{start_ts}:F> (<t:{start_ts}:R>)", inline=False)
-            
-        if self.cm_data.get("image_url"):
-            embed.set_image(url=self.cm_data["image_url"])
-            
-        embed.set_footer(text="Umalator CM Helper")
-        
-        # Edita el mensaje existente sobre sí mismo de forma limpia
-        await interaction.response.edit_message(embed=embed, view=self.view)
+        "name": "Capricorn Cup (Chukyo 12d, view=self.view)
 
 class CMSectionView(View):
     def __init__(self, cm_data):
