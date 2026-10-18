@@ -1,0 +1,230 @@
+{
+ "taurus_cup": {
+  "name": "Taurus Cup 2026",
+  "number": "13",
+  "gametora_url": "https://gametora.com/umamusume/events/champions-meeting",
+  "banner_url": "https://gametora.com/images/umamusume/en/race_banners/thum_race_rt_000_1009_00.png",
+  "track_map_url": "maps/taurus_cup.png",
+  "umalator_url": "https://dev.umalator.app/#H4sIAAAAAAAACt2PsWrEMBBE%2F2VqFT6THEHdlekCV4YrhLV2xFlao11hgvG%2Fh3USQvIJ6d7Miidmw8CtCj1H%2BFN37s4OU%2BVWLDqsFPSN6sFCQbgcqCkTfO8gIS8zCfxj1zm0HE7wG7jpmNSMgIMsRGbr7YloyKmE77jwavYn46mpwD8Yrkki568gWoPS9A6PK5U7NzjEJBrKQJdFk7ZIdrOvWh3Dr%2FaCH8GfOjPHzxH3NM8C%2F3pzGLkOFK%2FWvLAkTVwEftv3Y13%2FX9ftH6lrXHsHAgAA",
+  "map_id": "Tokyo 2400m (counterclockwise)",
+  "course_id": "10606",
+  "track": {
+   "venue": "Tokyo",
+   "distance_m": "Medium (2400m)",
+   "surface": "Turf",
+   "conditions": "Spring • Firm • Sunny • Left-Handed",
+   "similar": "Japanese Derby (Tokyo Yushun), Japanese Oaks, Japan Cup"
+  },
+  "summary": "",
+  "sections": {}
+ },
+ "gemini_cup": {
+  "name": "Gemini Cup 2026",
+  "number": "14",
+  "gametora_url": "https://gametora.com/umamusume/events/champions-meeting",
+  "banner_url": "https://gametora.com/images/umamusume/en/race_banners/thum_race_rt_000_1007_00.png",
+  "track_map_url": "maps/gemini_cup.png",
+  "umalator_url": "https://dev.umalator.app/#H4sIAAAAAAAACt2PsWrEMBBE%2F2VqFT6ThEPdlekCV4YUwlo74iyt0a4wwfjfw%2FoSQvIJ6d7Miidmw8CtCj1H%2BFP31PUOU%2BVWLDqsFPSd6sFCQbgcqCkTfO8gIS8zCfxj1zm0HE7wG7jpmNSMgIMsRGbr7YloyKmE77jwavaz8dRU4B8M1ySR81cQrUFp%2BoDHlcqNGxxiEg1loMuiSVsku9lXrY7hV3vBj%2BBPnZnjfcQtzbPAv745jFwHildrXliSJi4Cv%2B37sa7%2Fr%2Bv2T0b2dw0HAgAA",
+  "map_id": "Tokyo 1600m (counterclockwise)",
+  "course_id": "10602",
+  "track": {
+   "venue": "Tokyo",
+   "distance_m": "Mile (1600m)",
+   "surface": "Turf",
+   "conditions": "Spring • Firm • Sunny • Left-Handed",
+   "similar": "NHK Mile Cup, Yasuda Kinen"
+  },
+  "summary": "",
+  "sections": {}
+ },
+ "cancer_cup": {
+  "name": "Cancer Cup 2026",
+  "number": "15",
+  "gametora_url": "https://gametora.com/umamusume/events/champions-meeting",
+  "banner_url": "https://gametora.com/images/umamusume/en/race_banners/thum_race_rt_000_1012_00.png",
+  "track_map_url": "maps/cancer_cup.png",
+  "umalator_url": "https://dev.umalator.app/#H4sIAAAAAAAACt2PQU7EMAxF7%2FLXWXQqQJDdLNkhzRKxiBq3WNPEVeyoQlXvjtIBITgCu%2B9n61l%2FwyC1KD1H%2BFP31D04TEVqjvC9w0rB3qkcWSmo5CMaJ7qxkJaZFP6%2B6xxqCif4DVJtZGtGwEEXoibv24laSJzD97jI2uyPLU%2FVFP6uxZU1Svoa1Eowmj7gcaF8lQqHyGohD3RejK1Garv2qpYx%2FKJn%2FAj%2B4CRyK6lXnmeFf31zGKUMFC%2BNvIiysWSF3%2Fb9aNf%2F13b7J%2BdYrPwHAgAA",
+  "map_id": "Hanshin 2200m (inner) (clockwise)",
+  "course_id": "10906",
+  "track": {
+   "venue": "Hanshin",
+   "distance_m": "Medium (2200m)",
+   "surface": "Turf",
+   "conditions": "Summer • Good • Cloudy • Right-Handed",
+   "similar": "Takarazuka Kinen"
+  },
+  "summary": "",
+  "sections": {}
+ },
+ "leo_cup": {
+  "name": "Leo Cup 2026",
+  "number": "16",
+  "gametora_url": "https://gametora.com/umamusume/events/champions-meeting",
+  "banner_url": "https://gametora.com/images/umamusume/en/race_banners/thum_race_rt_000_1013_00.png",
+  "track_map_url": "maps/leo_cup.png",
+  "umalator_url": "https://dev.umalator.app/#H4sIAAAAAAAACt2PsWrEMBBE%2F2VqFbbJQVB3ZbrAlSGFsNaOOEtrtCtMMP73sE5CSD4h3ZtZ8cTsGLlVoacI33eXrneYK7di0WGjoG9UTxYKwgV%2BcNCU6QQJeV1I4C9d59By6OF3cNMpqRkBB1mJzDbYE9GQUwnfceXN7I%2FGc1OBfzDckkTOX0G0BqX5HR43KnducIhJNJSRrqsmbZHsZl%2B1OoVf7RU%2Fgj91Zo6fI%2B5pWQT%2B5dVh4jpSvFnzzJI0cRH4%2FTjOdcN%2FXXd8ACrYoscHAgAA",
+  "map_id": "Nakayama 1200m (outer) (clockwise)",
+  "course_id": "10501",
+  "track": {
+   "venue": "Nakayama",
+   "distance_m": "Sprint (1200m)",
+   "surface": "Turf",
+   "conditions": "Summer • Firm • Sunny • Right-Handed",
+   "similar": "Sprinters Stakes"
+  },
+  "summary": "",
+  "sections": {}
+ },
+ "virgo_cup": {
+  "name": "Virgo Cup 2026",
+  "number": "17",
+  "gametora_url": "https://gametora.com/umamusume/events/champions-meeting",
+  "banner_url": "https://gametora.com/images/umamusume/en/race_banners/thum_race_rt_000_1102_00.png",
+  "track_map_url": "maps/virgo_cup.png",
+  "umalator_url": "https://dev.umalator.app/#H4sIAAAAAAAACt2PPWrEMBCF7%2FJqFbY3gTDdlukCW4YthDV2xFoaoxlhgvHdgzYJITlCuvczfMPbMUotys8B1Pd9d3KYi9QcQIPDxt7euIB6B2WvkkEnB4uJ7736tC6soMeuc6jJ96AdUm2K1oiAg67MDT60EzWfYvbfdpWt0Z%2Banqsp6KHJLWqQ9GXUijee30G4cL5JhUOIaj6PfF4tWg3cuvaqlsn%2FSs%2F4AfyJk8jnSL3FZVHQ69VhkjJyuLTkRTRalKyg%2FTju64b%2Fuu74AIpADhkHAgAA",
+  "map_id": "Ooi 2000m (clockwise) (dirt)",
+  "course_id": "11103",
+  "track": {
+   "venue": "Ooi",
+   "distance_m": "Medium (2000m)",
+   "surface": "Dirt",
+   "conditions": "Autumn • Good • Sunny • Right-Handed",
+   "similar": "Japan Dirt Derby, Tokyo Daishoten"
+  },
+  "summary": "",
+  "sections": {}
+ },
+ "libra_cup": {
+  "name": "Libra Cup 2026",
+  "number": "18",
+  "gametora_url": "https://gametora.com/umamusume/events/champions-meeting",
+  "banner_url": "https://gametora.com/images/umamusume/en/race_banners/thum_race_rt_000_1022_00.png",
+  "track_map_url": "maps/libra_cup.png",
+  "umalator_url": "",
+  "map_id": "Hanshin 1600m (outer) (clockwise)",
+  "course_id": "10903",
+  "track": {
+   "venue": "Hanshin",
+   "distance_m": "Mile (1600m)",
+   "surface": "Turf",
+   "conditions": "Autumn • Firm • Cloudy • Right-Handed",
+   "similar": "Asahi Hai Futurity Stakes, Hanshin Juvenile Fillies, Oka Sho"
+  },
+  "summary": "",
+  "sections": {}
+ },
+ "scorpio_cup": {
+  "name": "Scorpio Cup 2026",
+  "number": "19",
+  "gametora_url": "https://gametora.com/umamusume/events/champions-meeting",
+  "banner_url": "https://gametora.com/images/umamusume/en/race_banners/thum_race_rt_000_1017_00.png",
+  "track_map_url": "maps/scorpio_cup.png",
+  "umalator_url": "",
+  "map_id": "Kyoto 2200m (outer) (clockwise)",
+  "course_id": "10808",
+  "track": {
+   "venue": "Kyoto",
+   "distance_m": "Medium (2200m)",
+   "surface": "Turf",
+   "conditions": "Autumn • Firm • Sunny • Right-Handed",
+   "similar": "Queen Elizabeth II Cup"
+  },
+  "summary": "",
+  "sections": {}
+ },
+ "sagittarius_cup": {
+  "name": "Sagittarius Cup 2026",
+  "number": "20",
+  "gametora_url": "https://gametora.com/umamusume/events/champions-meeting",
+  "banner_url": "https://gametora.com/images/umamusume/en/race_banners/thum_race_rt_000_1023_00.png",
+  "track_map_url": "maps/sagittarius_cup.png",
+  "umalator_url": "",
+  "map_id": "Nakayama 2500m (inner) (clockwise)",
+  "course_id": "10506",
+  "track": {
+   "venue": "Nakayama",
+   "distance_m": "Long (2500m)",
+   "surface": "Turf",
+   "conditions": "Winter • Good • Cloudy • Right-Handed",
+   "similar": "Arima Kinen"
+  },
+  "summary": "",
+  "sections": {}
+ },
+ "capricorn_cup": {
+  "name": "Capricorn Cup 2026",
+  "number": "21",
+  "gametora_url": "https://gametora.com/umamusume/events/champions-meeting",
+  "banner_url": "https://gametora.com/images/umamusume/en/race_banners/thum_race_rt_000_1002_00.png",
+  "track_map_url": "maps/capricorn_cup.png",
+  "umalator_url": "",
+  "map_id": "Chukyo 1200m (counterclockwise)",
+  "course_id": "10701",
+  "track": {
+   "venue": "Chukyo",
+   "distance_m": "Sprint (1200m)",
+   "surface": "Turf",
+   "conditions": "Winter • Firm • Sunny • Left-Handed",
+   "similar": "Takamatsunomiya Kinen"
+  },
+  "summary": "",
+  "sections": {}
+ },
+ "aquarius_cup": {
+  "name": "Aquarius Cup 2026",
+  "number": "22",
+  "gametora_url": "https://gametora.com/umamusume/events/champions-meeting",
+  "banner_url": "https://gametora.com/images/umamusume/en/race_banners/thum_race_rt_000_1001_00.png",
+  "track_map_url": "maps/aquarius_cup.png",
+  "umalator_url": "",
+  "map_id": "Tokyo 1600m (counterclockwise) (dirt)",
+  "course_id": "10611",
+  "track": {
+   "venue": "Tokyo",
+   "distance_m": "Mile (1600m)",
+   "surface": "Dirt",
+   "conditions": "Winter • Soft • Snow • Left-Handed",
+   "similar": "February Stakes"
+  },
+  "summary": "",
+  "sections": {}
+ },
+ "pisces_cup": {
+  "name": "Pisces Cup 2026",
+  "number": "23",
+  "gametora_url": "https://gametora.com/umamusume/events/champions-meeting",
+  "banner_url": "https://media.gametora.com/umamusume/races/banners/en/1024.png",
+  "track_map_url": "maps/pisces_cup.png",
+  "umalator_url": "",
+  "map_id": "Nakayama 2000m (inner) (clockwise)",
+  "course_id": "10504",
+  "track": {
+   "venue": "Nakayama",
+   "distance_m": "Medium (2000m)",
+   "surface": "Turf",
+   "conditions": "Spring • Firm • Sunny • Right-Handed",
+   "similar": "Hopeful Stakes, Satsuki Sho"
+  },
+  "summary": "",
+  "sections": {}
+ },
+ "aries_cup": {
+  "name": "Aries Cup 2026",
+  "number": "24",
+  "gametora_url": "https://gametora.com/umamusume/events/champions-meeting",
+  "banner_url": "https://gametora.com/images/umamusume/en/race_banners/thum_race_rt_000_1006_00.png",
+  "track_map_url": "maps/aries_cup.png",
+  "umalator_url": "",
+  "map_id": "Kyoto 3200m (outer) (clockwise)",
+  "course_id": "10811",
+  "track": {
+   "venue": "Kyoto",
+   "distance_m": "Long (3200m)",
+   "surface": "Turf",
+   "conditions": "Spring • Firm • Sunny • Right-Handed",
+   "similar": "Tenno Sho Spring"
+  },
+  "summary": "",
+  "sections": {}
+ }
+}

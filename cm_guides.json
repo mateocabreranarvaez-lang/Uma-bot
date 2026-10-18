@@ -1,0 +1,542 @@
+{
+ "_config": {
+  "current_cm": "sagittarius_cup"
+ },
+ "sagittarius_cup": {
+  "summary": "**Sagittarius Cup (CM20)** se corre en **Nakayama · Turf · 2500m (Long)**, curso interior, **Right-Handed**, **Winter**, **Cloudy** y terreno **Good**. Está basada en el **Arima Kinen** y, según Game8, se disputó del 7 al 16 de octubre de 2026.\n\n**Cómo se decide:** la fase final (*Final Leg*) empieza en el metro **1667**, en plena **recta trasera**, y una **curva** llega solo 33 m después. Por eso mandan las aceleraciones que se activan **en recta** (**Straightaway Spurt / Encroaching Shadow**, **Victory Cheer!**, **Break It Down!**) y las skills de curva final. Hay 3 subidas y 1 bajada: ninguna sirve para acelerar, así que **Highlander** y **Straight Descent** no valen la pena. La subida final (**+2%**, metros 2325–2435) pega justo antes de una recta de meta de solo 310 m, de ahí que **Power** pese.\n\n**Meta de estilos:** **Front Runner** domina (sus aceleraciones no piden condiciones difíciles). **End Closer** es el siguiente. **Late Surger** depende de cómo salga el lobby y **Pace Chaser** es el más complicado. Si puedes, entrena en **Grand Concert**: da más puntos de skill y topes de Speed más altos.",
+  "sections": {
+   "track_overview": {
+    "fields": [
+     {
+      "name": "🗺️ Trazado y fases",
+      "value": "**Fases:** Opening 0–417 m · Middle 417–1667 m · **Final Leg 1667–2083 m** · Last Spurt 2083–2500 m.\n**Curvas (6):** C3 100–246 · C4 246–496 · C1 875–1125 · C2 1125–1375 · C3 1700–1950 · C4 1950–2190. **Rectas:** 496–875, trasera 1375–1700 y **final 2190–2500**.\n**Pendientes:** subidas 621–731 (+2%) y 825–1025 (+1.5%) · bajada 1125–1525 (−1.5%) · **subida final 2325–2435 (+2%)**.\nEl *position keep* termina cerca del metro 1042. Con 6 curvas, las recuperaciones de curva tienen muchas oportunidades de activarse."
+     },
+     {
+      "name": "🌱 Skills verdes que encajan",
+      "value": "**Right-Handed** (pista a derechas) · **Winter Runner** (invierno) · **Nakayama Racecourse** · **Non-Standard Distance** (2500 m no es múltiplo de 400) · **Cloudy Days** (nublado) · **Wet Conditions** (cubre terreno *Good*).\nCada una cuesta 90 SP y da 129 pts; las 6 suman **540 SP**."
+     }
+    ]
+   },
+   "stats": {
+    "title": "Stats",
+    "fields": [
+     {
+      "name": "Graded League",
+      "value": "**Sin límite de rank:** aquí compites con tu mejor build.\n• **Speed** 1500+\n• **Stamina** ~900 (óptimo **867–901**) con **1 skill dorada de recuperación**\n• **Power** 1000+\n• **Guts** mínimo 577–601 (ideal 867–901 si llegas)\n• **Wit** 1000+\nLa pista tiene **umbrales de Stamina y Guts**: cruzarlos da un bonus extra de velocidad, así que llega justo a esos números antes de subir Speed."
+     },
+     {
+      "name": "Open League",
+      "value": "Tiene **tope de rank por Uma** (el valor exacto cambia entre ediciones: confírmalo en la pantalla de selección de liga). Las metas de stats son las mismas, pero como no puedes pasarte del tope, prioriza **skills baratas y eficientes en puntos** (Nimble Navigator, Straightaway Spurt, verdes) y asegura primero los umbrales de **Stamina/Guts** antes que Speed extra."
+     }
+    ]
+   },
+   "umas": {
+    "title": "Best Umas & Running Styles",
+    "description": "Basado en el tier list de **uma.guide** para esta CM. **Inversión** = lo costoso que es construirla; **S/A/B** = rendimiento medio. Todos los estilos tienen una aceleración instantánea disponible: cualquier uma bien construida puede ganar, pero el estilo pesa mucho. Entre paréntesis: habilidad **única** y aptitudes (Long / estilo). Cuando la aptitud Long es baja, súbela con herencia (el objetivo es **S en Long y Turf**).",
+    "fields": [
+     {
+      "name": "🏃 Front Runner / Runaway — el estilo dominante",
+      "value": "Sus aceleraciones (**Angling and Scheming**, **Break It Down!**) no tienen precondiciones difíciles y el *position keep* abre huecos grandes: aunque la zaga active todo, un buen Front se escapa.\n• **Mihono Bourbon** (id 102613) — **S** · baja: la mejor relación esfuerzo/resultado.\n• **Seiun Sky** (id 102020) y **Daiwa Scarlet** (id 100946) — **A** · baja.\n• **Mejiro McQueen [End of the Skies]** _(única: **Legacy of the Strong** · Long A · Front B)_ — **A** · media.\n• **Daiwa Scarlet [Peak Blue]** _(única: **Resplendent Red Ace** · Long B · Front A)_ — **A** · media.\n• **Kitasan Black [Gilded Shrine to Glory]** _(única: **Victory Cheer!** · Long A · Front A)_ — **A** · media.\n• **Runaway:** **Silence Suzuka [Innocent Silence]** _(única: **The View from the Lead is Mine!** · Long E · Front A)_ y **Mejiro Palmer [Line Breakthrough]** _(única: **Keep Pushing Ahead** · Long A · Front A)_ — **S** · media. ⚠️ Si coinciden dos Runaways se activa *Spot Struggle* y ambas pierden HP."
+     },
+     {
+      "name": "🐎 Pace Chaser — el más difícil",
+      "value": "Compite con los Front por las mismas condiciones. **My True Strength** pide ir a menos de 4 cuerpos del líder (un Runaway lo anula) y **Victory Cheer! / Break It Down!** exigen ir 2.º al empezar la fase final. Necesitan mucha skill de mitad de carrera para llegar bien posicionadas.\n• **Oguri Cap (Christmas)** (id 100646), **Mejiro McQueen (Summer)** (id 101330) y **Rice Shower (Halloween)** (id 103040) — **S** · media: curan por sí mismas o traen velocidad en mitad de carrera.\n• **Biwa Hayahide** (id 102346) — **S** · alta."
+     },
+     {
+      "name": "🌊 Late Surger — depende del lobby",
+      "value": "**Claw Forward** es una aceleración instantánea muy potente, pero cuesta 2% de HP (reserva unos 50 de Stamina extra) y solo se activa yendo **4.º–9.º**: con pocos Front en el lobby puedes quedarte sin ella. Lleva siempre una segunda aceleración de respaldo.\n• **T.M. Opera O (New Year's)** (id 101510) — **A** · baja: cura propia y buena fase final.\n• **Matikanetannhauser [Clippety-Tippety-Clop]** _(única: **Go, Go, Mun!** · Long A · Late A)_ y **Satono Diamond [Jade's Prosperity]** _(única: **Rain Cloud Bolt** · Long A · Late A)_ — **A** · alta.\n• **Special Week [Hopp'n♪Happy Heart]** _(única: **Dazzl'n ♪ Diver** · Long A · Late A)_ y **Oguri Cap** — **B** · media."
+     },
+     {
+      "name": "🔥 End Closer — el 2.º mejor estilo",
+      "value": "**Straightaway Spurt / Encroaching Shadow** acelera desde cualquier posición. Su reto es tener suficiente mitad de carrera para no perder demasiado terreno frente a los Front: **Uma Stan** y **Daring Strike** son obligatorias.\n• **Narita Taishin [Nevertheless]** y **Inari One** (id 103443) — **S** · baja.\n• **Sweep Tosho [Platanus Witch]** _(única: **Victory belongs to me—Strelitzia! ☆** · Long D · End A)_ — **S** · alta. ⚠️ Long D: sube la aptitud.\n• **Gold Ship [Red Strife]** _(única: **Anchors Aweigh!** · Long A · End A)_, **Mayano Top Gun [Scramble☆Zone]** _(única: **Flashy☆Landing** · Long A · End B)_ y **Mejiro Bright [Brunissage Line]** _(única: **Lovely Spring Breeze** · Long A · End A)_ — **S** · alta.\n• **Tamamo Cross [Fast as Lightning]** _(única: **White Lightning Comin' Through!** · Long A · End A)_ — **A** · media. **Admire Vega [Starry Nocturne]** _(única: **Shooting Star of Dioskouroi** · Long C · End A)_ — **A** · alta (Long C: sube la aptitud)."
+     },
+     {
+      "name": "🟣 Debuffer",
+      "value": "En 2500m **Mystifying Murmur / Murmur no se activan** (solo funcionan en distancia Medium). Las opciones reales son **Stamina Siphon** y **Stamina Eater**, que exigen ir **5.º o más atrás**: encajan con End Closer o Late Surger. **Stamina Siphon** viene de la primera **Manhattan Cafe SSR**. Referencias de la edición de enero en esta misma pista: **Nice Nature**, **Halloween Super Creek**, **Wedding Mayano Top Gun** y **Grass Wonder**. Un debuffer sigue necesitando su propia aceleración y recuperación: no sacrifiques la base."
+     },
+     {
+      "name": "🧭 ¿Cuál construyo?",
+      "value": "• **Poco tiempo / inversión baja:** **Mihono Bourbon** (Front), **Narita Taishin [Nevertheless]** o **Inari One** (End), **T.M. Opera O** (Late).\n• **Máximo rendimiento:** Front. Si ya hay un Runaway fuerte en tu grupo, elige un Front normal para evitar el *Spot Struggle*.\n• **Lobby con muchos Front:** End Closer, porque su aceleración no depende de tu posición.\n• **Lobby con pocos o flojos Front:** una Late Surger puede quedar demasiado adelantada y fallar la posición **4.º–9.º** que pide **Claw Forward**."
+     }
+    ]
+   },
+   "inheritance": {
+    "title": "Inheritance & Legacy Planning",
+    "description": "**Estrellas azules:** el objetivo es **Stamina**. Sin al menos **16★ de Stamina** en el legado tendrás que dedicar un slot del mazo a una carta de Stamina. El resto de azules (Speed/Power) se reparte según lo que falte después de cubrir eso.\n**Skills de herencia:** apunta a heredar **al menos una** skill de curva final de **+0.25 m/s durante 3 s**: **∴win Q.E.D.** (200 SP · 180 pts) y **Barcarole of Blessings** (200 SP · 180 pts) son las más accesibles. **Inside Scoop** (160 SP · 217 pts) es buena skill normal y además activa **Dreams Donned with Pride!** (única de Special Week, que necesita otra skill en la curva final).",
+    "fields": [
+     {
+      "name": "👴 Abuelos recomendados (todos los estilos)",
+      "value": "**T.M. Opera O** (id 101510), **Special Week [Hopp'n♪Happy Heart]**, **Mejiro McQueen [Frontline Elegance]** y **Biwa Hayahide**. Pace/Late/End añaden **Oguri Cap [Starlight Beat]** y **Special Week [Special Dreamer]**; Front añade **Mihono Bourbon** (id 102613) y **Seiun Sky** (id 102020)."
+     },
+     {
+      "name": "🧬 Por qué estos padres",
+      "value": "• **Seiun Sky [Reeling in the Big One]** → única **Angling and Scheming** (acelera en la curva yendo al frente) _(única: **Angling and Scheming** · Long A · Front A)_.\n• **Kitasan Black [Gilded Shrine to Glory]** → única **Victory Cheer!** _(única: **Victory Cheer!** · Long A · Front A)_.\n• **Mejiro Dober [Off the Line]** → única **Moving Past, and Beyond** _(única: **Moving Past, and Beyond** · Long F · Late A)_. Su aptitud Long es F, por eso cuesta armar un legado Long suyo.\n⚠️ **Gold Ship** como padre da **Anchors Aweigh!**, que suele estorbar a las Late Surger: dificulta activar el resto de tus skills."
+     },
+     {
+      "name": "🏃 Front Runner",
+      "value": "**Padres:** **Seiun Sky** y **Kitasan Black**.\nHereda **Angling and Scheming** (200 SP · 180 pts). **Break It Down!** también es de Seiun Sky, así que una de las dos solo sale de la capa de sub-legado: si solo puedes llevar 2 de las 3 aceleraciones únicas, prioriza **Angling and Scheming**. No necesitas **Nimble Navigator** (150 SP · 174 pts): un Front va delante, sin bloqueos."
+     },
+     {
+      "name": "🐎 Pace Chaser",
+      "value": "**Padres:** **Seiun Sky** y **Kitasan Black**.\nChispas blancas de la CM: **Nimble Navigator** (150 SP · 174 pts) y **My True Strength** (180 SP · 217 pts). Como sus aceleraciones dependen de la posición, planea mucha skill de mitad de carrera."
+     },
+     {
+      "name": "🌊 Late Surger",
+      "value": "**Padre:** **Mejiro Dober [Off the Line]**.\nChispas blancas: **Nimble Navigator** (150 SP · 174 pts) y **Scramble** (180 SP · 217 pts) (versión blanca de **Claw Forward**). **Moving Past, and Beyond** (200 SP · 180 pts) llega algo tarde pero sirve de 2.ª aceleración; si no puedes armar el legado de Dober, omítela."
+     },
+     {
+      "name": "🔥 End Closer",
+      "value": "**Padre:** **Mejiro Dober [Off the Line]**.\nChispas blancas: **Nimble Navigator** (150 SP · 174 pts) y **Straightaway Spurt** (180 SP · 217 pts). Igual que Late, **Moving Past, and Beyond** (200 SP · 180 pts) es una 2.ª aceleración opcional."
+     },
+     {
+      "name": "🟣 Debuffer",
+      "value": "Hereda lo del estilo con el que corras (normalmente End/Late) y consigue los debuffs por **hint de soporte** (**Stamina Siphon** de Manhattan Cafe SSR) en vez de gastar herencia en ellos."
+     },
+     {
+      "name": "📋 Checklist final de herencia",
+      "value": "**Front:** ≥16★ Stamina · **Angling and Scheming** (+ **Break It Down!** si puedes) · 1 skill de curva final.\n**Pace:** ≥16★ Stamina · **Nimble Navigator** + **My True Strength** · 1 skill de curva final.\n**Late:** ≥16★ Stamina · **Nimble Navigator** + **Scramble** · 1 skill de curva final · (opcional **Moving Past, and Beyond**).\n**End:** ≥16★ Stamina · **Nimble Navigator** + **Straightaway Spurt** · 1 skill de curva final · (opcional **Moving Past, and Beyond**).\n**Debuffer:** lo de su estilo base + hint de **Stamina Siphon**.\nLas skills únicas heredadas cuestan **200 SP** cada una: súmalo a tu presupuesto."
+     }
+    ]
+   },
+   "supports_whale": {
+    "title": "Supports — Whale (SSR a alto límite)",
+    "description": "Mazos típicos: **2 SPD · 1 STA · 2 WIT + pal Light Hello** (si tu uma tiene *Speed Growth*) o **3 SPD · 1 STA · 1 WIT + Light Hello** (si no). Stamina es el stat más difícil, así que casi siempre entra **1 carta de Stamina**. **Light Hello SSR (pal)** está en todos los ejemplos y aporta **Front Runner Savvy** y **Pace Chaser Savvy**.\n**3-1-1:** Kitasan Black · Agnes Tachyon · Maruzensky · Light Hello · Mr. C.B. · Super Creek.\n**2-1-2:** Agnes Tachyon · Maruzensky · Light Hello · Tokai Teio · Fine Motion · Super Creek.\nEntre corchetes: bonus a **límite máximo** (Amistad / Eficacia de entrenamiento).",
+    "fields": [
+     {
+      "name": "💨 Speed",
+      "value": "• **Kitasan Black SSR «Fire at My Heels»** [Amistad 25% · Entren. 10%]: **Corner Adept**, **Corner Recovery**, **Long Corners**; evento **Professor of Curvature**. Front/Pace.\n• **Agnes Tachyon SSR «Q≠0»** [Amistad 20% (+20% at bond 100+) · Entren. 5%]: **Head-On**, **Pace Chaser Corners**, **Pace Chaser Savvy**. Pace Chaser.\n• **Maruzensky SSR «Sentimental Flare ♪»** [Amistad 25%]: **Focus**, **Early Lead**, **Front Runner Corners/Straightaways**, **Groundwork**. Front.\n• **Eishin Flash SSR «Danke Schön»** [Amistad 20% · Entren. 10%]: **Late Surger Corners/Straightaways**, **Late Surger Savvy**. Late.\n• **Air Shakur SSR «Mag!c Number»** [Amistad 20%]: **Straightaway Spurt**, **End Closer Corners**. End."
+     },
+     {
+      "name": "🫁 Stamina",
+      "value": "• **Super Creek SSR «Piece of Mind»** [Amistad 25% · Entren. 15%]: la mejor: evento **Swinging Maestro** (recuperación dorada) + **Corner Recovery**, **Ramp Up**.\n• **Mejiro Palmer SSR «Moonlit Devil ♪»** [Amistad 35%]: **Early Lead**, **Keeping the Lead**, **Groundwork** (da **Taking the Lead**). Front con cura propia.\n• **Symboli Kris S SSR «A Win Foreshadowed»** [Amistad 30% · Entren. 5%]: **Corner Recovery**, **Slick Surge**, **Scramble** (da **Claw Forward**). Late.\n• **Manhattan Cafe SSR «My Solo Spun in Spiraling Runs»** [Amistad 35%]: **Stamina Eater** (y **Stamina Siphon**). Debuffer."
+     },
+     {
+      "name": "💪 Power",
+      "value": "• **Narita Brian SSR «Glad Tidings»** [Amistad 20%]: **Right-Handed**, **Winter Runner**, **Long Straightaways**; evento **My True Strength**. Pace.\n• **Admire Vega SSR «Lucky Star in the Sky»** [Amistad 30% · Entren. 15%]: **End Closer Straightaways**; evento **Daring Strike**. End.\n• **Grass Wonder SSR «From Icy Blues to Verdant Hues»** [Amistad 25%]: **Winter Runner**, **Cloudy Days**, **Long Corners**, **Stamina Eater**. Debuffer/Late.\n• **Daiwa Scarlet SSR «Number 1 Outfit»** [Amistad 35%]: evento **Neck and Neck**; rara vez compensa como carta solo de skills."
+     },
+     {
+      "name": "🔥 Guts",
+      "value": "Basta con cubrir **577–601 de Guts** (umbral de pista).\n• **Yukino Bijin SSR «Dancing Light into the Night»** [Amistad 20% · Entren. 10%]: **Nakayama Racecourse** y **Winter Runner** (dos verdes de esta CM) + **Steadfast**.\n• **Mejiro Palmer SSR «Go Ahead and Laugh»** [Amistad 35%]: **Nakayama Racecourse**, **Early Lead**, **Fast-Paced**. Front."
+     },
+     {
+      "name": "🧠 Wit",
+      "value": "• **Mr. C.B. SSR «Dear Mr. C.B.»** [Amistad 30% · Entren. 5%]: **Straightaway Spurt**, **Homestretch Haste**, **Tail Held High**; evento **Daring Strike**. End.\n• **Tokai Teio SSR «Teio-Oo-Oo!!!»** [Amistad 30%]: **Nimble Navigator**, **Corner Adept**, **Pace Chaser Corners**; evento **Professor of Curvature**. Pace.\n• **Fine Motion SSR «Wave of Gratitude»** [Amistad 25% · Entren. 15%]: **Right-Handed**, **Nimble Navigator**; evento **Corner Adept**.\n• **Yukino Bijin SSR «Hometown Cheers»** [Amistad 20%]: **Nakayama Racecourse**, **Winter Runner**, **Medium Corners**."
+     },
+     {
+      "name": "🎯 Mazo sugerido por estilo",
+      "value": "**Front:** Maruzensky + Kitasan Black + Mejiro Palmer (Stamina) + Super Creek.\n**Pace:** Agnes Tachyon + Tokai Teio + Narita Brian (Power) + Super Creek.\n**Late:** Eishin Flash + Symboli Kris S (Stamina) + Mr. C.B./Fine Motion.\n**End:** Mr. C.B. + Air Shakur + Admire Vega + Super Creek.\n**Debuffer:** Manhattan Cafe + Grass Wonder + el resto del estilo base.\nAhorra el slot de Stamina si una carta **Speed** te da recuperación dorada: **Mayano Top Gun SSR** (**Restless**), **Zenno Rob Roy SSR** (**Lie in Wait**), **Mejiro Ardan SSR** (**Race Planner**), **Air Shakur SSR** (**Serenity**) o **Tosen Jordan SSR** (**Breath of Fresh Air**)."
+     },
+     {
+      "name": "🙅 Cartas solo de skills",
+      "value": "Una carta que solo aporta skills (**Daiwa Scarlet** por **Neck and Neck**, **Yukino Bijin** por **No Stopping Me!**) rara vez compensa el slot: pierdes entrenamiento y skills como **Head-On** o **Nimble Navigator** se consiguen por herencia. Excepción: **Yukino Bijin Guts SSR**, que recomienda Game8 por **Winter Runner**, **Nakayama Racecourse** y **Playtime's Over!** y encima cubre Guts."
+     }
+    ]
+   },
+   "supports_f2p": {
+    "title": "Supports — F2P / Budget",
+    "description": "Los mazos *Budget* de uma.guide combinan pocas SSR accesibles (**Agnes Tachyon**, **Light Hello**, **Super Creek**) con SR baratas.\n**2-1-2:** Agnes Tachyon · Sweep Tosho · Light Hello · Daiwa Scarlet · Marvelous Sunday · Super Creek.\n**3-1-1:** Agnes Tachyon · Sweep Tosho · El Condor Pasa · Light Hello · Marvelous Sunday · Super Creek.\nComo no tendrás los LB de una whale, cada carta debe aportar **skills útiles y verdes de esta CM**. Entre corchetes: bonus al **límite máximo** de cada carta.",
+    "fields": [
+     {
+      "name": "💨 Speed",
+      "value": "• **Sweep Tosho SR «Lamplit Training of a Witch-to-Be»** [Amistad 30% · Entren. 5%]: **Prudent Positioning**, **Slipstream**. Front/Pace.\n• **El Condor Pasa SR «Mud-Caked Compañero»** [Amistad 20% · Entren. 5%]: **Head-On**, **Pace Chaser Straightaways**. Pace.\n• **Eishin Flash SR «5:00 a.m.-Right on Schedule»** [Amistad 20% · Entren. 5%]: **Late Surger Straightaways/Corners**. Late.\n• **Mihono Bourbon SR «Pal-Assisted Training»** [Amistad 30%]: **Early Lead**, **Front Runner Corners/Straightaways**; evento **Focus**. Front."
+     },
+     {
+      "name": "🫁 Stamina",
+      "value": "• **Super Creek SSR «Piece of Mind»** [Amistad 25% · Entren. 15%]: sigue siendo la mejor y entra en los mazos budget (**Swinging Maestro** por evento).\n• **Mayano Top Gun SR «Cute + Cute = ?»** [Amistad 25% · Entren. 10%]: **Non-Standard Distance** (verde de esta CM), **Corner Adept**, **Nimble Navigator**.\n• **Zenno Rob Roy SR «The Perfect Book for You»** [Amistad 20% · Entren. 5%]: **Nimble Navigator**, **Prudent Positioning**.\n• **Manhattan Cafe SR «My Solo Drawn to Raindrop Drums»** [Amistad 20%]: **Wet Conditions**, **Stamina Eater**. Debuffer."
+     },
+     {
+      "name": "💪 Power",
+      "value": "• **Narita Top Road SR «Stop, Prez!»** [Amistad 20%]: **Right-Handed**, **Non-Standard Distance**: dos verdes de esta CM.\n• **Inari One SR «Laughing through the Mud»** [Amistad 25% · Entren. 5%]: **Winter Runner**, **Ramp Up**, **Tail Held High**.\n• **Hishi Amazon SR «Reach the Top!»** [Amistad 30%]: **Straightaway Spurt**, **End Closer Straightaways**. End.\n• **Biwa Hayahide SR «Trial Initiation»** [Amistad 20% · Entren. 10%]: **Wet Conditions**, **Cloudy Days**; evento **Inside Scoop**."
+     },
+     {
+      "name": "🔥 Guts",
+      "value": "• **Yukino Bijin SR «City Girl 101»** [Amistad 20% · Entren. 5%]: **Nakayama Racecourse** y **Winter Runner**.\n• **Seeking the Pearl SR «The World's My Oyster»** [Amistad 30%]: **Pace Strategy**, **Firm Conditions**. Pace/Late.\n• **Air Groove SR «Nothing Escapes the Vice Prez»** [Amistad 20% · Entren. 10%]: **Groundwork**, **Flustered/Hesitant End Closers**."
+     },
+     {
+      "name": "🧠 Wit",
+      "value": "• **Marvelous Sunday SR «A Marvelous ☆ Plan»** [Amistad 20%]: **Straightaway Adept**, **Ramp Up**, **Tail Held High**.\n• **Daiwa Scarlet SR «Nothing Hard Work Can't Solve!»** [Amistad 30%]: carta de referencia del mazo budget (**Up-Tempo**, **Shifting Gears**).\n• **Mejiro Ardan SR «My Heart Will Go On»** [Amistad 20% · Entren. 5%]: **Pace Chaser Corners/Savvy**. Pace.\n• **Nice Nature SR «Messing Around»** [Amistad 20% · Entren. 10%]: debuff **Hesitant Late Surgers**."
+     },
+     {
+      "name": "🎯 Mazo sugerido por estilo",
+      "value": "**Front:** Mihono Bourbon + Sweep Tosho + Super Creek + Light Hello.\n**Pace:** Agnes Tachyon + El Condor Pasa + Marvelous Sunday + Super Creek.\n**Late:** Eishin Flash + Narita Top Road + Mayano Top Gun (Nimble Navigator) + Super Creek.\n**End:** Hishi Amazon + Inari One + Marvelous Sunday + Super Creek.\n**Prioridad si tus recursos son limitados:** primero **Super Creek** (Stamina + Swinging Maestro), luego **Light Hello** (pal), y después las SR con verdes de la CM."
+     },
+     {
+      "name": "🙅 Sin Super Creek",
+      "value": "Si no la tienes: reúne **≥16★ de Stamina** en el legado, o usa una carta **Speed** con recuperación dorada (**Mayano Top Gun**, **Zenno Rob Roy**, **Mejiro Ardan**…). Consigue **Nimble Navigator** (150 SP) por herencia en vez de gastar un slot en una carta solo de skills."
+     }
+    ]
+   },
+   "skills": {
+    "title": "Key Skills & Priorities",
+    "description": "🟢 verde · ⚪ blanca · 🟡 dorada · 🧬 herencia · 💰 costo SP · ⭐ puntos de rating (base). **Orden:** verdes y aceleración del estilo primero, luego **1 recuperación dorada** (obligatoria), después velocidad y posición.",
+    "fields": [
+     {
+      "name": "💰 Presupuesto de SP",
+      "value": "• **Front Runner:** núcleo (6 primeras) **1130 SP** · lista completa **2310 SP**\n• **Pace Chaser:** núcleo (6 primeras) **1060 SP** · lista completa **2480 SP**\n• **Late Surger:** núcleo (6 primeras) **1040 SP** · lista completa **2340 SP**\n• **End Closer:** núcleo (6 primeras) **1000 SP** · lista completa **2320 SP**\nSi te falta SP, recorta de abajo hacia arriba: las últimas de cada lista son las más prescindibles."
+     },
+     {
+      "name": "🚫 No las lleves",
+      "value": "• **Victoria por plancha ☆** y **Give Mummy a Hug ♡**: aceleran en la recta trasera, no en la final.\n• **Slick Surge / On Your Left!** (Late): suelen activarse fuera de la zona de aceleración.\n• **Head-On / Neck and Neck** (Pace): lo mismo; solo si no hay alternativa.\n• **Highlander** y **Straight Descent**: las cuestas de Nakayama no ayudan a acelerar.\n• **Mystifying Murmur / Murmur**: solo activan en distancia Medium."
+     },
+     {
+      "name": "📐 Cuándo se activa cada cosa",
+      "value": "• **m1667 (inicio de la fase final), recta trasera:** zona útil de aceleración: **Victory Cheer!**, **Break It Down!**, **Straightaway Spurt / Encroaching Shadow**, **Nimble Navigator / No Stopping Me!**.\n• **m1700 (33 m después), curva C3:** aceleraciones de curva (**Angling and Scheming**, **Let's Pump Some Iron!**, **Moving Past, and Beyond**): viables, pero sacrificables.\n• **C3–C4 finales (1700–2190):** skills de curva final (**∴win Q.E.D.**, **Barcarole of Blessings**, **Dreams Donned with Pride!**).\n• **m2325–2435, subida final:** **1,500,000 CC** (Late).\n• **Recuperaciones:** **Swinging Maestro** dispone de 6 curvas para activarse."
+     }
+    ],
+    "styles": {
+     "Todos los estilos (verdes)": [
+      {
+       "name": "Right-Handed ○",
+       "tier": "passive"
+      },
+      {
+       "name": "Winter Runner ○",
+       "tier": "passive"
+      },
+      {
+       "name": "Nakayama Racecourse ○",
+       "tier": "passive"
+      },
+      {
+       "name": "Non-Standard Distance ○",
+       "tier": "passive"
+      },
+      {
+       "name": "Cloudy Days ○",
+       "tier": "passive"
+      },
+      {
+       "name": "Wet Conditions ○",
+       "tier": "passive",
+       "note": "terreno Good"
+      }
+     ],
+     "Front Runner": [
+      {
+       "name": "Angling and Scheming",
+       "tier": "inherit",
+       "note": "prioridad"
+      },
+      {
+       "name": "Break It Down!",
+       "tier": "inherit"
+      },
+      {
+       "name": "∴win Q.E.D.",
+       "tier": "inherit",
+       "note": "curva final"
+      },
+      {
+       "name": "Professor of Curvature",
+       "tier": "gold"
+      },
+      {
+       "name": "Swinging Maestro",
+       "tier": "gold",
+       "note": "recup."
+      },
+      {
+       "name": "Restless",
+       "tier": "gold",
+       "note": "recup. en subida"
+      },
+      {
+       "name": "Corner Adept ○",
+       "tier": "normal"
+      },
+      {
+       "name": "Long Corners ○",
+       "tier": "normal"
+      },
+      {
+       "name": "Front Runner Corners ○",
+       "tier": "normal"
+      },
+      {
+       "name": "Front Runner Straightaways ○",
+       "tier": "normal"
+      },
+      {
+       "name": "Early Lead",
+       "tier": "normal"
+      },
+      {
+       "name": "Taking the Lead",
+       "tier": "normal"
+      },
+      {
+       "name": "Focus",
+       "tier": "normal"
+      },
+      {
+       "name": "Inside Scoop",
+       "tier": "normal"
+      },
+      {
+       "name": "Groundwork",
+       "tier": "normal"
+      }
+     ],
+     "Pace Chaser": [
+      {
+       "name": "Beast Mode",
+       "tier": "gold",
+       "note": "accel"
+      },
+      {
+       "name": "My True Strength",
+       "tier": "normal",
+       "note": "a <4 cuerpos"
+      },
+      {
+       "name": "Victory Cheer!",
+       "tier": "inherit",
+       "note": "2.º"
+      },
+      {
+       "name": "Break It Down!",
+       "tier": "inherit",
+       "note": "2.º"
+      },
+      {
+       "name": "Nimble Navigator",
+       "tier": "normal"
+      },
+      {
+       "name": "No Stopping Me!",
+       "tier": "gold"
+      },
+      {
+       "name": "Professor of Curvature",
+       "tier": "gold"
+      },
+      {
+       "name": "Gourmand",
+       "tier": "gold",
+       "note": "recup."
+      },
+      {
+       "name": "Swinging Maestro",
+       "tier": "gold",
+       "note": "recup."
+      },
+      {
+       "name": "Pace Chaser Corners ○",
+       "tier": "normal"
+      },
+      {
+       "name": "Pace Chaser Straightaways ○",
+       "tier": "normal"
+      },
+      {
+       "name": "Tail Held High",
+       "tier": "normal"
+      },
+      {
+       "name": "It's On!",
+       "tier": "gold"
+      },
+      {
+       "name": "Corner Adept ○",
+       "tier": "normal"
+      },
+      {
+       "name": "Head-On",
+       "tier": "normal",
+       "note": "si falta accel"
+      }
+     ],
+     "Late Surger": [
+      {
+       "name": "Claw Forward",
+       "tier": "gold",
+       "note": "−2% HP; 4.º–9.º"
+      },
+      {
+       "name": "Scramble",
+       "tier": "normal",
+       "note": "respaldo"
+      },
+      {
+       "name": "Nimble Navigator",
+       "tier": "normal"
+      },
+      {
+       "name": "No Stopping Me!",
+       "tier": "gold"
+      },
+      {
+       "name": "Moving Past, and Beyond",
+       "tier": "inherit",
+       "note": "opcional"
+      },
+      {
+       "name": "Professor of Curvature",
+       "tier": "gold"
+      },
+      {
+       "name": "Swinging Maestro",
+       "tier": "gold",
+       "note": "recup."
+      },
+      {
+       "name": "Lie in Wait",
+       "tier": "gold",
+       "note": "recup."
+      },
+      {
+       "name": "Late Surger Corners ○",
+       "tier": "normal"
+      },
+      {
+       "name": "Long Corners ○",
+       "tier": "normal"
+      },
+      {
+       "name": "Uma Stan",
+       "tier": "normal"
+      },
+      {
+       "name": "Tail Held High",
+       "tier": "normal"
+      },
+      {
+       "name": "1,500,000 CC",
+       "tier": "normal",
+       "note": "subida final"
+      },
+      {
+       "name": "Inside Scoop",
+       "tier": "normal"
+      },
+      {
+       "name": "Corner Adept ○",
+       "tier": "normal"
+      }
+     ],
+     "End Closer": [
+      {
+       "name": "Encroaching Shadow",
+       "tier": "gold",
+       "note": "accel en recta"
+      },
+      {
+       "name": "Straightaway Spurt",
+       "tier": "normal"
+      },
+      {
+       "name": "Nimble Navigator",
+       "tier": "normal"
+      },
+      {
+       "name": "No Stopping Me!",
+       "tier": "gold"
+      },
+      {
+       "name": "Uma Stan",
+       "tier": "normal",
+       "note": "clave"
+      },
+      {
+       "name": "Daring Strike",
+       "tier": "gold",
+       "note": "clave"
+      },
+      {
+       "name": "Serenity",
+       "tier": "gold",
+       "note": "recup."
+      },
+      {
+       "name": "Swinging Maestro",
+       "tier": "gold",
+       "note": "recup."
+      },
+      {
+       "name": "Professor of Curvature",
+       "tier": "gold"
+      },
+      {
+       "name": "End Closer Corners ○",
+       "tier": "normal"
+      },
+      {
+       "name": "End Closer Straightaways ○",
+       "tier": "normal"
+      },
+      {
+       "name": "Long Corners ○",
+       "tier": "normal"
+      },
+      {
+       "name": "Ramp Up",
+       "tier": "normal"
+      },
+      {
+       "name": "Slipstream",
+       "tier": "normal"
+      },
+      {
+       "name": "Tail Held High",
+       "tier": "normal"
+      }
+     ],
+     "Debuffer": [
+      {
+       "name": "Stamina Siphon",
+       "tier": "gold",
+       "note": "va atrás (5.º+)"
+      },
+      {
+       "name": "Stamina Eater",
+       "tier": "normal",
+       "note": "va atrás (5.º+)"
+      },
+      {
+       "name": "Flustered Front Runners",
+       "tier": "normal"
+      },
+      {
+       "name": "Hesitant Front Runners",
+       "tier": "normal"
+      },
+      {
+       "name": "Flustered Pace Chasers",
+       "tier": "normal"
+      },
+      {
+       "name": "Hesitant Pace Chasers",
+       "tier": "normal"
+      },
+      {
+       "name": "Flustered Late Surgers",
+       "tier": "normal"
+      },
+      {
+       "name": "Hesitant Late Surgers",
+       "tier": "normal"
+      },
+      {
+       "name": "Nimble Navigator",
+       "tier": "normal"
+      },
+      {
+       "name": "Swinging Maestro",
+       "tier": "gold",
+       "note": "recup."
+      },
+      {
+       "name": "Professor of Curvature",
+       "tier": "gold"
+      },
+      {
+       "name": "Straightaway Spurt",
+       "tier": "normal",
+       "note": "si corre End"
+      }
+     ]
+    }
+   }
+  }
+ }
+}
